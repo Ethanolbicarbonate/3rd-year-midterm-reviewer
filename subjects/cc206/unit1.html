@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: Introduction to Application Development - CC206 AppDev</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>CC206 AppDev</span> / 
+                    <span>Unit 1: Introduction to Application Development</span>
+                </div>
+                <h1 class="chapter-title">Unit 1: Introduction to Application Development</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Why Develop Applications?</h2>
+                    <div class="content-block info-block">
+                        <p>We develop applications to solve real-world problems, improve efficiency, and provide convenient, accessible, and user-friendly solutions. The ultimate goal is to enhance productivity, communication, and the overall quality of life.</p>
+                        <p>Applications enable task automation, support decision-making, connect people and systems globally, and adapt to evolving technologies to meet both personal and business needs effectively.</p>
+                    </div>
+                     <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h3>Solve Real-World Problems</h3>
+                            <p>Applications are created to address specific needs and challenges faced by users or businesses.</p>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h3>Simplify Tasks</h3>
+                            <p>By automating processes, applications make complex or repetitive tasks easier and faster to complete.</p>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h3>Drive Innovation</h3>
+                            <p>New applications often introduce novel solutions and technologies that push boundaries and create new possibilities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Application Platforms</h2>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h3>Web Applications</h3>
+                            <p>A software program that runs in a web browser and is accessed over the internet or a private network. They don't need to be installed on a user's device.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>Mobile Applications</h3>
+                            <p>A software program designed to run on smartphones, tablets, and other handheld devices. They are installed directly onto the device from an app store.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>Desktop Applications</h3>
+                            <p>A software program that runs on a desktop or laptop computer's operating system, such as Windows, macOS, or Linux. They are installed locally and can often work offline.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Application Development Approaches</h2>
+                    
+                    <h3>Native Application Development</h3>
+                    <div class="content-block">
+                        <p>A native app is developed <strong>exclusively for a single platform</strong> using a programming language native to that operating system.</p>
+                        <ul>
+                            <li><strong>For Android:</strong> Java or Kotlin</li>
+                            <li><strong>For iOS:</strong> Objective-C or Swift</li>
+                        </ul>
+                        <p>Native apps acquire all possible advantages of the device and its OS features. They have direct access to hardware like GPS, camera, and microphone, which results in high performance and a better user experience.</p>
+                        <p><strong>Examples:</strong> Google Maps, Pinterest, Spotify.</p>
+                    </div>
+
+                    <h3>Hybrid Application Development</h3>
+                    <div class="content-block">
+                         <p>Hybrid development combines native and web solutions. The core of the app is written using web technologies (<span class="term">HTML</span>, <span class="term">CSS</span>, <span class="term">JavaScript</span>) and then wrapped in a native container.</p>
+                         <p>Plugins like <strong>Apache Cordova</strong> or <strong>Ionic's Capacitor</strong> are used to bridge the gap and provide access to native device functionalities. A hybrid app generally consists of two main components: a backend code and a native viewer (essentially a web browser within the app).</p>
+                        <p><strong>Examples:</strong> Gmail, Uber, Apple App Store.</p>
+                    </div>
+
+                    <h3>Cross-Platform Application Development</h3>
+                    <div class="content-block">
+                        <p>This approach allows developers to <strong>write code once and reuse it</strong> for different platforms. This significantly reduces development time and cost.</p>
+                        <div class="note-block warning">
+                           <strong>⚠️ Hybrid vs. Cross-Platform:</strong> The only similarity between hybrid and cross-platform apps is "code shareability." The key difference lies in how they render elements and access native features, with cross-platform apps often compiling to native code for better performance than hybrid apps.
+                        </div>
+                        <p><strong>Examples:</strong> Skype, Slack, Facebook, Instagram, Uber Eats.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Development Tools: Frameworks vs. Kits</h2>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h3>Software Development Framework (SDF)</h3>
+                            <p>An <span class="term">SDF</span> is a ready-made structure or tool that helps developers build applications faster. It provides reusable parts like login systems and error tracking, so you don't build everything from scratch. It defines the overall flow and architecture of the application.</p>
+                            <p><strong>Analogy:</strong> A half-built playground. The swings and slide are already there; you just add your own touches and finish it.</p>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h3>Software Development Kit (SDK)</h3>
+                            <p>An <span class="term">SDK</span> is a collection of software development tools in one installable package. It allows for easier integration with existing technologies and provides tools, libraries, and documentation to build applications for a specific platform.</p>
+                            <p><strong>Analogy:</strong> A toolbox. It contains all the tools, parts, and instructions you need to build something (like a toy car or a treehouse) from the ground up.</p>
+                        </div>
+                    </div>
+                     <div class="note-block success">
+                        <strong>💡 Key Difference:</strong><br>
+                        <strong>SDK:</strong> "Here are the tools and parts to build anything you want."<br>
+                        <strong>SDF:</strong> "Here's the basic structure already made — now decorate and improve it."
+                    </div>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <div class="term-cards">
+                        <div class="term-card">
+                            <span class="term">SDF</span>
+                            <span class="definition">Software Development Framework</span>
+                        </div>
+                        <div class="term-card">
+                            <span class="term">SDK</span>
+                            <span class="definition">Software Development Kit</span>
+                        </div>
+                         <div class="term-card">
+                            <span class="term">iOS</span>
+                            <span class="definition">iPhone Operating System (Apple)</span>
+                        </div>
+                        <div class="term-card">
+                            <span class="term">GPS</span>
+                            <span class="definition">Global Positioning System</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ul class="summary-list">
+                        <li class="summary-point">Applications are built to solve problems, simplify tasks, and drive innovation.</li>
+                        <li class="summary-point">The three main application platforms are Web, Mobile, and Desktop.</li>
+                        <li class="summary-point"><strong>Native</strong> apps are platform-specific (e.g., Kotlin for Android, Swift for iOS) and offer the highest performance.</li>
+                        <li class="summary-point"><strong>Hybrid</strong> apps use web technologies (HTML, CSS, JS) inside a native wrapper to work on multiple platforms.</li>
+                        <li class="summary-point"><strong>Cross-Platform</strong> apps use a single codebase that is compiled or rendered for multiple platforms.</li>
+                        <li class="summary-point">An <span class="term">SDK</span> is a toolbox of tools for building, while an <span class="term">SDF</span> is a pre-built structure to build upon.</li>
+                    </ul>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Quick Facts</h3>
+                    <div class="fact-grid">
+                        <div class="fact-card">
+                            <span class="fact-label">Native Android Languages:</span>
+                            <span class="fact-value">Java / Kotlin</span>
+                        </div>
+                        <div class="fact-card">
+                            <span class="fact-label">Native iOS Languages:</span>
+                            <span class="fact-value">Swift / Obj-C</span>
+                        </div>
+                        <div class="fact-card">
+                            <span class="fact-label">Hybrid Core Tech:</span>
+                            <span class="fact-value">HTML, CSS, JS</span>
+                        </div>
+                        <div class="fact-card">
+                            <span class="fact-label">Key AppDev Goal:</span>
+                            <span class="fact-value">Improve Efficiency</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3: User Interface and User Experience - CC206 AppDev</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>CC206 AppDev</span> / 
+                    <span>Unit 3: User Interface and User Experience</span>
+                </div>
+                <h1 class="chapter-title">Unit 3: User Interface and User Experience</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Introduction to UI/UX</h2>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h3>User Interface (UI)</h3>
+                            <p>The graphical layout of an application. It's what the user sees and interacts with, including buttons, colors, fonts, icons, and menus. <br><strong>Focus: Visuals & Interaction.</strong></p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>User Experience (UX)</h3>
+                            <p>How a user feels when interacting with an app. It covers usability, satisfaction, and the ease of achieving goals. <br><strong>Focus: Journey & Emotion.</strong></p>
+                        </div>
+                    </div>
+                     <div class="note-block success">
+                        <strong>💡 Key Insight:</strong> Good <span class="term">UI</span> is a critical component of a good <span class="term">UX</span>, but it cannot fix a flawed user journey on its own. They are deeply interconnected.
+                    </div>
+                    
+                    <h3>Importance in Application Development</h3>
+                    <p>A strong focus on UI/UX is essential for an application's success. It impacts everything from initial user interest to long-term loyalty.</p>
+                    <ul>
+                        <li><strong>First Impression & Engagement:</strong> A visually appealing and user-friendly design attracts and retains users.</li>
+                        <li><strong>Usability & Loyalty:</strong> A seamless experience fosters positive usability, leading to higher user retention.</li>
+                        <li><strong>Competitive Edge:</strong> A unique and intuitive design helps an application stand out in a crowded market.</li>
+                        <li><strong>App Store Rankings:</strong> High-quality UI/UX often leads to better reviews and higher app store ratings.</li>
+                    </ul>
+
+                    <h3>The UX Design Process</h3>
+                    <p>A structured, user-centered approach to problem-solving. The Stanford d.school Design Thinking Process is a widely adopted model with five key stages:</p>
+                     <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>1. Empathize</h4><p>Understand the user's needs, motivations, and pain points through research, interviews, and observation.</p></div>
+                        <div class="concept-card secondary-concept"><h4>2. Define</h4><p>Clearly state the core problem that needs to be solved based on insights gathered during the Empathize phase.</p></div>
+                        <div class="concept-card secondary-concept"><h4>3. Ideate</h4><p>Brainstorm a wide range of creative solutions and ideas without judgment. This is the "thinking outside the box" phase.</p></div>
+                        <div class="concept-card secondary-concept"><h4>4. Prototype</h4><p>Create scaled-down, testable versions of the solution (e.g., wireframes, mockups) to see how they work in practice.</p></div>
+                        <div class="concept-card secondary-concept"><h4>5. Test</h4><p>Gather feedback on the prototypes from real users to identify flaws, refine the solution, and understand what works.</p></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Principles of UI Design</h2>
+                    <h3>Core UI Principles</h3>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept"><h4>Visual Hierarchy</h4><p>Arrange elements so the most important ones stand out, guiding the user's attention naturally.</p></div>
+                        <div class="concept-card primary-concept"><h4>Consistency</h4><p>Use the same styles, components, and patterns across the app for familiarity and predictability.</p></div>
+                        <div class="concept-card primary-concept"><h4>Alignment</h4><p>Properly align elements on a grid to create a clean, organized, and visually pleasing layout.</p></div>
+                        <div class="concept-card primary-concept"><h4>Spacing</h4><p>Use adequate padding and white space to reduce clutter, improve readability, and group related items.</p></div>
+                    </div>
+                    <h3>UI Elements</h3>
+                    <ul>
+                        <li><strong>Colors:</strong> Use color psychology to evoke emotions (e.g., blue for trust), ensure high contrast for accessibility, and align with brand identity.</li>
+                        <li><strong>Typography:</strong> Prioritize readability, limit font pairings to 2-3 typefaces, and use size/weight to create a clear text hierarchy.</li>
+                        <li><strong>Iconography:</strong> Use clear, recognizable, and standard icons for common actions (e.g., trash can for delete). Avoid overly complex or decorative icons.</li>
+                    </ul>
+                     <h3>Platform-Specific Design Patterns</h3>
+                    <div class="content-block info-block">
+                        <p>Apps should feel native to the platform they run on by following established design guidelines.</p>
+                        <ul>
+                            <li><strong>Android (Material Design):</strong> Characterized by flat elements, bold colors, and floating action buttons.</li>
+                            <li><strong>iOS (Human Interface Guidelines):</strong> Emphasizes a minimalistic aesthetic, soft colors, and clean navigation.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Principles of UX Design</h2>
+                    <p>These principles are guidelines for creating user-friendly, intuitive, and effective experiences.</p>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept"><h4>Usability Heuristics</h4><p>General rules of thumb for interface design, like Nielsen's 10 Heuristics, which help identify common usability problems.</p></div>
+                        <div class="concept-card primary-concept"><h4>User Journey & Personas</h4><p>A <strong>User Journey</strong> maps the steps a user takes to achieve a goal. <strong>Personas</strong> are fictional user profiles that guide design decisions by representing a target audience.</p></div>
+                        <div class="concept-card primary-concept"><h4>Cognitive Load</h4><p>Minimize the mental effort a user needs to use the app by simplifying interfaces and showing only necessary information.</p></div>
+                        <div class="concept-card primary-concept"><h4>Feedback & Affordance</h4><p><strong>Feedback</strong> shows users the result of their actions (e.g., a confirmation message). <strong>Affordance</strong> means designing elements to suggest their function (e.g., buttons look clickable).</p></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Wireframing and Prototyping</h2>
+                     <div class="content-block info-block">
+                        <p>Wireframes and prototypes are essential tools for visualizing and planning an application's structure and flow before any code is written.</p>
+                     </div>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h3>Low-Fidelity Wireframes</h3>
+                            <p>Simple sketches or block diagrams that focus on layout, structure, and flow, not visual details. They are quick to create and ideal for early-stage brainstorming.</p>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h3>High-Fidelity Wireframes</h3>
+                            <p>Detailed mockups created with design tools that include colors, fonts, realistic content, and branding. They closely resemble the final product.</p>
+                        </div>
+                    </div>
+                     <h3>Tools for Prototyping</h3>
+                     <ul class="summary-list">
+                        <li class="summary-point"><strong>Figma:</strong> A popular, browser-based collaborative design and prototyping tool.</li>
+                        <li class="summary-point"><strong>Adobe XD:</strong> A vector-based tool for UI/UX design and prototyping.</li>
+                        <li class="summary-point"><strong>Sketch:</strong> A professional vector graphics editor for UI design, focused on macOS.</li>
+                        <li class="summary-point"><strong>InVision:</strong> A platform for creating interactive prototypes and collecting feedback.</li>
+                     </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Usability Testing and Evaluation</h2>
+                    <h3>Common Testing Methods</h3>
+                    <ul>
+                        <li><strong>A/B Testing:</strong> Comparing two different design versions (e.g., a blue vs. green button) to see which one performs better based on a specific metric like click-through rate.</li>
+                        <li><strong>Think-Aloud Protocol:</strong> Users verbalize their thoughts, feelings, and actions as they navigate the app, providing direct insight into their thought process.</li>
+                        <li><strong>Heatmaps:</strong> A visual representation of data that tracks where users click, tap, or scroll the most, highlighting areas of high and low engagement.</li>
+                    </ul>
+                    <h3>Evaluation and Improvement</h3>
+                    <p><strong>Heuristic Evaluation</strong> involves experts reviewing an interface against established usability principles (heuristics) to identify potential problems. This, combined with direct user feedback, fuels the <strong>Iterative Improvement</strong> loop: gather feedback, make targeted changes, and repeat testing until goals are met.</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">Other Considerations</h2>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h3>Cross-Platform Design</h3>
+                            <p>Ensure designs adapt and scale well for different screen sizes (mobile, tablet, desktop) and that interactions are intuitive for both touch and mouse inputs.</p>
+                        </div>
+                        <div class="concept-card success note-block">
+                             <h3>Inclusive & Ethical Design</h3>
+                            <p>Design for everyone. Use high-contrast colors, provide text alternatives for images, and support screen readers. Avoid manipulative "dark patterns" and be transparent about data collection, giving users control over their information.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <div class="term-cards">
+                        <div class="term-card"><span class="term">UI</span><span class="definition">User Interface (The look)</span></div>
+                        <div class="term-card"><span class="term">UX</span><span class="definition">User Experience (The feel)</span></div>
+                        <div class="term-card"><span class="term">Persona</span><span class="definition">Fictional user profile</span></div>
+                        <div class="term-card"><span class="term">Wireframe</span><span class="definition">A visual guide to a page's structure</span></div>
+                        <div class="term-card"><span class="term">Prototype</span><span class="definition">An interactive model of a product</span></div>
+                        <div class="term-card"><span class="term">Heuristics</span><span class="definition">Usability inspection guidelines</span></div>
+                        <div class="term-card"><span class="term">A/B Testing</span><span class="definition">Comparing two versions of a design</span></div>
+                        <div class="term-card"><span class="term">Affordance</span><span class="definition">An object's properties that show how it can be used</span></div>
+                    </div>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ul class="summary-list">
+                        <li class="summary-point"><span class="term">UI</span> is the visual design (what you see); <span class="term">UX</span> is the overall usability and feeling (what you experience).</li>
+                        <li class="summary-point">The UX Design Process is a 5-step cycle: Empathize, Define, Ideate, Prototype, and Test.</li>
+                        <li class="summary-point">Effective <span class="term">UI</span> relies on principles like visual hierarchy, consistency, and platform-specific patterns (e.g., Material Design).</li>
+                        <li class="summary-point">Key <span class="term">UX</span> principles involve managing cognitive load, creating user personas, and providing clear feedback.</li>
+                        <li class="summary-point">Usability testing methods like A/B testing and think-aloud protocols are crucial for iterative improvement.</li>
+                        <li class="summary-point">Always design inclusively and ethically, considering accessibility and avoiding manipulative patterns.</li>
+                    </ul>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Quick Facts</h3>
+                    <div class="fact-grid">
+                        <div class="fact-card"><span class="fact-label">UX Process Steps:</span><span class="fact-value">5</span></div>
+                        <div class="fact-card"><span class="fact-label">Android Design System:</span><span class="fact-value">Material Design</span></div>
+                        <div class="fact-card"><span class="fact-label">iOS Design System:</span><span class="fact-value">HIG</span></div>
+                        <div class="fact-card"><span class="fact-label">Goal of Spacing:</span><span class="fact-value">Reduce Clutter</span></div>
+                        <div class="fact-card"><span class="fact-label">Low-Fidelity Focus:</span><span class="fact-value">Layout</span></div>
+                        <div class="fact-card"><span class="fact-label">High-Fidelity Focus:</span><span class="fact-value">Visuals</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4: Version Control Systems - CC206 AppDev</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>CC206 AppDev</span> / 
+                    <span>Unit 4: Version Control Systems</span>
+                </div>
+                <h1 class="chapter-title">Unit 4: Version Control Systems</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">What is a Version Control System?</h2>
+                    <div class="content-block info-block">
+                        <p><strong>Version Control</strong>, also known as <strong>Source Control</strong> or <strong>Source Code Management (<span class="term">SCM</span>)</strong>, is the practice of tracking and managing changes to software code. A <strong>Version Control System (<span class="term">VCS</span>)</strong> is a software tool that helps teams manage these changes over time.</p>
+                        <p>A <span class="term">VCS</span> keeps track of every modification in a special database. If a mistake is made, developers can "turn back the clock" to compare or revert to earlier versions of the code, minimizing disruption to the team.</p>
+                    </div>
+
+                    <h3>Benefits of Version Control Systems</h3>
+                     <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h4>Collaboration</h4>
+                            <p>Allows multiple developers to work on the same codebase seamlessly without overriding each other's work.</p>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h4>Backup and Recovery</h4>
+                            <p>Enables developers to revert to any older version if something breaks, gets deleted, or an error is introduced.</p>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h4>History Tracking</h4>
+                            <p>Provides a complete timeline of the code, showing every change made, by whom, and why (via commit messages).</p>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h4>Branching and Merging</h4>
+                            <p>Allows developers to safely experiment with new ideas or fixes in isolation (branching) and then integrate them when ready (merging).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Types of Version Control Systems</h2>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h3>Local VCS (LVCS)</h3>
+                            <p>Stores all version history on a developer's local computer. It saves different versions of files on the same machine.
+                            <br><strong>Limitation:</strong> Collaboration is difficult and prone to error.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>Centralized VCS (CVCS)</h3>
+                            <p>All files and version history are stored on a single central server. Developers connect to this server to access files.
+                            <br><strong class="danger note-block">Limitation:</strong> The central server is a single point of failure. If it goes down, no one can collaborate or save changes.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>Distributed VCS (DVCS)</h3>
+                            <p>Each user has their own full repository and working copy. Changes are saved locally and then "pushed" to a central server to share.
+                            <br><strong class="success note-block">Advantage:</strong> No single point of failure. Work can continue even if the central server is offline.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Introduction to Git</h2>
+                    <div class="content-block info-block">
+                        <p><strong>Git</strong> is a specific, open-source, distributed version control system (<span class="term">DVCS</span>) created by Linus Torvalds in <span class="fact-value">2005</span>. The entire codebase and its history are available on every developer's computer, making it the go-to <span class="term">VCS</span> for modern software development.</p>
+                    </div>
+                     <h3>Getting Started with Git</h3>
+                    <ol>
+                        <li><strong>Install Git:</strong> Download from <a href="https://git-scm.com" target="_blank">git-scm.com</a> and install using the default settings.</li>
+                        <li><strong>Verify Installation:</strong> Open a terminal (e.g., cmd, VS Code terminal) and run the command:
+                        <pre class="code-block"><code>git --version</code></pre>
+                        </li>
+                    </ol>
+                </div>
+
+                 <div class="content-section">
+                    <h2 class="section-title">Common Git Commands</h2>
+                    
+                    <h3>Basic Configuration</h3>
+                    <pre class="code-block"><code># Initializes a new Git repository in the current directory
+git init
+
+# Sets the author name for your commits
+git config --global user.name "[Your Name]"
+
+# Sets the author email for your commits
+git config --global user.email "[your.email@example.com]"</code></pre>
+
+                    <h3>Core Workflow</h3>
+                    <pre class="code-block"><code># Creates a local copy of a remote repository
+git clone [URL]
+
+# Adds changes to the staging area
+git add [file]
+git add . # Adds all changed files
+
+# Commits staged changes to your local repository with a message
+git commit -m "[Descriptive message]"
+
+# Updates your local repository with changes from a remote repository
+git pull
+
+# Pushes your local commits to the remote repository
+git push</code></pre>
+
+                    <h3>Branching and Merging</h3>
+                    <pre class="code-block"><code># Lists all local branches
+git branch
+
+# Switches to a different branch
+git checkout [branch-name]
+
+# Combines changes from another branch into your current branch
+git merge [branch-name]</code></pre>
+
+                    <h3>History and Status</h3>
+                    <pre class="code-block"><code># Displays the status of your working directory (modified, staged files)
+git status
+
+# Shows a history of commits in the current branch
+git log</code></pre>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">GitHub</h2>
+                     <div class="content-block info-block">
+                        <p><strong>GitHub</strong> is a for-profit company that offers a cloud-based Git repository hosting service. It provides a web-based graphical interface and access control for Git repositories, making it easier to collaborate and manage projects without needing advanced command-line skills.</p>
+                    </div>
+                    <h3>Creating a Repository in GitHub</h3>
+                    <ol>
+                        <li>Go to <strong>GitHub.com</strong> and log in to your account.</li>
+                        <li>Click the "<strong>+</strong>" icon in the top right corner and select "<strong>New repository</strong>".</li>
+                        <li>Fill in the details:
+                            <ul>
+                                <li>Repository Name (e.g., my-first-repo)</li>
+                                <li>Description (optional)</li>
+                                <li>Choose Public or Private</li>
+                                <li>Optionally, check "Add a README file"</li>
+                            </ul>
+                        </li>
+                        <li>Click "<strong>Create repository</strong>". You now have an empty repository hosted on GitHub.</li>
+                    </ol>
+                </div>
+
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <div class="term-cards">
+                        <div class="term-card"><span class="term">VCS</span><span class="definition">Version Control System</span></div>
+                        <div class="term-card"><span class="term">SCM</span><span class="definition">Source Code Management</span></div>
+                        <div class="term-card"><span class="term">LVCS</span><span class="definition">Local Version Control System</span></div>
+                        <div class="term-card"><span class="term">CVCS</span><span class="definition">Centralized Version Control System</span></div>
+                        <div class="term-card"><span class="term">DVCS</span><span class="definition">Distributed Version Control System</span></div>
+                        <div class="term-card"><span class="term">Git</span><span class="definition">An open-source DVCS</span></div>
+                        <div class="term-card"><span class="term">Repository</span><span class="definition">Database of project changes</span></div>
+                        <div class="term-card"><span class="term">Commit</span><span class="definition">A snapshot of changes saved to the local repo</span></div>
+                    </div>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ul class="summary-list">
+                        <li class="summary-point">A <span class="term">VCS</span> tracks changes to code, allowing for collaboration, history tracking, and recovery.</li>
+                        <li class="summary-point">The three main types are Local (<span class="term">LVCS</span>), Centralized (<span class="term">CVCS</span>), and Distributed (<span class="term">DVCS</span>).</li>
+                        <li class="summary-point"><span class="term">CVCS</span> has a single point of failure; <span class="term">DVCS</span> does not, as everyone has a full copy of the repository.</li>
+                        <li class="summary-point"><strong>Git</strong> is the most popular, open-source <span class="term">DVCS</span>.</li>
+                        <li class="summary-point">The core Git workflow is: `git add` (stage changes), `git commit` (save locally), and `git push` (share remotely).</li>
+                        <li class="summary-point"><strong>GitHub</strong> is a hosting service for remote Git repositories, providing a user-friendly web interface.</li>
+                    </ul>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Quick Facts</h3>
+                    <div class="fact-grid">
+                        <div class="fact-card"><span class="fact-label">Git Creator:</span><span class="fact-value">Linus Torvalds</span></div>
+                        <div class="fact-card"><span class="fact-label">Git Created In:</span><span class="fact-value">2005</span></div>
+                        <div class="fact-card"><span class="fact-label">CVCS Weakness:</span><span class="fact-value">Single Failure Point</span></div>
+                        <div class="fact-card"><span class="fact-label">DVCS Strength:</span><span class="fact-value">Resilience</span></div>
+                        <div class="fact-card"><span class="fact-label">Save Changes Locally:</span><span class="fact-value">git commit</span></div>
+                        <div class="fact-card"><span class="fact-label">Share Changes:</span><span class="fact-value">git push</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

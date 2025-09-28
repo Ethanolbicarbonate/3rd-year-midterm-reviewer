@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review - Architecture & Organization</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <!-- No sidebar needed for the PDF viewer layout -->
+        <main class="chapter-main" style="max-width: 1200px; margin: 0 auto;">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>CCS225 Archi</span> / 
+                    <span>Review (Scrollable PDF)</span>
+                </div>
+                <h1 class="chapter-title">Architecture & Organization Review</h1>
+            </header>
+
+            <section class="content-area">
+                <div class="content-block info-block">
+                    <p>Pwede ma chatgpt ah</p>
+                </div>
+
+                <!-- PDF Viewer Container -->
+                <div class="pdf-viewer-container">
+                    <iframe 
+                        src="../../assets/pdfs/archi-review.pdf" 
+                        title="Architecture & Organization Review PDF">
+                    </iframe>
+                </div>
+            </section>
+            
+            <!-- No chapter navigation is needed for a single review page -->
+        </main>
+    </div>
+
+
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>
