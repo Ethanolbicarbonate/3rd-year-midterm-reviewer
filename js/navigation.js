@@ -1,7 +1,7 @@
 // Navigation data structure
 const subjects = [
     {
-        name: "CC206 AppDev",
+        name: "AppDev",
         icon: "💻",
         color: "#2563eb",
         chapters: [
@@ -12,7 +12,7 @@ const subjects = [
         ]
     },
     {
-        name: "BA234 Techno",
+        name: "Techno",
         icon: "🚀",
         color: "#10b981",
         chapters: [
@@ -22,7 +22,7 @@ const subjects = [
         ]
     },
     {
-        name: "CCS225 Archi",
+        name: "Archi",
         icon: "🏛️",
         color: "#f59e0b",
         chapters: [
