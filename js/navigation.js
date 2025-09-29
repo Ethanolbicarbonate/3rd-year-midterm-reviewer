@@ -44,7 +44,16 @@ const subjects = [
             { id: "unit5", title: "Unit 5: Review Techniques and SQA" },
             { id: "unit5-1to5-2", title: "Unit 5.1 and 5.2: Cyclomatic Complexity and Reliability, Availability, Maintainability" }
         ]
-    }
+    },
+    {
+        name: "ANN",
+        icon: "👾",
+        color: "#8b5cf6",
+        chapters: [
+            { id: "review", title: "Review" },
+        ]
+    },
+    
 ];
 
 // Generate navigation menu

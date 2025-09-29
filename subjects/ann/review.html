@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review - Artificial Neural Network</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <!-- No sidebar needed for the PDF viewer layout -->
+        <main class="chapter-main" style="max-width: 1200px; margin: 0 auto;">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>CCS248 ANN</span> / 
+                    <span>Review (Scrollable PDF)</span>
+                </div>
+                <h1 class="chapter-title">Backpropagation Review</h1>
+            </header>
+
+            <section class="content-area">
+<div class="content-section">
+    <h2 class="section-title">Core Concepts of Neural Networks and Backpropagation</h2>
+    <div class="content-block info-block">
+        <p>This section breaks down the fundamental mathematical components and formulas that power a neural network's learning process. Understanding these concepts is key to grasping how a network makes predictions and corrects its errors through backpropagation.</p>
+    </div>
+
+    <h3>Core Concepts & Notation</h3>
+    <div class="term-cards">
+        <div class="term-card">
+            <span class="term">\(z\) (logit)</span>
+            <span class="definition">The weighted sum of inputs for a neuron, before the activation function is applied. <br>\[z = \mathbf{W} \cdot \mathbf{X} + b\]</span>
+        </div>
+        <div class="term-card">
+            <span class="term">\(a\) (activation)</span>
+            <span class="definition">The output of a neuron after the activation function is applied. <br>\[a = f(z)\]</span>
+        </div>
+        <div class="term-card">
+            <span class="term">\(\hat{y}\) (y-hat)</span>
+            <span class="definition">The final prediction or output of the entire network. It's the 'a' value from the final output neuron.</span>
+        </div>
+        <div class="term-card">
+            <span class="term">\(y\) (label)</span>
+            <span class="definition">The true, correct label or target value for a given input.</span>
+        </div>
+        <div class="term-card">
+            <span class="term">\(L\) (Loss / Cost)</span>
+            <span class="definition">A measure of the error between the prediction (\(\hat{y}\)) and the true value (\(y\)). The goal is to minimize this value.</span>
+        </div>
+        <div class="term-card">
+            <span class="term">\(\eta\) (eta)</span>
+            <span class="definition">The learning rate, a small number (e.g., 0.01) that controls the step size during weight updates in gradient descent.</span>
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 2rem;">1. Common Activation Functions & Their Derivatives</h3>
+    <p>The derivative of the activation function (\(\frac{\partial a}{\partial z}\)) is crucial for backpropagation because it tells us how much a change in the weighted sum 'z' affects the neuron's output 'a'.</p>
+    <div class="concept-cards">
+        <div class="concept-card primary-concept">
+            <h4>ReLU (Rectified Linear Unit)</h4>
+            <p><strong>Formula:</strong> \[a = \max(0, z)\]</p>
+            <p><strong>Derivative:</strong> \[ f'(z) = \begin{cases} 1 & \text{if } z > 0 \\ 0 & \text{if } z \le 0 \end{cases} \]</p>
+            <p><strong>Notes:</strong> Most common for hidden layers. Computationally fast but can lead to "dying ReLUs".</p>
+        </div>
+        <div class="concept-card primary-concept">
+            <h4>Sigmoid</h4>
+            <p><strong>Formula:</strong> \[a = \frac{1}{1 + e^{-z}}\]</p>
+            <p><strong>Derivative:</strong> \[f'(z) = a(1-a)\]</p>
+            <p><strong>Notes:</strong> Used for binary classification output layers as it squashes output to a probability (0 to 1). Suffers from vanishing gradients.</p>
+        </div>
+        <div class="concept-card primary-concept">
+            <h4>Tanh (Hyperbolic Tangent)</h4>
+            <p><strong>Formula:</strong> \[a = \frac{e^z - e^{-z}}{e^z + e^{-z}}\]</p>
+            <p><strong>Derivative:</strong> \[f'(z) = 1 - a^2\]</p>
+            <p><strong>Notes:</strong> Squashes output between -1 and 1. Often better than Sigmoid in hidden layers, but also has vanishing gradient issues.</p>
+        </div>
+        <div class="concept-card primary-concept">
+            <h4>Leaky ReLU</h4>
+            <p><strong>Formula:</strong> \[ a = \begin{cases} z & \text{if } z > 0 \\ \alpha z & \text{if } z \le 0 \end{cases} \]</p>
+            <p><strong>Derivative:</strong> \[ f'(z) = \begin{cases} 1 & \text{if } z > 0 \\ \alpha & \text{if } z \le 0 \end{cases} \]</p>
+            <p><strong>Notes:</strong> An improvement on ReLU that prevents dying neurons by allowing a small, non-zero gradient (\(\alpha\)).</p>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 2rem;">2. Common Loss Functions & Their Derivatives</h3>
+    <p>The derivative of the loss function with respect to the final prediction (\(\frac{\partial L}{\partial \hat{y}}\)) is the starting point for backpropagation—it's the initial "error signal".</p>
+    <div class="concept-cards">
+        <div class="concept-card primary-concept">
+            <h4>Mean Squared Error (MSE)</h4>
+            <p><strong>Formula:</strong> \[L = \frac{1}{2}(\hat{y} - y)^2\]</p>
+            <p><strong>Derivative:</strong> \[\frac{\partial L}{\partial \hat{y}} = \hat{y} - y\]</p>
+            <p><strong>Notes:</strong> Common for regression tasks. The \(\frac{1}{2}\) is a convenience that simplifies the derivative.</p>
+        </div>
+        <div class="concept-card primary-concept">
+            <h4>Binary Cross-Entropy</h4>
+            <p><strong>Formula:</strong> \[L = -[y \log(\hat{y}) + (1 - y) \log(1 - \hat{y})]\]</p>
+            <p><strong>Derivative:</strong> \[\frac{\partial L}{\partial \hat{y}} = \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})}\]</p>
+            <p><strong>Notes:</strong> Standard for binary classification. Pairs perfectly with a Sigmoid output layer.</p>
+        </div>
+    </div>
+
+    <div class="note-block success">
+        <strong>💡 Note on Sigmoid + Cross-Entropy:</strong> When you pair a Sigmoid output with Binary Cross-Entropy loss, the chain rule for the last layer's weighted sum \(z\) simplifies beautifully:
+        \[ \frac{\partial L}{\partial z} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z} = \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})} \cdot \hat{y}(1 - \hat{y}) = \hat{y} - y \]
+        This simple, stable gradient (\(\hat{y} - y\)) is why this pairing is so common in binary classification.
+    </div>
+
+    <h3 style="margin-top: 2rem;">3. Backpropagation Formulas (The Chain Rule)</h3>
+    <div class="content-block">
+        <p>Backpropagation is the process of using the chain rule from calculus to calculate the gradient of the Loss with respect to each weight and bias in the network (\(\frac{\partial L}{\partial w}\)). This gradient tells us how to adjust each weight to reduce the overall loss.</p>
+        
+        <h4>For a Weight in the Output Layer (e.g., \(w_3\))</h4>
+        <p><strong>Chain Rule:</strong> \[\frac{\partial L}{\partial w_3} = \frac{\partial L}{\partial a_{o1}} \times \frac{\partial a_{o1}}{\partial z_{o1}} \times \frac{\partial z_{o1}}{\partial w_3}\]</p>
+        <p><strong>With Derivatives (using MSE):</strong> \[\frac{\partial L}{\partial w_3} = (a_{o1} - y) \times f'(z_{o1}) \times a_{h1}\]</p>
+        
+        <h4>For a Weight in a Hidden Layer (e.g., \(w_1\))</h4>
+        <p>The chain is longer because the weight's influence must pass through the output layer to affect the final loss.</p>
+        <p><strong>Chain Rule:</strong> \[\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial a_{o1}} \times \frac{\partial a_{o1}}{\partial z_{o1}} \times \frac{\partial z_{o1}}{\partial a_{h1}} \times \frac{\partial a_{h1}}{\partial z_{h1}} \times \frac{\partial z_{h1}}{\partial w_1}\]</p>
+        <p><strong>With Derivatives:</strong> \[\frac{\partial L}{\partial w_1} = (a_{o1} - y) \times f'(z_{o1}) \times w_3 \times g'(z_{h1}) \times x_1\]</p>
+    </div>
+
+    <h3 style="margin-top: 2rem;">4. The Weight Update Formula (Gradient Descent)</h3>
+    <div class="content-block">
+        <p>Once the gradient (\(\frac{\partial L}{\partial w}\)) is calculated for a weight, it is updated using the gradient descent algorithm to minimize the loss.</p>
+        \[ w_{\text{new}} = w_{\text{old}} - \eta \frac{\partial L}{\partial w} \]
+        <p><strong>Intuition:</strong> The gradient \(\frac{\partial L}{\partial w}\) points in the direction of the steepest ascent of the loss function. We want to descend, so we take a step in the <em>opposite</em> direction, hence the minus sign. The learning rate \(\eta\) controls the size of that step.</p>
+    </div>
+    <div class="note-block warning">
+        <strong>⚠️ Note on Alternative Formulas:</strong> Some materials may calculate the initial loss derivative as \(y - \hat{y}\) instead of \(\hat{y} - y\). This simply inverts the sign of the gradient. To compensate, the weight update rule becomes \(w_{\text{new}} = w_{\text{old}} + \eta (y - \hat{y}) \times \dots\). Both methods produce the exact same final result.
+    </div>
+</div>
+                <!-- PDF Viewer Container -->
+                <div class="pdf-viewer-container">
+                    <iframe 
+                        src="../../assets/pdfs/ann-review.pdf" 
+                        title="Backpropagation Review PDF">
+                    </iframe>
+                </div>
+            </section>
+            
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>
