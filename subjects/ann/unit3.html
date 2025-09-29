@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: Neural Networks - CCS248 ANN</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>CCS248 ANN</span> / 
+                    <span>Unit 2: Neural Networks 2</span>
+                </div>
+                <h1 class="chapter-title">Unit 2: Neural Networks 2</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Optimization in Neural Networks</h2>
+                    <div class="content-block info-block">
+                        <p>After performing a forward pass and calculating the loss, the next critical step is to adjust the network's parameters (weights and biases) to improve its predictions. This process is called <strong>optimization</strong>. The core challenge is to intelligently adjust these parameters to minimize the loss function.</p>
+                    </div>
+                    <h3>Challenges in Optimization</h3>
+                    <ul>
+                        <li>There are nearly infinite possible combinations of weights and biases.</li>
+                        <li>Each parameter has a different degree of influence on the final loss.</li>
+                        <li>The relationship between the parameters and the loss is complex and non-linear.</li>
+                    </ul>
+                     <div class="note-block danger">
+                        <strong>⚠️ Is Randomization Enough?</strong>
+                        <p>A naive approach might be to randomly adjust weights and biases and keep the combination that results in the lowest loss. However, this random search would take far too long to be a practical or acceptable method for finding an optimal solution.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">The Calculus of Learning</h2>
+                    <p>To optimize intelligently, we use concepts from calculus to understand how each parameter affects the loss. This allows us to make small, targeted adjustments that consistently reduce the error.</p>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h4>Derivatives</h4>
+                            <p>A derivative measures the rate of change or the slope of a function at a specific point. In neural networks, it tells us the impact a small change in a parameter will have on the loss. It quantifies the sensitivity of the loss to each parameter.</p>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h4>Partial Derivatives</h4>
+                            <p>An extension of derivatives for functions with multiple inputs (parameters). To find the partial derivative with respect to one parameter, we treat all other parameters as constants. This allows us to isolate the impact of a single weight or bias on the loss.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h4>The Chain Rule</h4>
+                            <p>Neural networks are deeply nested composite functions. The chain rule is a fundamental calculus rule that allows us to calculate the derivative of these complex functions by breaking them down and multiplying the local derivatives together. This is the mathematical engine that drives backpropagation.</p>
+                             <p>\[ \frac{df}{dx} = \frac{df}{dg} \cdot \frac{dg}{dh} \cdot \frac{dh}{dx} \]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Backpropagation: The Learning Algorithm</h2>
+                    <div class="content-block info-block">
+                        <p><strong>Backpropagation</strong> (short for "backward propagation of errors") is the algorithm used to train neural networks. It systematically applies the chain rule to compute the partial derivative of the loss function with respect to every single weight and bias in the network.</p>
+                    </div>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h4>1. Forward Pass</h4>
+                            <p>First, a forward pass is performed. Inputs are passed through the network layer by layer, computing the weighted sums and activations until a final prediction is made and the loss is calculated. The intermediate values (activations of each neuron) are stored for use in the next step.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h4>2. Backward Pass</h4>
+                            <p>The error is propagated backward from the output layer. Using the chain rule, the algorithm calculates the partial derivatives (also known as <strong>gradients</strong>) of the loss with respect to the parameters of each layer, moving from the last layer back to the first.</p>
+                        </div>
+                    </div>
+
+                    <h3>Updating Weights with Gradient Descent</h3>
+                    <p>After the backward pass calculates the gradient for each weight (\(\frac{\partial L}{\partial W}\)), the weights are updated using an optimization algorithm, most commonly Gradient Descent.</p>
+                     <div class="example-block">
+                        <h4>Weight Update Formula</h4>
+                        \[ W_{\text{new}} = W_{\text{old}} - \eta \frac{\partial L}{\partial W} \]
+                    </div>
+                    
+                    <h4>The Learning Rate (\(\eta\))</h4>
+                    <p>The learning rate is a crucial hyperparameter that controls the size of the adjustment step for the weights and biases.</p>
+                     <div class="note-block warning">
+                        <strong>⚠️ Choosing a Learning Rate:</strong>
+                        <ul>
+                            <li><strong>Too High:</strong> The updates can be too large, causing the loss to "overshoot" the minimum and potentially diverge (get worse).</li>
+                            <li><strong>Too Low:</strong> The updates are tiny, leading to very slow learning (slow convergence) or getting stuck in a suboptimal local minimum.</li>
+                            <li>Typical values are small, such as <span class="fact-value">0.1</span>, <span class="fact-value">0.01</span>, or <span class="fact-value">0.001</span>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">Optimization</span>: The process of intelligently adjusting a model's parameters (weights and biases) to minimize the loss function.</li>
+                        <li><span class="term">Derivative</span>: A measure of the instantaneous rate of change or slope of a function. It quantifies the impact of a parameter on the function's output.</li>
+                        <li><span class="term">Partial Derivative</span>: The derivative of a multi-variable function with respect to one variable, treating all others as constants.</li>
+                        <li><span class="term">Chain Rule</span>: A calculus rule for finding the derivative of a composite function, essential for backpropagation.</li>
+                        <li><span class="term">Gradient</span>: A vector of all the partial derivatives of the loss function with respect to all the model's parameters. It points in the direction of the steepest ascent of the loss.</li>
+                        <li><span class="term">Backpropagation</span>: The algorithm that uses the chain rule to efficiently compute the gradients for all weights and biases in the network.</li>
+                        <li><span class="term">Gradient Descent</span>: An optimization algorithm that uses the gradient to iteratively update parameters and minimize the loss.</li>
+                        <li><span class="term">Learning Rate (\(\eta\))</span>: A hyperparameter that controls the step size during gradient descent.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li>The goal of training a neural network is <strong>optimization</strong>: finding the set of weights and biases that minimizes the loss function.</li>
+                        <li>Optimization relies on calculus, specifically <strong>derivatives</strong>, to measure how each parameter influences the loss.</li>
+                        <li>The <strong>Chain Rule</strong> is the key mathematical tool that makes it possible to calculate these derivatives efficiently in a complex, multi-layered network.</li>
+                        <li><strong>Backpropagation</strong> is the algorithm that operationalizes the chain rule, calculating the error gradient for every parameter by propagating the error signal backward from the output layer.</li>
+                        <li>A <strong>forward pass is always required before backpropagation</strong> to compute the intermediate activation values needed for the gradient calculations.</li>
+                        <li>Once gradients are computed, the <strong>Gradient Descent</strong> algorithm updates each weight by taking a small step in the opposite direction of its gradient, scaled by the <strong>learning rate (\(\eta\))</strong>.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>The Training Loop Cycle:</strong>
+                            <ul>
+                                <li>Perform a Forward Pass to get a prediction.</li>
+                                <li>Calculate the Loss (error).</li>
+                                <li>Perform a Backward Pass (Backpropagation) to compute gradients.</li>
+                                <li>Update the weights and biases using an optimizer (Gradient Descent).</li>
+                                <li>Repeat for many iterations or epochs.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Core Calculus Concepts for Backpropagation:</strong>
+                             <ul>
+                                <li>Derivatives (to measure impact)</li>
+                                <li>Partial Derivatives (to handle multiple parameters)</li>
+                                <li>Chain Rule (to handle nested functions)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

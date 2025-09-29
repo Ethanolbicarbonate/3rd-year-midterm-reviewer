@@ -51,6 +51,9 @@ const subjects = [
         color: "#8b5cf6",
         chapters: [
             { id: "review", title: "Review" },
+            { id: "unit1", title: "Unit 1: Introduction to Neural Network" },
+            { id: "unit2", title: "Unit 2: Neural Networks 1" },
+            { id: "unit3", title: "Unit 3: Neural Networks 2" }
         ]
     },
     

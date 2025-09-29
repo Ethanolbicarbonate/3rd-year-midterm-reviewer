@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: Introduction to Neural Networks - CCS248 ANN</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>CCS248 ANN</span> / 
+                    <span>Unit 1: Introduction to Neural Networks</span>
+                </div>
+                <h1 class="chapter-title">Unit 1: Introduction to Neural Networks</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Biological vs. Artificial Neurons</h2>
+                    <div class="content-block info-block">
+                        <p>Artificial Neural Networks (ANNs) are a type of machine learning inspired by the structure and function of the organic brain. While not a perfect comparison, ANNs simulate the brain's network of neurons, activations, and interconnectivity to process information and learn from data.</p>
+                    </div>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h3>Biological Neuron</h3>
+                            <p>The fundamental cell of the nervous system. It receives electrical impulses from senses via dendrites, processes them in the cell body, and transmits an output signal through the axon to other neurons.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>Artificial Neuron (Perceptron)</h3>
+                            <p>A mathematical model that forms the basic unit of an ANN. It receives numerical inputs, computes a weighted sum, adds a bias, and passes the result through an activation function to produce an output.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">A Brief History: The Perceptron</h2>
+                    <div class="content-block">
+                        <p>The first and simplest architecture of a neural network was the <strong>Perceptron</strong>, discovered by American psychologist <strong>Frank Rosenblatt</strong> in <span class="fact-value">1957</span>. Inspired by how brain cells receive, store, and use information from electrical impulses, he proposed a model that could simulate these basic principles.</p>
+                    </div>
+                     <div class="note-block warning">
+                        <strong>⚠️ Limitations of a Single Perceptron:</strong>
+                        <ul>
+                            <li>It is limited to learning only <strong>linearly separable</strong> patterns.</li>
+                            <li>Its output is commonly restricted to a binary value (0 or 1) or a probability.</li>
+                            <li>It can only handle numerical data directly.</li>
+                        </ul>
+                    </div>
+                    <div class="note-block success">
+                        <strong>💡 The Solution: Stacking Perceptrons</strong>
+                        <p>The solution to the Perceptron's limitations was to connect multiple perceptrons together. This defined the first step toward modern Neural Networks, where stacking neurons in layers simulates the brain's vast, interconnected network, allowing the model to learn complex, non-linear patterns.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Basic Concepts of a Neural Network</h2>
+                    <h3>Components of an Artificial Neuron</h3>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Inputs</h4><p>Features collected from a dataset. ANNs only handle numerical inputs; categorical data must be converted using techniques like <strong>One-Hot Encoding</strong>.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Weights</h4><p>A value corresponding to each input that represents its strength or importance. These are the primary values adjusted during the training process.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Bias</h4><p>A constant value added to the weighted sum. It helps shift the activation function's threshold, allowing for better model fitting.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Weighted Sum</h4><p>The sum of all inputs, each multiplied by its respective weight.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Activation Function</h4><p>A function that takes the weighted sum as input and determines the neuron's output, deciding whether it should "fire."</p></div>
+                        <div class="concept-card secondary-concept"><h4>Output</h4><p>The final value produced by the neuron after the activation function is applied. This can be a final prediction or an input to the next layer of neurons.</p></div>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">Mathematical Model of a Neuron</h2>
+                     <div class="content-block info-block">
+                        <p>The process of transforming inputs into an output within a neuron is called a <strong>forward process</strong> or forward propagation. It follows a clear mathematical sequence.</p>
+                    </div>
+                    <h3>Combination of Factors</h3>
+                    <p>The output of a neuron is a function of the weighted sum of its inputs plus a bias. The general equation is:</p>
+                    <div class="example-block">
+                        <p><strong>Vector Form:</strong> \[ y = f(\mathbf{W} \cdot \mathbf{X} + b) \]</p>
+                        <p><strong>Expanded Form:</strong> \[ y = f((w_1 x_1 + w_2 x_2 + \dots + w_n x_n) + b) \]</p>
+                    </div>
+                    
+                    <h3>Activating the Neuron</h3>
+                    <p>Once the aggregated sum (\(z\)) is calculated, it is passed to an activation function. The earliest and simplest is the binary step function, which uses a threshold to decide the output.</p>
+                    <div class="example-block">
+                        <h4>Binary Step Function</h4>
+                        \[ \text{output} = \begin{cases} 1 & \text{if } z > \text{threshold} \\ 0 & \text{if } z \le \text{threshold} \end{cases} \]
+                    </div>
+                    
+                    <h3>Overall Equation</h3>
+                    <p>The process can be summarized in two simple steps:</p>
+                     <pre class="code-block"><code>weighted_sum = sum(inputs * weights) + bias
+output = activation_function(weighted_sum)</code></pre>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">ANN (Artificial Neural Network)</span>: A type of machine learning model inspired by the biological brain.</li>
+                        <li><span class="term">Neuron</span>: The fundamental processing unit of a neural network.</li>
+                        <li><span class="term">Perceptron</span>: The first and simplest architecture of an artificial neuron.</li>
+                        <li><span class="term">Weights</span>: Parameters that represent the strength of the connection between inputs and a neuron.</li>
+                        <li><span class="term">Bias</span>: An additional parameter used to adjust the output along with the weighted sum of the inputs.</li>
+                        <li><span class="term">Weighted Sum</span>: The sum of inputs multiplied by their corresponding weights.</li>
+                        <li><span class="term">Activation Function</span>: A function that determines the output of a neuron based on the weighted sum.</li>
+                        <li><span class="term">Hidden Layer</span>: A layer of neurons between the input and output layers.</li>
+                        <li><span class="term">Deep Learning</span>: A subfield of machine learning involving neural networks with two or more hidden layers.</li>
+                        <li><span class="term">One-Hot Encoding</span>: A process for converting categorical data into a numerical format for ANNs.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li>Artificial Neural Networks (ANNs) are computing systems inspired by the interconnected neurons of a biological brain.</li>
+                        <li>The simplest form of a neuron is the <strong>Perceptron</strong>, invented by Frank Rosenblatt in <span class="fact-value">1957</span>.</li>
+                        <li>A single neuron calculates a <strong>weighted sum</strong> of its inputs, adds a <strong>bias</strong>, and passes the result through an <strong>activation function</strong> to produce an output.</li>
+                        <li>Weights signify the importance of each input, while the bias shifts the decision boundary. Both are learned during training.</li>
+                        <li>A single perceptron is limited and can only solve <strong>linearly separable</strong> problems.</li>
+                        <li>Modern neural networks overcome this by stacking multiple neurons in layers (input, hidden, and output layers) to learn complex patterns.</li>
+                        <li>A network with two or more hidden layers is considered a "deep" network, and its study is called <strong>Deep Learning</strong>.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>Components of an Artificial Neuron:</strong>
+                            <ul>
+                                <li>Inputs</li>
+                                <li>Weights</li>
+                                <li>Bias</li>
+                                <li>Weighted Sum</li>
+                                <li>Activation Function</li>
+                                <li>Output</li>
+                            </ul>
+                        </li>
+                        <li><strong>Limitations of a Single Perceptron:</strong>
+                             <ul>
+                                <li>Limited to linearly separable patterns.</li>
+                                <li>Output is typically binary or a probability.</li>
+                                <li>Can only handle numerical data directly.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>
