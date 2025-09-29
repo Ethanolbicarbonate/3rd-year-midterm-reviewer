@@ -50,7 +50,7 @@ body {
 }
 
 .nav-container {
-    max-width: 100vw;
+    max-width: 90vw;
     margin: 0 auto;
     padding: var(--spacing-sm) var(--spacing-md);
     display: flex;
