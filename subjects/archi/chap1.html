@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Introduction</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>CCS225 Archi</span> / 
+                    <span>Chapter 1: Introduction</span>
+                </div>
+                <h1 class="chapter-title">Chapter 1: Introduction to Structured Computer Organization</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">The Concept of a Multilevel Machine</h2>
+                    <div class="content-block info-block">
+                        <p>A digital computer is a machine that executes a sequence of instructions, called a <strong>program</strong>. The most basic instructions a computer's electronic circuits can execute form its <strong>machine language</strong>. Because these languages are extremely simple and tedious for humans, computers are structured as a sequence of abstractions, or levels. This approach is called <strong>structured computer organization</strong>.</p>
+                        <p>Each level builds upon the one below it, creating a more powerful and user-friendly environment. The higher levels are more abstract and easier for humans to work with, while the lower levels deal directly with hardware operations.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Languages, Levels, and Virtual Machines</h2>
+                    <p>To bridge the gap between human-friendly languages (L1) and machine-friendly languages (L0), two primary methods are used to execute higher-level instructions.</p>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h3>Translation</h3>
+                            <p>The entire higher-level program (in language L1) is converted into an equivalent program in the machine's native language (L0). This new L0 program is then executed by the hardware. The program that performs this conversion is called a <strong>compiler</strong> or <strong>assembler</strong>.</p>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h3>Interpretation</h3>
+                            <p>A special program, called an <strong>interpreter</strong>, written in L0, takes the L1 program as input. It examines each L1 instruction one by one and executes the equivalent sequence of L0 instructions immediately. No new L0 program is generated.</p>
+                        </div>
+                    </div>
+                     <div class="concept-card primary-concept">
+                        <h3>Virtual Machine</h3>
+                        <p>Each level in a computer's hierarchy can be viewed as a <strong>virtual machine</strong>, with its own unique machine language. For example, a machine M1 with language L1 can be created, even if the physical hardware only understands L0. Programs written for this virtual machine can be either translated or interpreted to run on the real hardware (M0).</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">A Contemporary Six-Level Machine</h2>
+                    <p>Most modern computers can be conceptually divided into six levels, from the physical hardware at the bottom to high-level programming languages at the top.</p>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Level 5: Problem-Oriented Language Level</h4><p>Consists of high-level languages like C++, Java, or Python, designed for application programmers. Programs are translated by <strong>compilers</strong>.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Level 4: Assembly Language Level</h4><p>A symbolic representation of the underlying machine language, making it easier for system programmers to write code. Programs are translated by an <strong>assembler</strong>.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Level 3: Operating System Machine Level</h4><p>A hybrid level where new instructions (like system calls for I/O) are added. These new instructions are interpreted by the <strong>operating system</strong>.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Level 2: Instruction Set Architecture (ISA) Level</h4><p>This is the language (instruction set) that is visible to an assembly programmer. Instructions are interpreted by the microprogram or executed directly by hardware.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Level 1: Microarchitecture Level</h4><p>Consists of a collection of registers, an ALU, and a data path. Its operation is controlled by a <strong>microprogram</strong> or hardware to interpret ISA-level instructions.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Level 0: Digital Logic Level</h4><p>The true hardware level, composed of <strong>gates</strong> and circuits that perform simple logical operations like AND and OR.</p></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Evolution of Computer Generations</h2>
+                    <div class="content-block info-block">
+                        <p>The history of computing is marked by distinct generations, each defined by a fundamental shift in the underlying technology. This evolution has also blurred the lines between hardware and software.</p>
+                    </div>
+                     <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Zeroth Generation (1642–1945)</h4><p><strong>Mechanical Computers.</strong> Devices like Pascal's calculator and Babbage's Analytical Engine, which were mechanical and programmable using gears and punched cards.</p></div>
+                        <div class="concept-card secondary-concept"><h4>First Generation (1945–1955)</h4><p><strong>Vacuum Tubes.</strong> Machines like ENIAC and EDSAC. The concept of the stored-program computer (von Neumann architecture) was established.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Second Generation (1955–1965)</h4><p><strong>Transistors.</strong> Transistors replaced unreliable vacuum tubes, leading to smaller, faster, and more reliable computers like the PDP-1 and IBM 7094.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Third Generation (1965–1980)</h4><p><strong>Integrated Circuits (ICs).</strong> Multiple transistors were placed on a single silicon chip, leading to computer families like the IBM System/360 and the popular PDP-11 minicomputer.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Fourth Generation (1980–Present)</h4><p><strong>Very Large Scale Integration (VLSI).</strong> Millions of transistors on a chip enabled the creation of microprocessors and the personal computer (PC) era, dominated by the Intel x86 architecture.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Fifth Generation (Present)</h4><p><strong>Low-Power and Invisible Computers.</strong> A paradigm shift towards ubiquitous and pervasive computing, seen in smartphones, PDAs, and embedded devices.</p></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Technological and Economic Forces</h2>
+                    <div class="concept-card primary-concept">
+                        <h3>Moore's Law</h3>
+                        <p>An observation made by Intel co-founder Gordon Moore, which predicts that the number of transistors on a microchip doubles approximately every 18-24 months. This exponential growth has been the primary driving force behind the rapid increase in computing power and decrease in cost for over four decades.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">Program</span>: A sequence of instructions describing how to perform a task.</li>
+                        <li><span class="term">Machine Language</span>: The set of primitive instructions a computer can directly execute.</li>
+                        <li><span class="term">Structured Computer Organization</span>: The approach of designing computers as a series of levels or abstractions.</li>
+                        <li><span class="term">Translation</span>: Converting an entire program from a high-level language to a low-level one before execution.</li>
+                        <li><span class="term">Interpretation</span>: Executing a high-level program by having a lower-level program examine and carry out each instruction one by one.</li>
+                        <li><span class="term">Virtual Machine</span>: A hypothetical computer whose machine language is not directly executed by hardware.</li>
+                        <li><span class="term">ISA (Instruction Set Architecture)</span>: The set of instructions and features of a level that are visible to the user of that level.</li>
+                        <li><span class="term">Microprogram</span>: A program at the microarchitecture level that interprets ISA-level instructions.</li>
+                        <li><span class="term">Operating System (OS)</span>: An interpreter for Level 3 that adds new functionality (like I/O) to the ISA level.</li>
+                        <li><span class="term">Moore's Law</span>: The observation that the number of transistors on a chip doubles approximately every two years.</li>
+                        <li><span class="term">Hardware</span>: The physical, tangible components of a computer system (e.g., circuits, memory chips).</li>
+                        <li><span class="term">Software</span>: The set of algorithms and programs that tell the hardware what to do.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li>Computers are designed as a series of levels (or virtual machines) to manage complexity, with each level providing an abstraction over the one below it.</li>
+                        <li>High-level languages are made executable through either <strong>translation</strong> (compiling) or <strong>interpretation</strong>.</li>
+                        <li>A typical modern computer has six conceptual levels: Digital Logic, Microarchitecture, ISA, Operating System Machine, Assembly Language, and Problem-Oriented Language.</li>
+                        <li>The history of computers is marked by five generations, each defined by a major technological shift: Mechanical, Vacuum Tubes, Transistors, Integrated Circuits, and VLSI/Microprocessors.</li>
+                        <li>The line between hardware and software is arbitrary; any operation performed by software can be built into hardware, and vice versa.</li>
+                        <li><strong>Moore's Law</strong> is the key economic and technological force that has driven the exponential growth of computing power for decades.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>The Six Levels of a Contemporary Computer:</strong>
+                            <ul>
+                                <li>Level 5: Problem-Oriented Language</li>
+                                <li>Level 4: Assembly Language</li>
+                                <li>Level 3: Operating System Machine</li>
+                                <li>Level 2: Instruction Set Architecture (ISA)</li>
+                                <li>Level 1: Microarchitecture</li>
+                                <li>Level 0: Digital Logic</li>
+                            </ul>
+                        </li>
+                        <li><strong>Five Generations of Computing Technology:</strong>
+                             <ul>
+                                <li>Zeroth: Mechanical</li>
+                                <li>First: Vacuum Tubes</li>
+                                <li>Second: Transistors</li>
+                                <li>Third: Integrated Circuits (ICs)</li>
+                                <li>Fourth: Very Large Scale Integration (VLSI)</li>
+                             </ul>
+                        </li>
+                         <li><strong>Three Example Architectures:</strong>
+                             <ul>
+                                <li>x86 (PCs and Servers)</li>
+                                <li>ARM (Mobile and Embedded)</li>
+                                <li>AVR (Microcontrollers)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Study Reviewer. All rights reserved.</p>
+    </footer>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

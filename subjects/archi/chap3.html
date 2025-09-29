@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: The Digital Logic Level - CCS225 Archi</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>CCS225 Archi</span> / 
+                    <span>Chapter 3: The Digital Logic Level</span>
+                </div>
+                <h1 class="chapter-title">Chapter 3: The Digital Logic Level</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Gates and Boolean Algebra</h2>
+                    <div class="content-block info-block">
+                        <p>The digital logic level is the computer's true hardware, built from simple electronic elements. A digital circuit is one where only two logical values are present (e.g., 0 and 1). These circuits are constructed from primitive elements called gates.</p>
+                    </div>
+                    <h3>Gates</h3>
+                    <p>A <span class="term">gate</span> is a tiny electronic device that can compute various functions of two-valued signals. They are the fundamental hardware basis on which all digital computers are built. All modern digital logic rests on the fact that a transistor can act as a very fast binary switch.</p>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>NOT Gate (Inverter)</h4><p>Outputs the logical inverse of its single input.</p></div>
+                        <div class="concept-card secondary-concept"><h4>NAND Gate</h4><p>Outputs 0 if and only if all inputs are 1.</p></div>
+                        <div class="concept-card secondary-concept"><h4>NOR Gate</h4><p>Outputs 1 if and only if all inputs are 0.</p></div>
+                        <div class="concept-card secondary-concept"><h4>AND Gate</h4><p>Outputs 1 if and only if all inputs are 1.</p></div>
+                        <div class="concept-card secondary-concept"><h4>OR Gate</h4><p>Outputs 1 if at least one input is 1.</p></div>
+                    </div>
+                     <div class="note-block success">
+                        <strong>💡 Completeness:</strong> <span class="term">NAND</span> and <span class="term">NOR</span> gates are considered "complete" because any Boolean function can be constructed using only one of these gate types.
+                    </div>
+                    <h3>Boolean Algebra</h3>
+                    <p><span class="term">Boolean Algebra</span> is a mathematical technique used to analyze and describe the behavior of digital circuits. In this algebra, variables and functions can only take on the values 0 and 1.</p>
+                    <ul>
+                        <li><strong>Boolean Function:</strong> A function with one or more binary inputs that produces a binary output.</li>
+                        <li><strong>Truth Table:</strong> A table that completely describes a Boolean function by listing the output for every possible combination of inputs.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Basic Digital Logic Circuits</h2>
+                    <h3>Integrated Circuits (ICs)</h3>
+                    <p>Gates are manufactured in units called <span class="term">Integrated Circuits (ICs)</span> or chips. An IC is a rectangular piece of silicon containing a number of gates. Common packages for ICs include DIP (Dual Inline Package), PGA (Pin Grid Array), and LGA (Land Grid Array).</p>
+                    <h3>Combinational Circuits</h3>
+                    <div class="content-block info-block">
+                        <p>A <span class="term">combinational circuit</span> is a circuit with multiple inputs and outputs where the outputs are uniquely determined by the *current* input values. It has no memory of past states.</p>
+                    </div>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Multiplexer (MUX)</h4><p>A circuit with 2ⁿ data inputs, n control inputs, and one data output. It selects one of the data inputs to be passed to the output based on the value of the control lines.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Demultiplexer (DEMUX)</h4><p>The inverse of a multiplexer. It routes its single input signal to one of 2ⁿ outputs based on the value of its n control lines.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Decoder</h4><p>A circuit that takes an n-bit number as input and selects exactly one of its 2ⁿ output lines.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Comparator</h4><p>A circuit that compares two input words and outputs a signal indicating whether they are equal.</p></div>
+                    </div>
+                    <h3>Arithmetic Circuits</h3>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Shifter</h4><p>A circuit that takes an n-bit input and produces an output that is the input shifted by one or more bit positions to the left or right.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Half Adder</h4><p>A circuit for adding two single bits. It produces a sum bit and a carry bit.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Full Adder</h4><p>A circuit for adding three single bits (two input bits plus a carry-in bit). It forms the building block for multi-bit adders.</p></div>
+                        <div class="concept-card primary-concept"><h4>Arithmetic Logic Unit (ALU)</h4><p>A circuit that can perform various arithmetic (e.g., addition) and logical (e.g., AND, OR) operations on n-bit words.</p></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Memory</h2>
+                    <div class="content-block info-block">
+                        <p>Memory is an essential component of every computer, used for storing both instructions and data. Unlike combinational circuits, memory circuits are sequential—their output depends on past inputs as well as current ones.</p>
+                    </div>
+                    <h3>Latches and Flip-Flops</h3>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept"><h4>Latch</h4><p>A circuit that can "remember" previous input values. An SR latch has Set (S) and Reset (R) inputs. A D latch samples its D (Data) input when a clock signal is active. Latches are <strong>level-triggered</strong>, meaning they are sensitive to the state of the clock (e.g., high or low).</p></div>
+                        <div class="concept-card primary-concept"><h4>Flip-Flop</h4><p>A circuit that samples and stores an input value at a specific instant in time, typically on the rising (0 to 1) or falling (1 to 0) edge of a clock signal. Flip-flops are <strong>edge-triggered</strong>.</p></div>
+                    </div>
+                     <h3>Registers</h3>
+                    <p>A <span class="term">register</span> is a group of flip-flops combined to hold data types larger than 1 bit (e.g., an 8-bit register is made of 8 flip-flops).</p>
+                    <h3>Memory Organization and Chips</h3>
+                    <ul>
+                        <li><strong>RAM (Random Access Memory):</strong> Memory that can be both read from and written to.
+                            <ul>
+                                <li><strong>SRAM (Static RAM):</strong> Fast, uses flip-flops, retains data as long as power is applied. Used for cache memory.</li>
+                                <li><strong>DRAM (Dynamic RAM):</strong> Slower, uses capacitors, must be refreshed every few milliseconds. Used for main memory. Variants include SDRAM and DDR SDRAM.</li>
+                            </ul>
+                        </li>
+                        <li><strong>ROM (Read-Only Memory):</strong> Nonvolatile memory whose contents are set during manufacturing and cannot be changed. Variants include PROM, EPROM, EEPROM, and Flash Memory.</li>
+                    </ul>
+                </div>
+                
+                 <div class="content-section">
+                    <h2 class="section-title">CPU Chips and Buses</h2>
+                     <div class="content-block info-block">
+                        <p>Modern CPUs are contained on a single chip and communicate with memory and I/O devices through a set of pins connected to a bus.</p>
+                    </div>
+                    <h3>CPU Pin Categories</h3>
+                    <ul>
+                        <li><strong>Address Pins:</strong> Used to specify a memory location. A CPU with 'm' address pins can address up to 2<sup>m</sup> memory locations.</li>
+                        <li><strong>Data Pins:</strong> Used to transfer data to and from memory.</li>
+                        <li><strong>Control Pins:</strong> Regulate the flow and timing of data and handle functions like bus control, interrupts, and bus arbitration.</li>
+                    </ul>
+                    <h3>Computer Buses</h3>
+                    <p>A <span class="term">bus</span> is a common electrical pathway between multiple devices. Devices on a bus are either <strong>masters</strong> (which can initiate transfers) or <strong>slaves</strong> (which respond to requests).</p>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Synchronous Bus</h4><p>Has a master clock line. All bus activities are synchronized to this clock and take an integral number of clock cycles.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Asynchronous Bus</h4><p>Does not have a master clock. It uses a handshaking protocol (e.g., MSYN/SSYN signals) to coordinate transfers between master and slave devices.</p></div>
+                    </div>
+                    <h4>Bus Arbitration</h4>
+                    <p>A mechanism needed to decide which device gets to be the bus master when multiple devices request the bus simultaneously. A common method is <span class="term">daisy chaining</span>, which grants access based on a device's physical proximity to the arbiter.</p>
+                </div>
+
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">Gate</span>: The basic electronic element of a digital circuit (e.g., AND, OR, NOT).</li>
+                        <li><span class="term">Boolean Algebra</span>: The mathematical system used to analyze digital circuits.</li>
+                        <li><span class="term">Truth Table</span>: A table defining a logic function's output for all possible inputs.</li>
+                        <li><span class="term">Combinational Circuit</span>: A circuit whose output depends only on its current inputs (e.g., adder, multiplexer).</li>
+                        <li><span class="term">Sequential Circuit</span>: A circuit whose output depends on both current and past inputs (i.e., it has memory).</li>
+                        <li><span class="term">ALU (Arithmetic Logic Unit)</span>: A circuit that performs arithmetic and logical operations.</li>
+                        <li><span class="term">Latch</span>: A 1-bit memory element that is level-triggered.</li>
+                        <li><span class="term">Flip-Flop</span>: A 1-bit memory element that is edge-triggered.</li>
+                        <li><span class="term">Register</span>: A collection of flip-flops used to store a multi-bit word.</li>
+                        <li><span class="term">SRAM (Static RAM)</span>: Fast, volatile memory made of flip-flops; used for caches.</li>
+                        <li><span class="term">DRAM (Dynamic RAM)</span>: Slower, denser, volatile memory made of capacitors; used for main memory.</li>
+                        <li><span class="term">ROM (Read-Only Memory)</span>: Nonvolatile memory that cannot be written to after manufacturing.</li>
+                        <li><span class="term">Bus</span>: A shared communication pathway connecting multiple devices.</li>
+                        <li><span class="term">Synchronous Bus</span>: A bus whose operations are tied to a central clock.</li>
+                        <li><span class="term">Asynchronous Bus</span>: A bus that uses handshaking signals instead of a central clock.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li>The Digital Logic Level is the hardware foundation of a computer, built from simple logic gates.</li>
+                        <li>Boolean Algebra is the tool used to describe and simplify the logic of digital circuits.</li>
+                        <li><span class="term">Combinational circuits</span> like multiplexers and decoders compute functions based on current inputs, while <span class="term">sequential circuits</span> like latches and flip-flops store information, forming the basis of memory.</li>
+                        <li>An <span class="term">ALU</span> is a core combinational circuit that performs arithmetic and logic operations.</li>
+                        <li>Memory is built from basic 1-bit storage elements (latches/flip-flops) organized into addressable words. Main memory is typically slower DRAM, while fast cache memory is SRAM.</li>
+                        <li>CPUs, memory, and I/O devices communicate over a <span class="term">bus</span>, which can be either synchronous (clock-based) or asynchronous (handshake-based).</li>
+                        <li>Bus arbitration is required to manage access when multiple devices (masters) want to use the bus at the same time.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>Five Basic Logic Gates:</strong>
+                            <ul>
+                                <li>NOT</li>
+                                <li>AND</li>
+                                <li>OR</li>
+                                <li>NAND</li>
+                                <li>NOR</li>
+                            </ul>
+                        </li>
+                        <li><strong>Two Main RAM Types:</strong>
+                             <ul>
+                                <li>SRAM (Static RAM)</li>
+                                <li>DRAM (Dynamic RAM)</li>
+                            </ul>
+                        </li>
+                         <li><strong>Two Main Bus Types:</strong>
+                             <ul>
+                                <li>Synchronous</li>
+                                <li>Asynchronous</li>
+                            </ul>
+                        </li>
+                         <li><strong>Three CPU Pin Types:</strong>
+                             <ul>
+                                <li>Address</li>
+                                <li>Data</li>
+                                <li>Control</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Computer Systems Organization</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>CCS225 Archi</span> / 
+                    <span>Chapter 2: Computer Systems Organization</span>
+                </div>
+                <h1 class="chapter-title">Chapter 2: Computer Systems Organization</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Processors</h2>
+                    <div class="content-block info-block">
+                        <p>A digital computer consists of an interconnected system of three main components: processors, memories, and input/output devices. The processor, or <strong>CPU (Central Processing Unit)</strong>, is the "brain" of the computer, responsible for executing programs stored in main memory.</p>
+                    </div>
+                    <h3>CPU Components and Organization</h3>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Control Unit</h4><p>Fetches instructions from main memory and determines their type.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Arithmetic Logic Unit (ALU)</h4><p>Performs operations such as addition and Boolean logic needed to carry out instructions.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Registers</h4><p>Small, high-speed memory internal to the CPU used to store temporary results and control information.</p></div>
+                    </div>
+                    <h4>Key Registers</h4>
+                    <ul>
+                        <li><strong>Program Counter (PC):</strong> Points to the memory address of the next instruction to be fetched for execution.</li>
+                        <li><strong>Instruction Register (IR):</strong> Holds the instruction that is currently being executed.</li>
+                    </ul> <br>
+                    <h3>Instruction Execution: The Fetch-Decode-Execute Cycle</h3>
+                    <p>The core operation of a CPU is to execute instructions in a sequence known as the fetch-decode-execute cycle:</p>
+                    <ol>
+                        <li>Fetch the next instruction from memory into the instruction register.</li>
+                        <li>Change the program counter to point to the following instruction.</li>
+                        <li>Determine the type of instruction just fetched.</li>
+                        <li>If the instruction uses a word in memory, determine its location.</li>
+                        <li>Fetch the word, if needed, into a CPU register.</li>
+                        <li>Execute the instruction.</li>
+                        <li>Go back to step 1 to begin the next cycle.</li>
+                    </ol>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Processor Design Concepts</h2>
+                    <h3>RISC vs. CISC</h3>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept"><h4>CISC (Complex Instruction Set Computer)</h4><p>Features a large number of complex instructions, some of which may take multiple clock cycles to execute. Often relies on microcode interpretation. Examples: DEC VAX, Intel x86 family.</p></div>
+                        <div class="concept-card primary-concept"><h4>RISC (Reduced Instruction Set Computer)</h4><p>Features a small, highly optimized set of simple instructions that can typically be executed in a single clock cycle. Emphasizes direct hardware execution. Examples: SPARC, MIPS.</p></div>
+                    </div>
+                    <h3>Design Principles for Modern Computers</h3>
+                     <ul class="summary-list">
+                        <li class="summary-point"><strong>All common instructions are directly executed by hardware.</strong></li>
+                        <li class="summary-point"><strong>Maximize the rate at which instructions are issued.</strong></li>
+                        <li class="summary-point"><strong>Instructions should be easy to decode.</strong></li>
+                        <li class="summary-point"><strong>Only LOAD and STORE instructions should reference memory.</strong></li>
+                        <li class="summary-point"><strong>Provide plenty of registers</strong> (at least <span class="fact-value">32</span>).</li>
+                    </ul>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">Parallelism</h2>
+                    <h3>Instruction-Level Parallelism</h3>
+                    <ul>
+                        <li><strong>Pipelining:</strong> Divides instruction execution into multiple stages (e.g., fetch, decode, execute). Different instructions can be in different stages simultaneously, increasing throughput. A five-stage pipeline can complete one instruction per clock cycle.</li>
+                        <li><strong>Superscalar Architectures:</strong> Have multiple execution units, allowing the CPU to issue and execute multiple instructions in parallel during a single clock cycle.</li>
+                    </ul>
+                    <h3>Processor-Level Parallelism</h3>
+                    <ul>
+                        <li><strong>SIMD (Single Instruction, Multiple Data):</strong> Consists of a large number of identical processors that perform the same sequence of instructions on different sets of data. Common in GPUs.</li>
+                        <li><strong>Multiprocessors:</strong> Systems with multiple CPUs that share a common memory. They are <strong>tightly coupled</strong>.</li>
+                        <li><strong>Multicomputers:</strong> Systems with multiple interconnected computers, each having its own private memory. They are <strong>loosely coupled</strong> and communicate via message passing.</li>
+                    </ul>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">Primary Memory</h2>
+                     <div class="content-block info-block">
+                        <p>The primary memory is where programs and data are stored for access by the CPU. Its basic unit is the <strong>bit</strong> (a binary digit, 0 or 1). Eight bits form a <strong>byte</strong>, which is the smallest addressable unit in most modern computers.</p>
+                    </div>
+                     <h3>Byte Ordering</h3>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Big Endian</h4><p>The "big end" (most significant byte) of a multi-byte word is stored at the lowest memory address. Used by systems like SPARC and IBM mainframes.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Little Endian</h4><p>The "little end" (least significant byte) of a multi-byte word is stored at the lowest memory address. Used by the Intel x86 family.</p></div>
+                    </div>
+                    <h3>Error-Correcting Codes</h3>
+                    <p>Extra bits (check bits) are added to memory words to detect or correct errors. The number of bit positions in which two codewords differ is their <strong>Hamming distance</strong>. To detect 'd' errors, a code needs a distance of d+1. To correct 'd' errors, it needs a distance of 2d+1.</p>
+                </div>
+                
+                 <div class="content-section">
+                    <h2 class="section-title">Cache Memory</h2>
+                    <div class="content-block info-block">
+                        <p>A small, fast memory placed between the CPU and main memory to reduce the average memory access time. It works based on the <strong>locality principle</strong>: programs tend to access memory locations that are near recently accessed locations.</p>
+                    </div>
+                    <ul>
+                        <li><strong>Hit Ratio (h):</strong> The fraction of memory references found in the cache.</li>
+                        <li><strong>Miss Ratio:</strong> The fraction of memory references not found in the cache (1 - h).</li>
+                        <li><strong>Mean Access Time:</strong> c + (1 - h)m, where 'c' is cache access time and 'm' is main memory access time.</li>
+                        <li><strong>Cache Line:</strong> The fixed-size block of data that is transferred between main memory and the cache.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Secondary Memory</h2>
+                    <h3>Memory Hierarchy</h3>
+                    <p>A tiered structure of computer storage. As you move down the hierarchy:</p>
+                    <ol>
+                        <li>Access time increases.</li>
+                        <li>Storage capacity increases.</li>
+                        <li>Cost per bit decreases.</li>
+                    </ol>
+                    <p><strong>Levels:</strong> Registers → Cache → Main Memory → Solid-State/Magnetic Disk → Tape/Optical Disk.</p>
+                    <h3>Magnetic and Solid-State Disks</h3>
+                    <ul>
+                        <li><strong>Magnetic Disk:</strong> Consists of rotating platters. Key components are <strong>tracks</strong> (concentric circles), <strong>sectors</strong> (divisions of a track), and <strong>cylinders</strong> (a set of tracks at a given radial position).</li>
+                        <li><strong>Solid-State Disk (SSD):</strong> Uses nonvolatile flash memory. Offers much faster access times than magnetic disks because there are no moving parts (zero seek time).</li>
+                        <li><strong>RAID (Redundant Array of Independent Disks):</strong> A technology that distributes data across multiple disks to improve performance, reliability, or both. Levels range from RAID 0 (striping for performance) to RAID 5 (striping with distributed parity).</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Input/Output (I/O)</h2>
+                    <div class="content-block info-block">
+                        <p>I/O equipment is used to transfer information into and out of the computer. Devices are connected to the CPU and memory via one or more <strong>buses</strong>.</p>
+                    </div>
+                    <h3>Buses and Controllers</h3>
+                    <ul>
+                        <li><strong>Bus:</strong> A collection of parallel wires for transmitting address, data, and control signals. Examples include ISA, PCI, and the modern, high-speed PCIe (PCI Express).</li>
+                        <li><strong>Controller:</strong> Electronics that control an I/O device and handle its access to the bus.</li>
+                        <li><strong>DMA (Direct Memory Access):</strong> A process where a controller can transfer data directly to or from memory without CPU intervention, improving efficiency.</li>
+                        <li><strong>Interrupt:</strong> A signal from an I/O controller to the CPU, forcing it to suspend its current program and run an interrupt handler to service the I/O request.</li>
+                    </ul>
+                    <h3>Character Codes</h3>
+                    <ul>
+                        <li><strong>ASCII:</strong> A 7-bit code for representing characters, suitable for English.</li>
+                        <li><strong>Unicode:</strong> A 16-bit standard that assigns a unique code point to every character and symbol in the world's languages.</li>
+                        <li><strong>UTF-8:</strong> A variable-length encoding for Unicode that is backward-compatible with ASCII and is the dominant character set on the web.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">CPU</span>: Central Processing Unit, the "brain" of the computer.</li>
+                        <li><span class="term">ALU</span>: Arithmetic Logic Unit, performs calculations.</li>
+                        <li><span class="term">PC</span>: Program Counter, holds the address of the next instruction.</li>
+                        <li><span class="term">IR</span>: Instruction Register, holds the current instruction.</li>
+                        <li><span class="term">Fetch-Decode-Execute Cycle</span>: The fundamental operation cycle of a CPU.</li>
+                        <li><span class="term">RISC</span>: Reduced Instruction Set Computer.</li>
+                        <li><span class="term">CISC</span>: Complex Instruction Set Computer.</li>
+                        <li><span class="term">Pipelining</span>: A form of instruction-level parallelism that breaks instruction execution into stages.</li>
+                        <li><span class="term">Superscalar</span>: An architecture that can execute multiple instructions per clock cycle.</li>
+                        <li><span class="term">SIMD</span>: Single Instruction, Multiple Data; a form of parallel processing.</li>
+                        <li><span class="term">Big Endian / Little Endian</span>: Systems for ordering bytes in memory.</li>
+                        <li><span class="term">Cache</span>: A small, fast memory that sits between the CPU and main memory.</li>
+                        <li><span class="term">Locality Principle</span>: The tendency of programs to reuse data and instructions they have used recently.</li>
+                        <li><span class="term">RAID</span>: Redundant Array of Independent Disks.</li>
+                        <li><span class="term">SSD</span>: Solid-State Disk.</li>
+                        <li><span class="term">Bus</span>: A communication system that transfers data between components.</li>
+                        <li><span class="term">DMA</span>: Direct Memory Access.</li>
+                        <li><span class="term">ASCII / Unicode / UTF-8</span>: Standardized character codes.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li>A computer system is composed of a CPU, memory, and I/O devices interconnected by buses.</li>
+                        <li>The CPU's core function is the <strong>fetch-decode-execute cycle</strong>, managed by its Control Unit, ALU, and registers.</li>
+                        <li>Performance is enhanced through parallelism, both at the instruction level (pipelining, superscalar) and the processor level (multiprocessors, multicomputers).</li>
+                        <li>Memory is organized in a hierarchy, from fast, small registers and caches to slower, larger main and secondary storage.</li>
+                        <li>The <strong>locality principle</strong> is the key reason why caches are effective at reducing memory access time.</li>
+                        <li>Secondary storage like SSDs and RAID systems provide persistent, high-capacity data storage.</li>
+                        <li>I/O devices communicate with the CPU and memory through controllers and buses, often using DMA and interrupts to operate efficiently.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>Fetch-Decode-Execute Cycle Steps:</strong>
+                            <ul>
+                                <li>Fetch instruction</li>
+                                <li>Increment PC</li>
+                                <li>Decode instruction</li>
+                                <li>Locate operand(s)</li>
+                                <li>Fetch operand(s)</li>
+                                <li>Execute instruction</li>
+                                <li>Repeat</li>
+                            </ul>
+                        </li>
+                        <li><strong>Memory Hierarchy (Top to Bottom):</strong>
+                             <ul>
+                                <li>CPU Registers</li>
+                                <li>Cache Memory</li>
+                                <li>Primary (Main) Memory</li>
+                                <li>Secondary Memory (SSD, Magnetic Disk)</li>
+                                <li>Archival Storage (Tape)</li>
+                            </ul>
+                        </li>
+                         <li><strong>RAID Levels (Common):</strong>
+                             <ul>
+                                 <li>RAID 0: Striping (Performance)</li>
+                                 <li>RAID 1: Mirroring (Redundancy)</li>
+                                 <li>RAID 5: Striping with Distributed Parity (Balance)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Study Reviewer. All rights reserved.</p>
+    </footer>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

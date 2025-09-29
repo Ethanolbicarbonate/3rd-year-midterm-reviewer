@@ -26,7 +26,10 @@ const subjects = [
         icon: "🏛️",
         color: "#f59e0b",
         chapters: [
-            { id: "review", title: "Review" }
+            { id: "review", title: "Review" },
+            { id: "chap1", title: "Chapter 1: Introduction" },
+            { id: "chap2", title: "Chapter 2: Computer Systems Organization" },
+            { id: "chap3", title: "Chapter 3: The Digital Logic Level" }
         ]
     },
     {
