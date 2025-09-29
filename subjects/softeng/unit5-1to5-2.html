@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5 Addendum: Software Metrics & Complexity - SoftEng</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>SoftEng</span> / 
+                    <span>Unit 5 Addendum: Software Metrics & Complexity</span>
+                </div>
+                <h1 class="chapter-title">Unit 5 Addendum: Software Metrics & Complexity</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Software Reliability, Availability, and Maintainability</h2>
+                    <div class="content-block info-block">
+                        <p>These are key quantitative metrics used to measure different aspects of software quality and performance over time.</p>
+                    </div>
+                    <h3>Core Metrics: MTBF, MTTF, and MTTR</h3>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h4>Mean Time Between Failure (MTBF)</h4>
+                            <p>The average time a <strong>repairable</strong> system operates between successive failures. It measures reliability and uptime.</p>
+                            <pre><code>MTBF = Total Operational Time / Total # of Failures</code></pre>
+                            <p>It can also be expressed as:</p>
+                             <pre><code>MTBF = MTTF + MTTR</code></pre>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h4>Mean Time To Failure (MTTF)</h4>
+                            <p>A basic measure of reliability for <strong>non-repairable</strong> systems. It represents the average length of time an item is expected to last until it fails for good.</p>
+                             <pre><code>MTTF = Total Hours of Operation / Total # of Units</code></pre>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h4>Mean Time To Repair (MTTR)</h4>
+                            <p>The average time it takes to track, diagnose, and fix the errors causing a failure. It is a key measure of maintainability.</p>
+                             <pre><code>MTTR = Total Maintenance Time / Total # of Repairs</code></pre>
+                        </div>
+                    </div>
+                     <div class="note-block success">
+                        <strong>💡 Rule of Thumb for MTTR:</strong> While it depends on the system's criticality, a good target for a world-class MTTR is under <span class="fact-value">five hours</span>.
+                    </div>
+
+                    <h3>Key Performance Indicators (KPIs)</h3>
+                     <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h4>Software Reliability (R)</h4>
+                            <p>The probability that a program will operate successfully without failure for a given period of time.</p>
+                            <pre><code>R = MTBF / (1 + MTBF)</code></pre>
+                        </div>
+                         <div class="concept-card primary-concept">
+                            <h4>Software Availability (A)</h4>
+                            <p>The probability that a program is performing successfully according to its specifications at a given point in time.</p>
+                            <pre><code>A = MTBF / (MTBF + MTTR)</code></pre>
+                        </div>
+                         <div class="concept-card primary-concept">
+                            <h4>Software Maintainability (M)</h4>
+                            <p>The probability that a software error can be fixed right away, directly related to the Mean Time To Repair.</p>
+                            <pre><code>M = 1 / (1 + MTTR)</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="example-block">
+                        <h3>Example Calculation</h3>
+                        <p>Given the following timeline where red arrows indicate downtime:</p>
+                        <p>0 → 3 (Uptime) | 3 → 6 (Downtime) | 6 → 8 (Uptime) | 8 → 10 (Downtime) | 10 → 14 (Uptime) | 14 → 18 (Downtime) | 18 → 23 (Uptime) | 23 → 24 (Downtime)</p>
+                        <p>Based on the source material's interpretation of another timeline:</p>
+                        <ul>
+                            <li><strong>Uptime periods:</strong> 3, 2, 4, 5 (4 total failures)</li>
+                            <li><strong>Repair time periods:</strong> 3, 2, 2, 3 (as given in the example)</li>
+                        </ul>
+                        <pre class="code-block"><code># MTBF calculation based on uptime periods
+MTBF = (3 + 2 + 4 + 5) / 4 = 14 / 4 = 3.5
+
+# MTTR calculation based on repair time periods
+MTTR = (3 + 2 + 2 + 3) / 4 = 10 / 4 = 2.5
+
+# Reliability
+R = 3.5 / (1 + 3.5) = 3.5 / 4.5 ≈ 0.78 or 78%
+
+# Availability
+A = 3.5 / (3.5 + 2.5) = 3.5 / 6.0 ≈ 0.58 or 58%
+
+# Maintainability
+M = 1 / (1 + 2.5) = 1 / 3.5 ≈ 0.29 or 29%</code></pre>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Cyclomatic Complexity</h2>
+                    <div class="content-block info-block">
+                        <p>Introduced by <strong>Thomas McCabe</strong> in <span class="fact-value">1976</span>, <strong>Cyclomatic Complexity</strong> is a software metric that measures the number of linearly independent paths through a program's source code. It is a key indicator of code complexity, testability, and maintainability, often used in white-box testing and code reviews.</p>
+                    </div>
+                    <h3>How to Calculate Cyclomatic Complexity</h3>
+                    <p>There are three common methods to calculate the complexity, V(G).</p>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>1. Graph-Based Method</h4><p>V(G) = E - N + 2P<br>Where E = number of edges, N = number of nodes, and P = number of connected components (usually 1).</p></div>
+                        <div class="concept-card secondary-concept"><h4>2. Predicate-Based Method</h4><p>V(G) = P + 1<br>Where P = number of decision points (e.g., if, while, for, case).</p></div>
+                        <div class="concept-card secondary-concept"><h4>3. Region-Based Method</h4><p>V(G) = R + 1<br>Where R = number of regions in the control flow graph.</p></div>
+                    </div>
+                     <div class="example-block">
+                        <h3>Code Example and Calculation</h3>
+                        <pre class="code-block"><code>void checkNumber(int x) {
+    if (x > 0)
+        cout &lt;&lt; "Positive";
+    else
+        cout &lt;&lt; "Non-positive";
+}</code></pre>
+                        <p>This code can be represented by a control flow graph with 4 nodes (start/if, positive, non-positive, end) and 4 edges.</p>
+                        <ul>
+                            <li><strong>Graph-Based:</strong> V(G) = 4 (edges) - 4 (nodes) + 2*1 = 2</li>
+                            <li><strong>Predicate-Based:</strong> V(G) = 1 (if statement) + 1 = 2</li>
+                            <li><strong>Region-Based:</strong> The graph creates 1 enclosed region, so V(G) = 1 (region) + 1 = 2</li>
+                        </ul>
+                        <p>A complexity of 2 means there are two independent paths through the code that need to be tested.</p>
+                    </div>
+                    <h3>Interpreting the Complexity Score</h3>
+                     <table>
+                        <thead>
+                            <tr><th>Complexity Score</th><th>Meaning</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1-10</td><td>Structured, well-written code. High testability, low cost/effort.</td></tr>
+                            <tr><td>10-20</td><td>Complex code. Medium testability, medium cost/effort.</td></tr>
+                            <tr><td>20-40</td><td>Very complex code. Low testability, high cost/effort.</td></tr>
+                            <tr><td>>40</td><td>Not realistically testable. Very high cost/effort. Consider refactoring.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">MTBF (Mean Time Between Failure)</span>: Average operating time between failures for repairable systems.</li>
+                        <li><span class="term">MTTF (Mean Time To Failure)</span>: Average time to failure for non-repairable systems.</li>
+                        <li><span class="term">MTTR (Mean Time To Repair)</span>: Average time it takes to fix a failure.</li>
+                        <li><span class="term">Reliability (R)</span>: Probability of failure-free operation for a specific time.</li>
+                        <li><span class="term">Availability (A)</span>: Probability a system is operational at a given point in time.</li>
+                        <li><span class="term">Maintainability (M)</span>: Probability a software error can be fixed promptly.</li>
+                        <li><span class="term">Cyclomatic Complexity (V(G))</span>: A measure of the number of independent paths through a program's code.</li>
+                        <li><span class="term">Control Flow Graph</span>: A graphical representation of all paths that might be traversed through a program during its execution.</li>
+                        <li><span class="term">Predicate Node</span>: A node in a control flow graph that represents a decision point (e.g., an 'if' statement).</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li><strong>MTBF vs. MTTF:</strong> Use MTTF for non-repairable items (like a lightbulb) and MTBF for repairable systems (like a server or a complex software application).</li>
+                        <li><strong>Core Relationship:</strong> MTBF is the sum of the average time the system is running (MTTF) and the average time it's being repaired (MTTR).</li>
+                        <li><strong>Key Metrics Formulas:</strong> Reliability is based on MTBF, Maintainability on MTTR, and Availability on both.</li>
+                        <li><strong>Cyclomatic Complexity's Purpose:</strong> It quantifies the complexity of a program, which directly impacts how difficult it is to test, maintain, and understand. A higher number means more complexity.</li>
+                        <li><strong>Calculating Complexity:</strong> The simplest method is the Predicate-Based formula: `V(G) = (Number of decision points) + 1`.</li>
+                        <li><strong>Ideal Complexity Score:</strong> A score of <span class="fact-value">1-10</span> is generally considered good, indicating simple, well-structured, and easily testable code.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                     <ol>
+                        <li><strong>Three Core Time-Based Metrics:</strong>
+                            <ul>
+                                <li>Mean Time Between Failure (MTBF)</li>
+                                <li>Mean Time To Failure (MTTF)</li>
+                                <li>Mean Time To Repair (MTTR)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Three Key Performance Indicators (KPIs):</strong>
+                             <ul>
+                                <li>Software Reliability (R)</li>
+                                <li>Software Availability (A)</li>
+                                <li>Software Maintainability (M)</li>
+                            </ul>
+                        </li>
+                         <li><strong>Three Methods for Calculating Cyclomatic Complexity:</strong>
+                             <ul>
+                                <li>Graph-Based (E - N + 2P)</li>
+                                <li>Predicate-Based (P + 1)</li>
+                                <li>Region-Based (R + 1)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Study Reviewer. All rights reserved.</p>
+    </footer>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

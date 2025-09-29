@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: Software Quality - SoftEng</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>SoftEng</span> / 
+                    <span>Unit 1: Software Quality</span>
+                </div>
+                <h1 class="chapter-title">Unit 1: Software Quality</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">The Problem of Software Quality</h2>
+                    <div class="content-block info-block">
+                        <p>Poor software quality is a persistent issue that affects nearly every organization using computers. It leads to lost productivity, corrupted data, high IT support costs, and low customer satisfaction. This problem often creates a cycle of blame:</p>
+                        <ul>
+                            <li><strong>Customers blame developers</strong> for sloppy practices.</li>
+                            <li><strong>Developers blame customers</strong> for irrational delivery dates and a continuous stream of changes.</li>
+                        </ul>
+                    </div>
+                     <div class="content-block">
+                        <p>The concept of "quality" itself can be elusive, as famously described by Robert Pirsig in <em>Zen and the Art of Motorcycle Maintenance</em>: "Quality... you know what it is, yet you don’t know what it is."</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Defining Software Quality</h2>
+                    <p>David Garvin of Harvard Business School suggests that quality is a multifaceted concept that can be viewed from five different perspectives.</p>
+                    <h3>Garvin's Five Views on Quality</h3>
+                    <ul>
+                        <li><strong>Transcendental View:</strong> Quality is something you immediately recognize but cannot explicitly define.</li>
+                        <li><strong>User View:</strong> Quality is seen in terms of an end-user’s specific goals and fitness for purpose.</li>
+                        <li><strong>Manufacturer’s View:</strong> Quality is defined by conformance to the original specification.</li>
+                        <li><strong>Product View:</strong> Quality is tied to inherent characteristics of the product itself.</li>
+                        <li><strong>Value-Based View:</strong> Quality is measured based on how much a customer is willing to pay for a product.</li>
+                    </ul>
+
+                    <h3>Garvin’s 8 Dimensions of Quality</h3>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Performance</h4><p>The product's primary operating characteristics.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Features</h4><p>Secondary characteristics that add to the product's appeal.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Reliability</h4><p>The probability of a product operating without failure for a specific period.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Conformance</h4><p>The degree to which a product's design and operating characteristics meet established standards.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Durability</h4><p>How long the product lasts before it deteriorates or needs replacement.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Serviceability</h4><p>The speed, courtesy, competence, and ease of repair or maintenance.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Aesthetics</h4><p>The sensory appeal of the product—how it looks, feels, sounds, etc.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Perceived Quality</h4><p>The reputation, brand image, or customer perception of quality.</p></div>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">Core Quality Concepts</h2>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h3>Quality of Design</h3>
+                            <p>Refers to how thoughtfully and effectively a product is planned before implementation. It involves the characteristics designers specify, such as modularity, scalability, and consistency.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>Quality of Conformance</h3>
+                            <p>Focuses on the degree to which the implementation follows the design. It asks the question: “Did we build the product the way we said we would?”</p>
+                        </div>
+                    </div>
+                    <div class="note-block success">
+                        <strong>💡 Beyond Conformance: User Satisfaction is Key</strong>
+                        <p>Robert Glass argues that true quality is more than just meeting specifications. He proposes the formula: <strong>User Satisfaction = Compliant Product + Good Quality + Delivery within Budget and Schedule</strong>. If the user isn’t satisfied, nothing else really matters.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Formal Quality Models</h2>
+                    <h3>McCall’s Quality Factors</h3>
+                    <div class="content-block">
+                        <p>This model categorizes software quality into three main areas:</p>
+                        <ul>
+                            <li><strong>Product Revision:</strong> The ease of modifying the software (Maintainability, Flexibility, Testability).</li>
+                            <li><strong>Product Transition:</strong> The ability to adapt the software to new environments (Portability, Reusability, Interoperability).</li>
+                            <li><strong>Product Operation:</strong> How well the software functions (Correctness, Reliability, Usability, Integrity, Efficiency).</li>
+                        </ul>
+                    </div>
+
+                    <h3>ISO 9126 Quality Factors</h3>
+                    <p>This international standard provides a framework for evaluating software quality across six key characteristics:</p>
+                     <div class="concept-cards">
+                        <div class="concept-card primary-concept"><h4>Functionality</h4><p>The degree to which the software satisfies stated needs.</p></div>
+                        <div class="concept-card primary-concept"><h4>Reliability</h4><p>The amount of time the software is available for use.</p></div>
+                        <div class="concept-card primary-concept"><h4>Usability</h4><p>The degree to which the software is easy to use.</p></div>
+                        <div class="concept-card primary-concept"><h4>Efficiency</h4><p>The degree to which the software makes optimal use of system resources.</p></div>
+                        <div class="concept-card primary-concept"><h4>Maintainability</h4><p>The ease with which repairs may be made to the software.</p></div>
+                        <div class="concept-card primary-concept"><h4>Portability</h4><p>The ease with which the software can be moved from one environment to another.</p></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">The "Good Enough" Software Dilemma</h2>
+                    <div class="note-block warning">
+                        <strong>⚠️ What is "Good Enough" Software?</strong>
+                        <p>This concept refers to software that delivers high-quality functions and features desired by most users, while simultaneously having other, more specialized functions that contain known, non-critical bugs.</p>
+                        <p><strong>Arguments Against:</strong> While this approach might work for large companies in certain domains, smaller companies must be cautious. Releasing "good enough" software can permanently damage a company's reputation. It should not be seen as a shortcut to solving quality problems.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">The Cost of Quality</h2>
+                    <div class="content-block info-block">
+                        <p>The cost of quality includes all costs incurred in the pursuit of quality or in performing quality-related activities, as well as the downstream costs of a lack of quality.</p>
+                    </div>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h3>Prevention Costs</h3>
+                            <p>Costs associated with planning and preventing defects. This includes quality planning, formal technical reviews, test planning, and training.</p>
+                        </div>
+                        <div class="concept-card secondary-concept">
+                            <h3>Appraisal Costs</h3>
+                            <p>Costs associated with evaluating the product to find defects. This includes technical reviews, data collection, metrics evaluation, testing, and debugging.</p>
+                        </div>
+                        <div class="concept-card danger note-block">
+                            <h3>Failure Costs</h3>
+                            <p>Costs resulting from defects. These are divided into:</p>
+                            <ul>
+                                <li><strong>Internal Failure:</strong> Costs to fix defects found *before* shipping to the customer (e.g., rework, repair).</li>
+                                <li><strong>External Failure:</strong> Costs to fix defects found *after* the product has been shipped (e.g., support calls, warranty work, reputational damage).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Risks and Consequences of Poor Quality</h2>
+                     <div class="note-block danger">
+                        <strong>High Stakes of Low Quality Software</strong>
+                        <p>Low-quality software increases risks for both developers and end-users. People bet their jobs, safety, and even their lives on software, so it "better be right."</p>
+                        <ul>
+                            <li><strong>Security Risks:</strong> Low-quality software is easier to hack and is more liable to contain architectural flaws and implementation bugs that create security vulnerabilities.</li>
+                            <li><strong>Legal Risks (Negligence and Liability):</strong> If a delivered system is late, fails to deliver features, and is error-prone, litigation can ensue.</li>
+                            <li><strong>Management Decisions Impact Quality:</strong> Irrational delivery dates, poor scheduling, and reactive (instead of proactive) risk management can force teams to take shortcuts, leading to reduced product quality.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div class="content-section">
+                    <h2 class="section-title">Achieving Software Quality</h2>
+                     <div class="note-block success">
+                        <strong>A Proactive Approach to Quality</strong>
+                        <p>Software quality is the result of good project management and solid engineering practices. It requires a deep understanding of the problem, a quality design that conforms to requirements, and processes to manage quality and change effectively.</p>
+                    </div>
+                     <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h3>Quality Control (QC)</h3>
+                            <p>A series of inspections, reviews, and tests used to ensure a work product conforms to its specifications. It is a <strong>reactive</strong> process focused on finding defects.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>Quality Assurance (QA)</h3>
+                            <p>Consists of auditing and reporting procedures used to provide management with the data needed to make proactive decisions. It is a <strong>proactive</strong> process focused on improving and ensuring the quality process itself.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">Quality of Design</span>: The thought and planning put into a product before it's built.</li>
+                        <li><span class="term">Quality of Conformance</span>: How well the final product matches its design specifications.</li>
+                        <li><span class="term">User Satisfaction</span>: The ultimate measure of quality, combining compliance, quality, and on-time/on-budget delivery.</li>
+                        <li><span class="term">ISO 9126</span>: An international standard defining six key factors for software quality.</li>
+                        <li><span class="term">Prevention Costs</span>: Costs incurred to prevent defects from occurring (e.g., planning, training).</li>
+                        <li><span class="term">Appraisal Costs</span>: Costs incurred to find defects (e.g., testing, reviews).</li>
+                        <li><span class="term">Failure Costs</span>: Costs resulting from defects, both internal (before shipping) and external (after shipping).</li>
+                        <li><span class="term">Quality Control (QC)</span>: Reactive activities focused on finding defects in the product.</li>
+                        <li><span class="term">Quality Assurance (QA)</span>: Proactive activities focused on ensuring the development process is correct.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li><strong>Quality is Multifaceted:</strong> It can be viewed from transcendental, user, manufacturer, product, and value-based perspectives. Garvin's 8 Dimensions (e.g., Performance, Reliability) provide a detailed framework.</li>
+                        <li><strong>Design vs. Conformance:</strong> Software must be well-designed (Quality of Design) and implemented according to that design (Quality of Conformance). However, ultimate success depends on user satisfaction.</li>
+                        <li><strong>Costs of Quality:</strong> Quality is not free. It involves Prevention costs (planning), Appraisal costs (testing), and Failure costs (fixing bugs). It is almost always cheaper to prevent defects than to fix them after release.</li>
+                        <li><strong>Risks of Poor Quality:</strong> Low-quality software leads to significant risks, including security vulnerabilities, legal liability, and reputational damage. Poor management decisions often directly contribute to low quality.</li>
+                        <li><strong>Achieving Quality (QA vs. QC):</strong> Quality is achieved through a combination of Quality Assurance (a proactive focus on the process) and Quality Control (a reactive focus on inspecting the product).</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>Garvin's 5 Views on Quality:</strong>
+                            <ul>
+                                <li>Transcendental</li>
+                                <li>User</li>
+                                <li>Manufacturer</li>
+                                <li>Product</li>
+                                <li>Value-Based</li>
+                            </ul>
+                        </li>
+                        <li><strong>ISO 9126 Quality Factors:</strong>
+                             <ul>
+                                <li>Functionality</li>
+                                <li>Reliability</li>
+                                <li>Usability</li>
+                                <li>Efficiency</li>
+                                <li>Maintainability</li>
+                                <li>Portability</li>
+                            </ul>
+                        </li>
+                         <li><strong>Categories of Quality Costs:</strong>
+                             <ul>
+                                <li>Prevention Costs</li>
+                                <li>Appraisal Costs</li>
+                                <li>Failure Costs (Internal & External)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Study Reviewer. All rights reserved.</p>
+    </footer>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

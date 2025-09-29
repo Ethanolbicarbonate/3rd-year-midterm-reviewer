@@ -2,7 +2,7 @@
 const subjects = [
     {
         name: "AppDev",
-        icon: "💻",
+        icon: "📱",
         color: "#2563eb",
         chapters: [
             { id: "unit1", title: "Unit 1: Intro to AppDev" },
@@ -27,6 +27,19 @@ const subjects = [
         color: "#f59e0b",
         chapters: [
             { id: "review", title: "Review" }
+        ]
+    },
+    {
+        name: "SoftEng",
+        icon: "💻",
+        color: "#ef4444",
+        chapters: [
+            { id: "unit1", title: "Unit 1: Software Quality" },
+            { id: "unit2", title: "Unit 2: User-Centered Design" },
+            { id: "unit3", title: "Unit 3: Golden Rules of Interface Design" },
+            { id: "unit4", title: "Unit 4: Pattern Based Design" },
+            { id: "unit5", title: "Unit 5: Review Techniques and SQA" },
+            { id: "unit5-1to5-2", title: "Unit 5.1 and 5.2: Cyclomatic Complexity and Reliability, Availability, Maintainability" }
         ]
     }
 ];

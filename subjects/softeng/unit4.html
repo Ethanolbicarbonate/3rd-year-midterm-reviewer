@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4: Pattern-Based Design - SoftEng</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>SoftEng</span> / 
+                    <span>Unit 4: Pattern-Based Design</span>
+                </div>
+                <h1 class="chapter-title">Unit 4: Pattern-Based Design</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Introduction to Design Patterns</h2>
+                    <div class="content-block info-block">
+                        <p>A <strong>Design Pattern</strong> is a general, reusable solution to a commonly occurring problem within a given context in software design. Each pattern is like a blueprint that you can customize to solve a particular design problem in your code. They help reduce the gap between a high-level design and its implementation.</p>
+                        <p>The concept was first introduced by Christopher Alexander in 1977. In 1990, the "Gang of Four" (GoF) compiled a famous catalog of design patterns that became foundational in software engineering.</p>
+                    </div>
+                    <h3>Structure of a Design Pattern</h3>
+                     <ul class="summary-list">
+                        <li class="summary-point"><strong>Name:</strong> A unique and descriptive name for the pattern.</li>
+                        <li class="summary-point"><strong>Problem:</strong> Describes the context and conditions in which to apply the pattern.</li>
+                        <li class="summary-point"><strong>Solution:</strong> Provides an abstract description of the pattern's elements, relationships, and responsibilities, often using diagrams like UML.</li>
+                        <li class="summary-point"><strong>Consequences:</strong> Outlines the results, trade-offs, and impacts of using the pattern.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Categories of Design Patterns</h2>
+                    <p>Design patterns are typically divided into three fundamental categories based on their purpose.</p>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h3>Creational Patterns</h3>
+                            <p>These patterns focus on the process of object creation, composition, and representation. They provide mechanisms to create objects in a manner suitable to the situation, increasing flexibility and reuse of existing code.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>Structural Patterns</h3>
+                            <p>These patterns deal with how classes and objects are organized and integrated to build a larger structure. They use inheritance and composition to form larger, more complex structures with new functionality.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>Behavioral Patterns</h3>
+                            <p>These patterns are concerned with the assignment of responsibilities between objects and the common communication patterns between them. They focus on how objects interact and distribute responsibility.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Examples of Design Patterns</h2>
+                    
+                    <h3>Creational Pattern: Factory Method</h3>
+                    <div class="content-block">
+                        <p>The <strong>Factory Method</strong> provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created. It defines a method for creating an object, but lets the subclasses decide which class to instantiate.</p>
+                    </div>
+                    <div class="example-block">
+                        <h4>Logistics Example</h4>
+                        <pre class="code-block"><code>from abc import ABC, abstractmethod
+
+# Product Interface
+class Transport(ABC):
+    @abstractmethod
+    def deliver(self):
+        pass
+
+# Concrete Products
+class Truck(Transport):
+    def deliver(self):
+        return "Delivering cargo by land in a truck."
+
+class Ship(Transport):
+    def deliver(self):
+        return "Delivering cargo by sea in a ship."
+
+# Creator (Factory)
+class Logistics(ABC):
+    @abstractmethod
+    def create_transport(self) -> Transport:
+        pass
+
+    def plan_delivery(self):
+        transport = self.create_transport()
+        return f"Logistics planning: {transport.deliver()}"
+
+# Concrete Creators
+class RoadLogistics(Logistics):
+    def create_transport(self) -> Transport:
+        return Truck()
+
+class SeaLogistics(Logistics):
+    def create_transport(self) -> Transport:
+        return Ship()
+
+# Client Code
+logistics = SeaLogistics()
+print(logistics.plan_delivery()) # Output: Logistics planning: Delivering cargo by sea in a ship.</code></pre>
+                    </div>
+
+                    <h3>Structural Pattern: Facade</h3>
+                     <div class="content-block">
+                        <p>The <strong>Facade</strong> pattern provides a simplified, unified interface to a set of interfaces in a subsystem. It hides the complexities of the system and provides a single class through which the client can access the system's functionality.</p>
+                    </div>
+                     <div class="example-block">
+                        <h4>Logistics Facade Example</h4>
+                        <pre class="code-block"><code># Complex Subsystem Parts
+class InventorySystem:
+    def check_item_availability(self, item_id, quantity):
+        print(f"[Inventory] Checking availability...")
+        return True
+
+class PaymentSystem:
+    def process_payment(self, amount):
+        print(f"[Payment] Processing payment...")
+        return True
+
+class TransportSystem:
+    def schedule_delivery(self, address):
+        print(f"[Transport] Scheduling delivery...")
+        return True
+
+# Facade Class
+class LogisticsFacade:
+    def __init__(self):
+        self.inventory = InventorySystem()
+        self.payment = PaymentSystem()
+        self.transport = TransportSystem()
+    
+    def place_order(self, item_id, quantity, amount, address):
+        print("--- Placing Order ---")
+        if self.inventory.check_item_availability(item_id, quantity):
+            if self.payment.process_payment(amount):
+                self.transport.schedule_delivery(address)
+                print("--- Order Placed Successfully! ---")
+                return True
+        print("--- Order Failed ---")
+        return False
+
+# Client Code
+facade = LogisticsFacade()
+facade.place_order(item_id=101, quantity=2, amount=150.0, address="123 Main Street")</code></pre>
+                    </div>
+
+                    <h3>Behavioral Pattern: Memento</h3>
+                     <div class="content-block">
+                        <p>The <strong>Memento</strong> pattern is used to restore an object to a previous state without revealing the details of its implementation. It involves three actors: the <strong>Originator</strong> (the object with state), the <strong>Memento</strong> (stores the state), and the <strong>Caretaker</strong> (keeps track of mementos).</p>
+                    </div>
+                    <div class="example-block">
+                        <h4>Delivery Order Memento Example</h4>
+                        <pre class="code-block"><code># Memento
+class OrderMemento:
+    def __init__(self, state):
+        self._state = state
+    def get_saved_state(self):
+        return self._state
+
+# Originator
+class DeliveryOrder:
+    def __init__(self, order_id):
+        self.state = "Created"
+    
+    def set_state(self, state):
+        self.state = state
+        print(f"Order state changed to: {self.state}")
+    
+    def save_state_to_memento(self):
+        return OrderMemento(self.state)
+    
+    def restore_state_from_memento(self, memento):
+        self.state = memento.get_saved_state()
+        print(f"Order state restored to: {self.state}")
+
+# Caretaker
+class OrderHistory:
+    def __init__(self):
+        self._mementos = []
+    def add(self, memento):
+        self._mementos.append(memento)
+    def get(self, index):
+        return self._mementos[index]
+
+# Client Code
+order = DeliveryOrder(101)
+history = OrderHistory()
+
+history.add(order.save_state_to_memento()) # Save "Created" state
+order.set_state("Packed")
+history.add(order.save_state_to_memento()) # Save "Packed" state
+order.set_state("Shipped")
+
+print("\n--- Rolling Back ---")
+order.restore_state_from_memento(history.get(1)) # Restores to "Packed"</code></pre>
+                    </div>
+                </div>
+
+                 <div class="content-section">
+                    <h2 class="section-title">Thinking in Patterns</h2>
+                     <div class="note-block success">
+                        <strong>A Pattern-Based Design Approach:</strong>
+                        <ol>
+                            <li><strong>Understand the big picture:</strong> Analyze the context and requirements of your system at a high level.</li>
+                            <li><strong>Extract patterns:</strong> Identify the recurring problems and challenges within that context.</li>
+                            <li><strong>Design with "big picture" patterns:</strong> Start your design with patterns that establish a foundational context or skeleton (e.g., architectural patterns), then refine with more specific patterns.</li>
+                        </ol>
+                    </div>
+                     <div class="note-block danger">
+                        <strong>Common Design Mistakes to Avoid:</strong>
+                        <ul>
+                            <li>Not spending enough time to understand the underlying problem.</li>
+                            <li>Choosing a pattern that doesn't fully address all the forces of the problem.</li>
+                            <li>Force-fitting the wrong pattern after realizing it's a poor choice.</li>
+                            <li>Applying a pattern too literally without adapting it to the specific problem space.</li>
+                        </ul>
+                    </div>
+                     <div class="content-block info-block">
+                        <p>Patterns themselves are not always sufficient to develop a complete design. In some cases, it may be necessary to use a <strong>framework</strong>, which is an implementation-specific skeletal infrastructure that provides a structure to build upon.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">Design Pattern</span>: A reusable blueprint for solving a common design problem.</li>
+                        <li><span class="term">GoF (Gang of Four)</span>: The authors of the seminal book on design patterns.</li>
+                        <li><span class="term">Creational Patterns</span>: Patterns concerned with object creation mechanisms.</li>
+                        <li><span class="term">Structural Patterns</span>: Patterns focused on class and object composition.</li>
+                        <li><span class="term">Behavioral Patterns</span>: Patterns related to object communication and responsibility assignment.</li>
+                        <li><span class="term">Factory Method</span>: A creational pattern that lets subclasses decide which class to instantiate.</li>
+                        <li><span class="term">Facade</span>: A structural pattern that provides a simplified interface to a complex subsystem.</li>
+                        <li><span class="term">Memento</span>: A behavioral pattern that allows an object's state to be saved and restored.</li>
+                        <li><span class="term">Framework</span>: A skeletal infrastructure that provides a pre-built structure for an application.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li>A <strong>Design Pattern</strong> is a proven solution to a common problem, not a finished piece of code.</li>
+                        <li>Patterns are categorized into three main types: <strong>Creational</strong> (object creation), <strong>Structural</strong> (composition), and <strong>Behavioral</strong> (communication).</li>
+                        <li>The <strong>Factory Method</strong> pattern allows a class to defer instantiation to its subclasses, promoting loose coupling.</li>
+                        <li>The <strong>Facade</strong> pattern simplifies interaction with a complex system by providing a single, clean entry point.</li>
+                        <li>The <strong>Memento</strong> pattern captures and externalizes an object's internal state so it can be restored later, without violating encapsulation.</li>
+                        <li>"Thinking in Patterns" involves starting with the big picture, identifying problems, and applying appropriate patterns as a skeleton for your design.</li>
+                        <li>Avoid common mistakes like force-fitting a pattern or not adapting it to your specific needs.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>Three Categories of Design Patterns:</strong>
+                            <ul>
+                                <li>Creational</li>
+                                <li>Structural</li>
+                                <li>Behavioral</li>
+                            </ul>
+                        </li>
+                        <li><strong>Four Parts of a Pattern's Structure:</strong>
+                             <ul>
+                                <li>Name</li>
+                                <li>Problem</li>
+                                <li>Solution</li>
+                                <li>Consequences</li>
+                            </ul>
+                        </li>
+                         <li><strong>Three Actors in the Memento Pattern:</strong>
+                             <ul>
+                                <li>Originator (the object with state)</li>
+                                <li>Memento (stores the state)</li>
+                                <li>Caretaker (manages mementos)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Study Reviewer. All rights reserved.</p>
+    </footer>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

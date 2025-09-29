@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3: The Golden Rules of Interface Design - SoftEng</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>SoftEng</span> / 
+                    <span>Unit 3: The Golden Rules of Interface Design</span>
+                </div>
+                <h1 class="chapter-title">Unit 3: The Golden Rules of Interface Design</h1>
+            </header>
+
+            <section class="content-area">
+                <div class="content-section">
+                    <h2 class="section-title">Introduction to the Golden Rules</h2>
+                    <div class="content-block info-block">
+                        <p>According to Theo Mandel's work on interface design, there are three fundamental principles that serve as a foundation for creating effective and user-friendly interfaces. These "Golden Rules" guide designers in crafting experiences that are intuitive, efficient, and satisfying for the user.</p>
+                        <ol>
+                            <li><strong>Place the user in control.</strong></li>
+                            <li><strong>Reduce the user’s memory load.</strong></li>
+                            <li><strong>Make the interface consistent.</strong></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Rule 1: Place the User in Control</h2>
+                    <p>This rule emphasizes empowering the user by providing them with flexibility, forgiveness, and clear navigation. The interface should adapt to the user, not the other way around.</p>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>1. Use modes judiciously (Modeless)</h4><p>Avoid forcing users into restrictive modes. Modern smartphones, for example, allow multitasking without a dedicated 'mode'.</p></div>
+                        <div class="concept-card secondary-concept"><h4>2. Allow different interaction modes (Flexible)</h4><p>Users should have multiple input options. Excel allows both mouse selections and keyboard formula entry.</p></div>
+                        <div class="concept-card secondary-concept"><h4>3. Allow users to change focus (Interruptible)</h4><p>Users should be able to interrupt, pause, or switch tasks without losing progress. For example, YouTube lets you pause a video and resume later.</p></div>
+                        <div class="concept-card secondary-concept"><h4>4. Display descriptive messages (Helpful)</h4><p>Messages should clearly explain system states or errors in plain language. Gmail warns users about large attachments and suggests using Drive.</p></div>
+                        <div class="concept-card secondary-concept"><h4>5. Provide reversible actions (Forgiving)</h4><p>Users should see immediate feedback and be able to undo mistakes. Trello lets you drag and drop tasks with instantly reversible changes.</p></div>
+                        <div class="concept-card secondary-concept"><h4>6. Provide meaningful paths and exits (Navigable)</h4><p>Users should never feel trapped; there should always be a clear way out, like the Back and Home buttons in web browsers.</p></div>
+                        <div class="concept-card secondary-concept"><h4>7. Accommodate different skill levels (Accessible)</h4><p>Interfaces should cater to both beginners and experts. Photoshop provides both guided tutorials and advanced editing tools.</p></div>
+                        <div class="concept-card secondary-concept"><h4>8. Make the UI transparent (Facilitative)</h4><p>The interface shouldn’t get in the user's way. Spotify's simple layout emphasizes search and play, focusing the user on their task.</p></div>
+                        <div class="concept-card secondary-concept"><h4>9. Allow customization (Preferences)</h4><p>Users should be able to tailor the interface to their needs, such as personalizing the desktop in Windows.</p></div>
+                        <div class="concept-card secondary-concept"><h4>10. Allow direct manipulation (Interactive)</h4><p>Users should interact directly with objects rather than through complex commands. Google Maps lets users drag and zoom the map directly.</p></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Rule 2: Reduce the User’s Memory Load</h2>
+                    <p>This rule focuses on minimizing the cognitive effort required to use an interface. The human brain is better at recognizing things than recalling them from memory.</p>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>1. Relieve short-term memory (Remember)</h4><p>Don’t force users to memorize information across different screens. Amazon’s shopping cart shows all selected items, so the user doesn't have to remember them.</p></div>
+                        <div class="concept-card secondary-concept"><h4>2. Rely on recognition, not recall (Recognition)</h4><p>Present options visibly instead of asking users to remember commands. Photo apps show icons for share, delete, or edit.</p></div>
+                        <div class="concept-card secondary-concept"><h4>3. Provide visual cues (Inform)</h4><p>Use icons, highlights, and colors to guide users and communicate status. Instagram shows red dots for new notifications.</p></div>
+                        <div class="concept-card secondary-concept"><h4>4. Provide defaults and undo (Forgiving)</h4><p>Offer safe default settings and allow undo/redo to reduce the fear of making errors. Google Docs saves version history for easy rollbacks.</p></div>
+                        <div class="concept-card secondary-concept"><h4>5. Provide interface shortcuts (Frequency)</h4><p>Allow experienced users to perform frequent actions more quickly. VS Code allows hotkeys for common coding actions.</p></div>
+                        <div class="concept-card secondary-concept"><h4>6. Promote an object-action syntax (Intuitive)</h4><p>Present the object first, then the possible actions. Right-clicking a file shows options like copy or rename for that specific file.</p></div>
+                        <div class="concept-card secondary-concept"><h4>7. Use real-world metaphors (Transfer)</h4><p>Borrow from real-world experiences to make the interface familiar. The desktop trash bin icon represents deleting files.</p></div>
+                        <div class="concept-card secondary-concept"><h4>8. Use progressive disclosure (Context)</h4><p>Show only relevant information step-by-step, revealing advanced options as needed. Settings menus often hide advanced options until expanded.</p></div>
+                        <div class="concept-card secondary-concept"><h4>9. Promote visual clarity (Organize)</h4><p>Clean, organized layouts reduce cognitive load and make information easier to process. The Google homepage is minimal, focusing only on search.</p></div>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">Rule 3: Make the Interface Consistent</h2>
+                    <p>Consistency builds trust and allows users to transfer knowledge from one part of the interface to another. It makes the system predictable and easier to learn.</p>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>1. Sustain the context of tasks (Continuity)</h4><p>Users should maintain awareness of where they are in a workflow. Netflix resumes shows exactly where users left off.</p></div>
+                        <div class="concept-card secondary-concept"><h4>2. Maintain consistency across products (Experience)</h4><p>Use consistent design patterns across related platforms. Microsoft Office apps (Word, Excel) share the same Ribbon interface.</p></div>
+                        <div class="concept-card secondary-concept"><h4>3. Keep interaction results the same (Expectations)</h4><p>Actions should produce predictable results every time. The play button in YouTube always starts or resumes a video.</p></div>
+                        <div class="concept-card secondary-concept"><h4>4. Provide aesthetic appeal and integrity (Attitude)</h4><p>A visually appealing and professional design improves user trust and satisfaction. Airbnb uses clean, modern visuals to build trust.</p></div>
+                        <div class="concept-card secondary-concept"><h4>5. Encourage exploration (Predictable)</h4><p>Users should feel safe to experiment with features without fear of breaking the system. Spotify encourages discovering new music through recommended playlists.</p></div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">Modeless Interface</span>: An interface that does not lock the user into a specific mode of operation, allowing for flexibility.</li>
+                        <li><span class="term">Direct Manipulation</span>: Interacting directly with on-screen objects (e.g., drag-and-drop).</li>
+                        <li><span class="term">Recognition vs. Recall</span>: The principle that it's easier for users to recognize options presented to them than to recall commands from memory.</li>
+                        <li><span class="term">Progressive Disclosure</span>: A strategy of showing only necessary information and revealing more complex features on demand.</li>
+                        <li><span class="term">Real-World Metaphor</span>: Using familiar concepts from the physical world to make an interface intuitive (e.g., a trash can for deleting files).</li>
+                        <li><span class="term">Aesthetic Integrity</span>: The principle that an interface's visual design should be clean, professional, and consistent with its purpose.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li><strong>The Three Golden Rules</strong> by Theo Mandel provide a comprehensive framework for UI design: Place the user in control, Reduce the user's memory load, and Make the interface consistent.</li>
+                        <li><strong>Placing the user in control</strong> is about creating an interface that is flexible, forgiving, and navigable, empowering the user to achieve their goals without frustration.</li>
+                        <li><strong>Reducing the user's memory load</strong> focuses on minimizing cognitive effort by favoring recognition over recall, providing clear visual cues, and using familiar metaphors.</li>
+                        <li><strong>Making the interface consistent</strong> ensures that the system is predictable and learnable, which builds user trust and encourages exploration.</li>
+                        <li>These rules are not independent; they work together. A consistent interface reduces memory load, and an interface that reduces memory load often gives the user a greater sense of control.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>Principles for Placing the User in Control (10):</strong>
+                            <ul>
+                                <li>Modeless, Flexible, Interruptible, Helpful, Forgiving, Navigable, Accessible, Facilitative, Preferences, Interactive.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Principles for Reducing Memory Load (9):</strong>
+                             <ul>
+                                <li>Remember, Recognition, Inform, Forgiving, Frequency, Intuitive, Transfer, Context, Organize.</li>
+                            </ul>
+                        </li>
+                         <li><strong>Principles for Making the Interface Consistent (5):</strong>
+                             <ul>
+                                <li>Continuity, Experience, Expectations, Attitude, Predictable.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Study Reviewer. All rights reserved.</p>
+    </footer>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

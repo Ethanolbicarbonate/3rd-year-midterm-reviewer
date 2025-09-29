@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5: Review Techniques and SQA - SoftEng</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>SoftEng</span> / 
+                    <span>Unit 5: Review Techniques and SQA</span>
+                </div>
+                <h1 class="chapter-title">Unit 5: Review Techniques and Software Quality Assurance</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">The Importance of Reviews</h2>
+                    <div class="content-block info-block">
+                        <p>In software engineering, quality is a necessity. Errors and defects can lead to anything from minor inconveniences to catastrophic failures. <strong>Software Reviews</strong> function as critical checkpoints throughout the Software Development Life Cycle (<span class="term">SDLC</span>) to validate work products like requirements, design documents, source code, and test cases.</p>
+                        <p>A review brings together multiple perspectives to identify improvements, confirm work that meets expectations, and achieve predictable technical quality.</p>
+                    </div>
+                     <div class="note-block danger">
+                        <strong>⚠️ Real-World Impact: NASA's Mars Climate Orbiter (1999)</strong>
+                        <p>A simple unit conversion error (metric vs. imperial units) caused the spacecraft to fail, resulting in a loss of <span class="fact-value">$327 million</span>. A rigorous requirements and design review could have detected this defect before launch, highlighting the critical importance of review processes.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Cost and Impact of Software Defects</h2>
+                    <div class="note-block warning">
+                        <p>The cost of fixing defects increases significantly the later they are discovered in the development process. A bug found during requirements analysis is cheap to fix, but the same bug found in production can cost thousands of times more due to its widespread impact.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Formal Technical Reviews (FTRs)</h2>
+                    <div class="content-block info-block">
+                        <p>An <strong>FTR</strong> is a structured meeting involving 3–5 people, lasting no more than two hours. The primary objective is not to debate solutions but to systematically detect errors.</p>
+                        <h4>Objectives of an FTR:</h4>
+                        <ol>
+                            <li>Detect errors in function, logic, or implementation.</li>
+                            <li>Verify that the software complies with its requirements.</li>
+                            <li>Ensure that the software adheres to predefined standards.</li>
+                            <li>Promote uniform and consistent software development.</li>
+                            <li>Enhance project manageability.</li>
+                        </ol>
+                    </div>
+                     <div class="note-block success">
+                        <strong>Review Guidelines and Best Practices:</strong>
+                        <ul>
+                            <li>Review the product, not the producer. Keep criticism constructive and focused on the work.</li>
+                            <li>Maintain a clear agenda and stick to it.</li>
+                            <li>Limit debate and problem-solving; the focus is on identifying issues, not fixing them on the spot.</li>
+                            <li>Use written notes and checklists to stay organized.</li>
+                            <li>Ensure all reviewers are properly trained to be effective.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">Post-Mortem Evaluations (PME)</h2>
+                     <div class="content-block info-block">
+                        <p>Unlike FTRs that focus on a specific work product, a <strong>Post-Mortem Evaluation (<span class="term">PME</span>)</strong> reflects on the entire project *after* its completion. The team analyzes both successes and challenges to identify lessons that can be applied to future projects.</p>
+                    </div>
+                     <div class="note-block danger">
+                        <strong>⚠️ Case Study: Knight Capital Trading Glitch (2012)</strong>
+                        <p>A software glitch caused a <span class="fact-value">$440 million</span> loss in just 45 minutes. The post-mortem revealed insufficient testing and flawed deployment checks. This event became a critical case study in risk management and the importance of post-project evaluation.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Software Quality Assurance (SQA)</h2>
+                    <div class="content-block info-block">
+                        <p><strong>Software Quality Assurance (<span class="term">SQA</span>)</strong>, often called quality management, is an umbrella activity that encompasses standards, reviews, testing, and other processes to ensure software quality throughout the SDLC. Its goals are to ensure high quality in requirements, design, code, and the quality control process itself.</p>
+                        <h4>SQA Encompasses:</h4>
+                        <ul>
+                            <li>Standards enforcement</li>
+                            <li>Reviews and audits</li>
+                            <li>Testing</li>
+                            <li>Error analysis and reporting</li>
+                            <li>Change management</li>
+                            <li>Vendor and security management</li>
+                            <li>Risk and safety assurance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Statistical SQA</h2>
+                    <div class="content-block info-block">
+                        <p>Statistical SQA is a formal approach that uses quantitative data to improve software quality. The process involves the following steps:</p>
+                        <ol>
+                            <li>Information about software defects is collected and categorized.</li>
+                            <li>Each defect is traced to its underlying cause (e.g., design error, misinterpretation of requirements).</li>
+                            <li>The <strong>Pareto principle</strong> is applied, which states that 80% of defects can be traced to 20% of the causes (the "vital few").</li>
+                            <li>Once the vital few causes are identified, corrective actions are taken to address these root problems.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                 <div class="content-section">
+                    <h2 class="section-title">Software Reliability and Availability</h2>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h3>Software Reliability</h3>
+                            <p>The probability of failure-free operation of a program in a specified environment for a specified time. It can be measured using metrics like <strong>Mean-Time-Between-Failure (MTBF)</strong>.</p>
+                            <pre><code>MTBF = MTTF + MTTR</code></pre>
+                            <p>Where <span class="term">MTTF</span> is Mean-Time-To-Failure and <span class="term">MTTR</span> is Mean-Time-To-Repair.</p>
+                        </div>
+                         <div class="concept-card secondary-concept">
+                            <h3>Software Availability</h3>
+                            <p>The probability that a program is operating according to requirements at a given point in time.</p>
+                            <pre><code>Availability = [MTTF / (MTTF + MTTR)] x 100%</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">The SQA Plan</h2>
+                    <div class="content-block info-block">
+                        <p>The IEEE provides a standard for SQA plans. A comprehensive plan should identify:</p>
+                        <ol>
+                            <li>The purpose and scope of the plan.</li>
+                            <li>A description of all software engineering work products covered by SQA.</li>
+                            <li>All applicable standards and practices to be applied.</li>
+                            <li>SQA actions and tasks (including reviews and audits) throughout the process.</li>
+                            <li>Tools and methods that support SQA actions.</li>
+                            <li>Software configuration management procedures.</li>
+                            <li>Methods for assembling, safeguarding, and maintaining SQA-related records.</li>
+                            <li>Organizational roles and responsibilities for product quality.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">SQA (Software Quality Assurance)</span>: An umbrella activity for managing and ensuring software quality.</li>
+                        <li><span class="term">SDLC (Software Development Life Cycle)</span>: The entire process of software development, from planning to maintenance.</li>
+                        <li><span class="term">FTR (Formal Technical Review)</span>: A structured meeting to find defects in a specific work product.</li>
+                        <li><span class="term">PME (Post-Mortem Evaluation)</span>: A review of an entire project after it has been completed.</li>
+                        <li><span class="term">Pareto Principle</span>: The "80/20 rule," stating that 80% of effects come from 20% of causes.</li>
+                        <li><span class="term">MTBF (Mean-Time-Between-Failure)</span>: A measure of software reliability.</li>
+                        <li><span class="term">MTTF (Mean-Time-To-Failure)</span>: The average time a system operates before a failure.</li>
+                        <li><span class="term">MTTR (Mean-Time-To-Repair)</span>: The average time it takes to repair a system after a failure.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li><strong>Reviews are Essential:</strong> Software reviews are critical checkpoints to find and fix defects early, which is significantly cheaper than finding them later in the SDLC.</li>
+                        <li><strong>FTR vs. PME:</strong> A Formal Technical Review (FTR) focuses on a *specific work product* (like code or a design document) to find defects, while a Post-Mortem Evaluation (PME) reviews the *entire project* after completion to learn lessons for the future.</li>
+                        <li><strong>SQA is Proactive:</strong> Software Quality Assurance (SQA) is a broad set of activities that includes enforcing standards, conducting reviews, and managing risk to ensure quality is built into the process, not just tested at the end.</li>
+                        <li><strong>Statistical SQA uses Data:</strong> This approach collects defect data, traces defects to their root causes, and applies the Pareto principle (80/20 rule) to focus improvement efforts on the "vital few" causes that create the most problems.</li>
+                        <li><strong>Reliability is Measurable:</strong> Software reliability can be quantified using metrics like MTBF (Mean-Time-Between-Failure), which is the sum of MTTF (Mean-Time-To-Failure) and MTTR (Mean-Time-To-Repair).</li>
+                        <li><strong>The SQA Plan is a Roadmap:</strong> A formal SQA Plan outlines all quality-related activities, standards, roles, and procedures for a project.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                     <ol>
+                        <li><strong>Objectives of a Formal Technical Review (FTR):</strong>
+                            <ul>
+                                <li>Detect errors.</li>
+                                <li>Verify compliance with requirements.</li>
+                                <li>Ensure adherence to standards.</li>
+                                <li>Promote uniform development.</li>
+                                <li>Enhance project manageability.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Steps of Statistical SQA:</strong>
+                             <ul>
+                                <li>Collect and categorize defect information.</li>
+                                <li>Trace each defect to its underlying cause.</li>
+                                <li>Use the Pareto principle to isolate the "vital few" causes (the 20%).</li>
+                                <li>Correct the problems that caused the defects.</li>
+                            </ul>
+                        </li>
+                         <li><strong>Components of an IEEE SQA Plan:</strong>
+                             <ul>
+                                <li>Purpose and scope.</li>
+                                <li>Description of work products.</li>
+                                <li>Applicable standards and practices.</li>
+                                <li>SQA actions and tasks.</li>
+                                <li>Tools and methods.</li>
+                                <li>Configuration management procedures.</li>
+                                <li>Record-keeping methods.</li>
+                                <li>Organizational roles and responsibilities.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Study Reviewer. All rights reserved.</p>
+    </footer>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

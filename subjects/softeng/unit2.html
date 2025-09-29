@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: User-Centered Design - SoftEng</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>SoftEng</span> / 
+                    <span>Unit 2: User-Centered Design</span>
+                </div>
+                <h1 class="chapter-title">Unit 2: User-Centered Design</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">User-Centered Design (UCD) in Software Engineering</h2>
+                    <div class="content-block info-block">
+                        <p><strong>User-Centered Design</strong> is a design philosophy and process that places the needs, preferences, and limitations of end users at the forefront of every stage of software development. Its goal is to ensure the final product is not only functional but also intuitive, accessible, and satisfying to use.</p>
+                    </div>
+                    <h3>Core Principles of UCD</h3>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept"><h4>Empathy-Driven Development</h4><p>Developers strive to understand the user's perspective, challenges, and goals to build solutions that genuinely meet their needs.</p></div>
+                        <div class="concept-card primary-concept"><h4>Iterative Design</h4><p>The design process is cyclical. Designs are created, tested with users, refined based on feedback, and tested again until an optimal solution is reached.</p></div>
+                        <div class="concept-card primary-concept"><h4>User Involvement</h4><p>End users are actively involved throughout the development process, from requirements gathering to testing, to provide continuous feedback.</p></div>
+                        <div class="concept-card primary-concept"><h4>Accessibility and Inclusivity</h4><p>The product is designed to be usable by people with a wide range of abilities and disabilities, ensuring no one is excluded.</p></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">What is a User Interface (UI)?</h2>
+                    <div class="content-block info-block">
+                        <p>The <strong>User Interface (<span class="term">UI</span>)</strong> is the visual part of an application through which a user interacts with the system. It focuses not just on usability but also on the overall look, style, and feel of the application.</p>
+                        <p>A popular application often has a UI that is attractive, simple to use, responsive, clear, and consistent across all screens.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Types of User Interfaces</h2>
+                    
+                    <h3>Text-Based User Interface (Command Line Interface - CLI)</h3>
+                    <div class="concept-cards">
+                         <div class="note-block success">
+                            <strong>Advantages:</strong>
+                            <ul>
+                                <li>Offers many and easier customization options.</li>
+                                <li>Typically capable of performing more important or complex tasks efficiently.</li>
+                            </ul>
+                        </div>
+                        <div class="note-block warning">
+                             <strong>Disadvantages:</strong>
+                            <ul>
+                                <li>Relies heavily on recall (remembering commands) rather than recognition.</li>
+                                <li>Navigation can be more difficult for inexperienced users.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Graphical User Interface (GUI)</h3>
+                    <p>A GUI uses visual elements like windows, icons, and menus to allow users to interact with the system.</p>
+                    <h4>Key Characteristics of a GUI:</h4>
+                    <ul>
+                        <li><strong>Windows:</strong> Allow different information to be displayed simultaneously.</li>
+                        <li><strong>Icons:</strong> Represent files, processes, or information visually.</li>
+                        <li><strong>Menus:</strong> Provide a list of commands to select from, rather than typing them.</li>
+                        <li><strong>Pointing:</strong> A pointing device (like a mouse) is used to select items.</li>
+                        <li><strong>Graphics:</strong> Visual elements can be mixed with text on the same display.</li>
+                    </ul>
+                     <div class="concept-cards">
+                         <div class="note-block success">
+                            <strong>Advantages:</strong>
+                            <ul>
+                                <li>Requires less expert knowledge to use.</li>
+                                <li>Easier to navigate and switch between tasks.</li>
+                            </ul>
+                        </div>
+                        <div class="note-block warning">
+                             <strong>Disadvantages:</strong>
+                            <ul>
+                                <li>Typically has fewer options than a CLI.</li>
+                                <li>Usually less customizable.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">UI Design Principles</h2>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h3>1. Structure</h3>
+                            <p>Organize the user interface purposefully. This means being consistent, making elements recognizable, grouping related items, and separating unrelated ones. Similar things should look similar.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>2. Simplicity</h3>
+                            <p>Make simple, common tasks easy to perform. The design should communicate clearly and directly, providing good shortcuts for longer procedures where meaningful.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>3. Visibility</h3>
+                            <p>Make all required options and materials for a given function visible without distraction. Avoid redundant data and hidden controls for primary tasks.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>4. Feedback</h3>
+                            <p>Keep users informed of their actions, system status, or errors. This includes confirmation messages, progress indicators, and clear error messages.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>5. Tolerance</h3>
+                            <p>The design should be flexible and reduce the cost of errors. Allow users to undo and redo actions, and prevent errors by tolerating varied inputs and interpreting all reasonable actions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">UCD (User-Centered Design)</span>: A design philosophy that prioritizes user needs at every stage of development.</li>
+                        <li><span class="term">UI (User Interface)</span>: The visual part of an application that a user interacts with.</li>
+                        <li><span class="term">CLI (Command Line Interface)</span>: A text-based user interface that relies on typed commands.</li>
+                        <li><span class="term">GUI (Graphical User Interface)</span>: A visual interface that uses windows, icons, and menus.</li>
+                        <li><span class="term">Empathy</span>: The core UCD principle of understanding and sharing the feelings of the user.</li>
+                        <li><span class="term">Iteration</span>: The cyclical process of designing, testing, and refining a product based on feedback.</li>
+                        <li><span class="term">Accessibility</span>: Designing products to be usable by people with disabilities.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li><strong>User-Centered Design (UCD)</strong> is a process focused on user needs, involving empathy, iteration, user participation, and accessibility.</li>
+                        <li>A <strong>User Interface (UI)</strong> is the visual gateway to an application, with two main types: Text-Based (<span class="term">CLI</span>) and Graphical (<span class="term">GUI</span>).</li>
+                        <li><span class="term">CLI</span> is powerful and customizable but requires users to recall commands. <span class="term">GUI</span> is intuitive and easy to navigate but can be less flexible.</li>
+                        <li>The five key <strong>UI Design Principles</strong> are essential for creating effective and user-friendly interfaces.</li>
+                        <li><strong>Structure</strong> ensures the UI is organized and consistent.</li>
+                        <li><strong>Simplicity</strong> makes common tasks easy and communication clear.</li>
+                        <li><strong>Visibility</strong> ensures necessary options are always visible and accessible.</li>
+                        <li><strong>Feedback</strong> keeps the user informed about system status and actions.</li>
+                        <li><strong>Tolerance</strong> minimizes the cost of user errors through features like "undo" and error prevention.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                     <ol>
+                        <li><strong>Four Core Principles of UCD:</strong>
+                            <ul>
+                                <li>Empathy-Driven Development</li>
+                                <li>Iterative Design</li>
+                                <li>User Involvement</li>
+                                <li>Accessibility and Inclusivity</li>
+                            </ul>
+                        </li>
+                        <li><strong>Five UI Design Principles:</strong>
+                             <ul>
+                                <li>Structure</li>
+                                <li>Simplicity</li>
+                                <li>Visibility</li>
+                                <li>Feedback</li>
+                                <li>Tolerance</li>  
+                            </ul>
+                        </li>
+                         <li><strong>Five Characteristics of a GUI:</strong>
+                             <ul>
+                                <li>Windows</li>
+                                <li>Icons</li>
+                                <li>Menus</li>
+                                <li>Pointing</li>
+                                <li>Graphics</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Study Reviewer. All rights reserved.</p>
+    </footer>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>
