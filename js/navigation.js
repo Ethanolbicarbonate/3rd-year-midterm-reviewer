@@ -56,6 +56,18 @@ const subjects = [
             { id: "unit3", title: "Unit 3: Neural Networks 2" }
         ]
     },
+        {
+        name: "Automata",
+        icon: "👾",
+        color: "#6b7280",
+        chapters: [
+            { id: "unit1", title: "Unit 1: Introduction to Automata Theory and Forma Languages" },
+            { id: "unit2.1", title: "Unit 2.1: Finite Automata (DFA & NFA)" },
+            { id: "unit2.2", title: "Unit 2.2: Pushdown Automata (DPDA & NPDA)" },
+            { id: "unit2.3", title: "Unit 2.3: Turing Machines (TM, NDTM, Multi-tape, Multi-head, Multi-head Multi-tape)" },
+            { id: "unit3", title: "Unit 3: Formal Languages" }
+        ]
+    },
     
 ];
 

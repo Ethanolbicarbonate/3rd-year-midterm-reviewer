@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: Introduction to Automata Theory and Formal Languages - Automata CCS 226</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>Automata CCS 226</span> / 
+                    <span>Unit 1: Introduction to Automata Theory and Formal Languages</span>
+                </div>
+                <h1 class="chapter-title">Unit 1: Introduction to Automata Theory and Formal Languages</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Introduction to the Field</h2>
+                    <div class="content-block info-block">
+                        <p>Computer Science, Automata Theory, and Formal Languages are closely related fields that study the foundations of computation. They provide the theoretical basis for designing algorithms, programming languages, and computational systems.</p>
+                    </div>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h3>Computer Science</h3>
+                            <p>A broad field that includes the study of algorithms, data structures, and the principles of system design and analysis. It explores how computers work and how they can be programmed to solve a variety of problems.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h3>Automata Theory and Formal Languages</h3>
+                            <p>A branch of theoretical computer science that deals with the study of <strong>abstract machines</strong> and the <strong>languages</strong> they can recognize and process. It examines the capabilities and limitations of computation itself.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Abstract Machines</h2>
+                    <div class="content-block info-block">
+                        <p><strong>Abstract machines</strong> are not physical devices but rather conceptual constructs used to analyze and understand the behavior and capabilities of computing systems. They provide a high-level view of how computations are carried out and are used to formalize the study of algorithms and computation.</p>
+                    </div>
+                    <h4>Types of Abstract Machines</h4>
+                    <ul class="summary-list">
+                        <li class="summary-point">Turing Machine (TM)</li>
+                        <li class="summary-point">Finite Automaton (FA)</li>
+                        <li class="summary-point">Pushdown Automaton (PDA)</li>
+                        <li class="summary-point">Random Access Machine (RAM)</li>
+                        <li class="summary-point">Lambda Calculus</li>
+                        <li class="summary-point">Abstract State Machines (ASM)</li>
+                        <li class="summary-point">Register Machines</li>
+                    </ul>
+                    <div class="example-block">
+                        <h3>Example Application: Spreadsheet Software</h3>
+                        <p>Spreadsheet software like Microsoft Excel can be understood through the lens of abstract machines.</p>
+                        <ul>
+                            <li><strong>Abstract Machine Concept:</strong> The software provides a layer of abstraction between the user and the underlying calculations. The user inputs data and formulas, but the actual computation process is intangible.</li>
+                            <li><strong>Cell-Based Calculation Engine:</strong> Each cell containing data or a formula is treated as a separate, independent abstract machine capable of performing calculations.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">Fields of Automata Theory</h2>
+                     <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h4>Finite Automata (FA)</h4>
+                            <p>The study of machines with a finite set of states that recognize <strong>regular languages</strong>. This includes deterministic (DFA) and nondeterministic (NFA) finite automata and regular expressions.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h4>Pushdown Automata (PDA)</h4>
+                            <p>An investigation of machines equipped with a stack, which allows them to recognize <strong>context-free languages</strong>. This field connects context-free grammars and parse trees to a machine model.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h4>Turing Machines (TM)</h4>
+                            <p>An in-depth analysis of the most powerful abstract model of computation. It is used to study concepts like Turing completeness, the Halting Problem, and the limits of what can be computed.</p>
+                        </div>
+                         <div class="concept-card secondary-concept">
+                            <h4>Computability Theory</h4>
+                            <p>Focuses on the limits of computation, addressing topics like undecidability, the Church-Turing thesis, and the Halting Problem.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Fields of Formal Languages</h2>
+                     <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h4>Regular Languages</h4>
+                            <p>Languages described by regular expressions or recognized by finite automata. Used in text searching and lexical analysis.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h4>Context-Free Languages (CFL)</h4>
+                            <p>Languages described by context-free grammars (CFG) or recognized by pushdown automata. Essential for defining the syntax of most programming languages.</p>
+                        </div>
+                         <div class="concept-card secondary-concept">
+                            <h4>Context-Sensitive Languages</h4>
+                            <p>Languages described by context-sensitive grammars and recognized by linear-bounded automata. Related to computational complexity.</p>
+                        </div>
+                         <div class="concept-card secondary-concept">
+                            <h4>Recursively Enumerable Languages</h4>
+                            <p>The most general class of languages, recognized by Turing machines. This class is closely tied to the study of the Halting Problem.</p>
+                        </div>
+                         <div class="concept-card primary-concept">
+                            <h4>Chomsky Hierarchy</h4>
+                            <p>A classification of formal languages into four types (Regular, Context-Free, Context-Sensitive, and Recursively Enumerable) based on their complexity and generative power.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Applications of Automata Theory and Formal Languages</h2>
+                     <div class="note-block success">
+                        <ul>
+                            <li><strong>Programming Languages and Compilers:</strong> Formal grammars define language syntax, and automata theory is used to build lexical analyzers (lexers) and parsers.</li>
+                            <li><strong>Regular Expressions and Text Searching:</strong> Regular expressions, a product of formal language theory, are used for pattern matching. Finite automata are used to implement these searches efficiently.</li>
+                            <li><strong>Natural Language Processing (NLP):</strong> Formal language concepts are applied in parsing natural languages to identify syntactic structures and grammatical rules.</li>
+                            <li><strong>Database Systems:</strong> Query languages like SQL are based on formal grammars that define their syntax.</li>
+                            <li><strong>Software Verification and Validation:</strong> Automata theory is used in techniques like model checking to verify that a system's behavior conforms to its specification.</li>
+                            <li><strong>Circuit Design and Hardware Verification:</strong> Formal languages like VHDL and Verilog are used to specify hardware descriptions, and formal verification methods ensure their correctness.</li>
+                            <li><strong>Network Protocols:</strong> Formal languages help in specifying and analyzing communication protocols for correctness and security.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">Automata Theory</span>: The study of abstract machines and the computational problems that can be solved using them.</li>
+                        <li><span class="term">Formal Language</span>: A set of strings of symbols, defined by a set of rules or a formal grammar.</li>
+                        <li><span class="term">Abstract Machine</span>: A theoretical model of a computer used to study computation (not a physical device).</li>
+                        <li><span class="term">Finite Automaton (FA)</span>: An abstract machine with a finite number of states, used to recognize regular languages.</li>
+                        <li><span class="term">Pushdown Automaton (PDA)</span>: A finite automaton equipped with a stack, used to recognize context-free languages.</li>
+                        <li><span class="term">Turing Machine (TM)</span>: A powerful abstract machine that can simulate any computer algorithm.</li>
+                        <li><span class="term">Regular Language</span>: The class of languages that can be recognized by finite automata.</li>
+                        <li><span class="term">Context-Free Language (CFL)</span>: The class of languages recognized by pushdown automata, defined by Context-Free Grammars.</li>
+                        <li><span class="term">Context-Free Grammar (CFG)</span>: A set of production rules used to generate all possible strings in a given formal language.</li>
+                        <li><span class="term">Chomsky Hierarchy</span>: A containment hierarchy of formal language classes.</li>
+                        <li><span class="term">Lexical Analysis (Lexing)</span>: The process of converting a sequence of characters from source code into a sequence of tokens.</li>
+                        <li><span class="term">Parsing (Syntax Analysis)</span>: The process of analyzing a string of symbols to determine its grammatical structure with respect to a given formal grammar.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li>Automata Theory and Formal Languages are the theoretical foundation of computer science, focusing on what can be computed and how.</li>
+                        <li>Automata Theory studies abstract computational models like Finite Automata, Pushdown Automata, and Turing Machines, each with different capabilities.</li>
+                        <li>Formal Language theory studies the rules (grammars) that define valid strings in a language, from simple Regular Languages to more complex ones.</li>
+                        <li>The Chomsky Hierarchy provides a formal classification for these languages and their corresponding machine models.</li>
+                        <li>These theoretical concepts have critical practical applications in compiler design, text processing, hardware verification, and natural language processing.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                     <ol>
+                        <li><strong>Three Main Types of Automata:</strong>
+                            <ul>
+                                <li>Finite Automata (FA)</li>
+                                <li>Pushdown Automata (PDA)</li>
+                                <li>Turing Machines (TM)</li>
+                            </ul>
+                        </li>
+                        <li><strong>The Chomsky Hierarchy (from least to most powerful):</strong>
+                             <ul>
+                                <li>Type-3: Regular Languages (recognized by Finite Automata)</li>
+                                <li>Type-2: Context-Free Languages (recognized by Pushdown Automata)</li>
+                                <li>Type-1: Context-Sensitive Languages (recognized by Linear-Bounded Automata)</li>
+                                <li>Type-0: Recursively Enumerable Languages (recognized by Turing Machines)</li>
+                            </ul>
+                        </li>
+                         <li><strong>Key Application Areas:</strong>
+                             <ul>
+                                <li>Compiler Design</li>
+                                <li>Text Processing & Regular Expressions</li>
+                                <li>Natural Language Processing (NLP)</li>
+                                <li>Software & Hardware Verification</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

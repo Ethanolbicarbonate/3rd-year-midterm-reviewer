@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2.1: Finite Automata (DFA & NFA) - Automata CCS 226</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>Automata CCS 226</span> / 
+                    <span>Unit 2.1: Finite Automata (DFA & NFA)</span>
+                </div>
+                <h1 class="chapter-title">Unit 2.1: Finite Automata</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Introduction to Finite Automata (FA)</h2>
+                    <div class="content-block info-block">
+                        <p>A <strong>Finite Automaton</strong> (<span class="term">FA</span>), often called a <strong>Finite State Machine</strong> (<span class="term">FSM</span>), is the simplest abstract machine used to recognize patterns. It is used to characterize a <strong>Regular Language</strong> and is applied in various areas like lexical analysis in compilers and text processing.</p>
+                        <p>An FA has a set of states and rules for moving from one state to another based on an input symbol. Based on this process, an input string is either <strong>accepted</strong> or <strong>rejected</strong>. Every automaton defines a language, which is the set of all strings it accepts.</p>
+                    </div>
+                    <h3>Formal Definition of a Finite Automaton</h3>
+                    <p>A finite automaton is formally defined as a 5-tuple:</p>
+                    <div class="example-block">
+                        <pre><code>{ Q, Σ, q, F, δ }</code></pre>
+                    </div>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Q</h4><p>A finite set of states.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Σ (Sigma)</h4><p>A finite set of input symbols, called the alphabet.</p></div>
+                        <div class="concept-card secondary-concept"><h4>q</h4><p>The initial or start state.</p></div>
+                        <div class="concept-card secondary-concept"><h4>F</h4><p>A set of final or accepting states.</p></div>
+                        <div class="concept-card secondary-concept"><h4>δ (delta)</h4><p>The transition function, which defines the rules for moving between states.</p></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Deterministic Finite Automata (DFA)</h2>
+                    <div class="content-block info-block">
+                        <p>A <strong>Deterministic Finite Automaton</strong> (<span class="term">DFA</span>) is a type of FA where for each state and input symbol, there is exactly one next state. The path of computation is uniquely determined.</p>
+                    </div>
+                    <h3>Key Properties of a DFA</h3>
+                    <ul>
+                        <li>For any given state and input character, the machine transitions to **one and only one** state.</li>
+                        <li>The transition function must be defined for **every state** and **every input symbol**.</li>
+                        <li>Null (ε) moves are **not allowed**; the machine cannot change state without an input character.</li>
+                    </ul>
+                    <h4>Formal Definition of a DFA Transition Function</h4>
+                    <pre class="code-block"><code>δ : Q × Σ → Q</code></pre>
+                    <p>This means the function δ takes a state from Q and a symbol from Σ as input and returns a single state from Q.</p>
+
+                    <div class="example-block">
+                        <h3>Example: DFA for strings ending with 'a'</h3>
+                        <p><strong>Given:</strong></p>
+                        <ul>
+                            <li><strong>Σ</strong> = {a, b}</li>
+                            <li><strong>Q</strong> = {q0, q1}</li>
+                            <li><strong>q</strong> = {q0} (Initial State)</li>
+                            <li><strong>F</strong> = {q1} (Final State)</li>
+                        </ul>
+                        <p><strong>Transition Function (δ):</strong></p>
+                        <ul>
+                            <li>δ(q0, a) = q1</li>
+                            <li>δ(q0, b) = q0</li>
+                            <li>δ(q1, a) = q1</li>
+                            <li>δ(q1, b) = q0</li>
+                        </ul>
+                    </div>
+
+                    <h3>Limitations of DFAs</h3>
+                    <div class="note-block warning">
+                        <ul>
+                            <li><strong>Cannot recognize languages requiring memory:</strong> DFAs have no stack or tape, so they cannot recognize patterns like balanced parentheses.</li>
+                            <li><strong>Limited to Regular Languages:</strong> Cannot recognize more complex languages like context-free or context-sensitive languages.</li>
+                            <li><strong>State Explosion:</strong> For some patterns, the number of required states can become impractically large.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Nondeterministic Finite Automata (NFA)</h2>
+                    <div class="content-block info-block">
+                        <p>A <strong>Nondeterministic Finite Automaton</strong> (<span class="term">NFA</span>) is similar to a DFA but allows for multiple possible transitions from a given state on a single input symbol. The exact state the machine moves to cannot be uniquely determined.</p>
+                    </div>
+                    <h3>Key Properties of an NFA</h3>
+                    <ul>
+                        <li>From a single state, a single input symbol can lead to **zero, one, or multiple** next states.</li>
+                        <li>It is not required to define a transition for every state on every symbol.</li>
+                        <li>NFAs can have null (ε) transitions, allowing them to change state without consuming an input symbol (though not shown in the provided examples).</li>
+                    </ul>
+                    <h4>Formal Definition of an NFA Transition Function</h4>
+                    <pre class="code-block"><code>δ : Q × Σ → 2<sup>Q</sup></code></pre>
+                    <p>This means the function δ takes a state from Q and a symbol from Σ and returns a <strong>subset of states</strong> from Q (the power set of Q).</p>
+                    <div class="note-block success">
+                        <strong>💡 Power of NFAs:</strong> While NFAs seem more powerful due to their flexibility, they are computationally equivalent to DFAs. Every NFA can be converted to an equivalent DFA. Their main advantage is often in design simplicity.
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">NFA to DFA Conversion</h2>
+                    <div class="content-block info-block">
+                        <p>Any NFA can be converted into an equivalent DFA that recognizes the same language. This process is often called the <strong>subset construction algorithm</strong>.</p>
+                    </div>
+                    <h3>Steps for Conversion</h3>
+                    <ol>
+                        <li><strong>Create the NFA's state table.</strong></li>
+                        <li><strong>Start the DFA table:</strong> The start state of the DFA is the set containing only the NFA's start state.</li>
+                        <li><strong>Compute transitions for new DFA states:</strong> For each new DFA state (which is a set of NFA states) and each input symbol, find the union of all possible next states in the NFA.</li>
+                        <li><strong>Repeat:</strong> Each new unique set of NFA states generated in step 3 becomes a new DFA state. Repeat step 3 for these new states until no new states are generated.</li>
+                        <li><strong>Mark final states:</strong> Any state in the DFA that contains at least one of the final states of the NFA becomes a final state in the DFA.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">FA (Finite Automaton)</span>: The simplest abstract machine for pattern recognition, composed of states and transitions.</li>
+                        <li><span class="term">FSM (Finite State Machine)</span>: Another name for a Finite Automaton.</li>
+                        <li><span class="term">DFA (Deterministic Finite Automaton)</span>: A type of FA where each transition is unique and unambiguous.</li>
+                        <li><span class="term">NFA (Nondeterministic Finite Automaton)</span>: A type of FA that can have multiple possible transitions for a single input from a given state.</li>
+                        <li><span class="term">Tuple</span>: A finite ordered list of elements. An FA is defined by a 5-tuple.</li>
+                        <li><span class="term">State</span>: A condition of the automaton. The set of all states is denoted by Q.</li>
+                        <li><span class="term">Alphabet (Σ)</span>: The set of all possible input symbols.</li>
+                        <li><span class="term">Transition Function (δ)</span>: The set of rules that define how the automaton moves from one state to another.</li>
+                        <li><span class="term">Final State (F)</span>: A state that, if reached at the end of an input string, signifies the string is accepted.</li>
+                        <li><span class="term">Regular Language</span>: The class of languages that can be recognized by a Finite Automaton.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li>A Finite Automaton (FA) is a 5-tuple machine defined by `{ Q, Σ, q, F, δ }`.</li>
+                        <li>A **DFA** is deterministic: for every state and input, there is exactly one next state. Null (ε) moves are forbidden.</li>
+                        <li>An **NFA** is nondeterministic: for a given state and input, there can be zero, one, or multiple next states.</li>
+                        <li>The key difference lies in the transition function (δ). For a DFA, `δ: Q × Σ → Q`. For an NFA, `δ: Q × Σ → 2^Q`.</li>
+                        <li>Despite their differences in structure, NFAs and DFAs are computationally equivalent; any language recognized by an NFA can also be recognized by a DFA.</li>
+                        <li>An NFA can be converted to an equivalent DFA using the subset construction algorithm.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>The 5 Tuples of a Finite Automaton:</strong>
+                            <ul>
+                                <li>Q (Set of States)</li>
+                                <li>Σ (Set of Input Symbols)</li>
+                                <li>q (Initial State)</li>
+                                <li>F (Set of Final States)</li>
+                                <li>δ (Transition Function)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Two Main Types of Finite Automata:</strong>
+                            <ul>
+                                <li>Deterministic Finite Automata (DFA)</li>
+                                <li>Nondeterministic Finite Automata (NFA)</li>
+                            </ul>
+                        </li>
+                         <li><strong>Steps for NFA to DFA Conversion (Subset Construction):</strong>
+                             <ul>
+                                <li>Create NFA state table.</li>
+                                <li>Initialize DFA with the NFA's start state.</li>
+                                <li>Iteratively compute transitions for new DFA states (sets of NFA states).</li>
+                                <li>Continue until no new DFA states are created.</li>
+                                <li>Mark DFA final states (any set containing an NFA final state).</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>

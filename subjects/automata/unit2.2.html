@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2.2: Pushdown Automata (DPDA & NPDA) - Automata CCS 226</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Quick Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated based on content sections -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>Automata CCS 226</span> / 
+                    <span>Unit 2.2: Pushdown Automata (DPDA & NPDA)</span>
+                </div>
+                <h1 class="chapter-title">Unit 2.2: Pushdown Automata</h1>
+            </header>
+
+            <section class="content-area">
+                <!-- Main content sections -->
+                <div class="content-section">
+                    <h2 class="section-title">Introduction to Pushdown Automata (PDA)</h2>
+                    <div class="content-block info-block">
+                        <p>A <strong>Pushdown Automaton</strong> (<span class="term">PDA</span>) is a type of automaton that extends the capabilities of a finite automaton with a <strong>stack</strong>. This stack provides memory, allowing the PDA to perform more complex language recognition tasks, including recognizing <strong>context-free languages</strong>. PDAs are often used to describe the behavior of parsers in compiler construction.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Formal Definition of a PDA</h2>
+                    <div class="content-block">
+                        <p>A Pushdown Automaton is formally defined as a 7-tuple. Note that this is more complex than the 5-tuple of a Finite Automaton, as it includes components for the stack.</p>
+                    </div>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept"><h4>Q</h4><p>A finite set of states.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Σ (Sigma)</h4><p>A finite set of input symbols (the input alphabet).</p></div>
+                        <div class="concept-card secondary-concept"><h4>Γ (Gamma)</h4><p>A finite set of pushdown symbols (the stack alphabet).</p></div>
+                        <div class="concept-card secondary-concept"><h4>q0</h4><p>The initial or start state, where q0 ∈ Q.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Z</h4><p>The initial pushdown symbol, which is initially present on the stack.</p></div>
+                        <div class="concept-card secondary-concept"><h4>F</h4><p>A set of final or accepting states, where F ⊆ Q.</p></div>
+                        <div class="concept-card primary-concept">
+                            <h4>δ (delta)</h4>
+                            <p>The transition function, which maps from the current state, input symbol (or ε), and top of the stack symbol to a new state and new stack symbol(s).</p>
+                            <p>Formal mapping: \( \delta: Q \times (\Sigma \cup \{\epsilon\}) \times \Gamma \to Q \times \Gamma^* \)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">How a PDA Computes</h2>
+                    <div class="concept-card primary-concept">
+                        <h3>Instantaneous Description (ID)</h3>
+                        <p>An <strong>Instantaneous Description</strong> (<span class="term">ID</span>) is an informal notation that captures the configuration of a PDA at a specific moment. It is a triple `(q, w, α)` where:</p>
+                        <ol>
+                            <li><strong>q</strong> is the current state.</li>
+                            <li><strong>w</strong> is the remaining input string.</li>
+                            <li><strong>α</strong> is the current stack contents (with the top of the stack at the left).</li>
+                        </ol>
+                    </div>
+                    <div class="concept-card secondary-concept">
+                        <h3>Turnstile Notation (⊢)</h3>
+                        <p>This notation is used to describe moves between IDs.</p>
+                        <ul>
+                            <li>The symbol `⊢` represents a single move.</li>
+                            <li>The symbol `⊢*` represents a sequence of zero or more moves.</li>
+                        </ul>
+                        <p>For example, `(p, b, T) ⊢ (q, w, α)` implies that from state `p`, by consuming input `b` and with `T` on top of the stack, the PDA moves to state `q`, the remaining input is `w`, and the `T` is replaced by the string `α` on the stack.</p>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">Types of Pushdown Automata</h2>
+                    <div class="concept-cards">
+                        <div class="concept-card secondary-concept">
+                            <h4>Deterministic Pushdown Automaton (DPDA)</h4>
+                            <p>In a DPDA, there is <strong>at most one</strong> possible transition for any combination of state, input symbol, and stack symbol. It follows a single, deterministic computational path and can recognize deterministic context-free languages.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h4>Nondeterministic Pushdown Automaton (NPDA)</h4>
+                            <p>An NPDA can have <strong>multiple possible transitions</strong> for a given combination of state, input, and stack symbol. It has the freedom to explore all possible paths simultaneously. An input string is accepted if <strong>even one</strong> of its possible paths leads to an accepting state.</p>
+                        </div>
+                    </div>
+                    <div class="note-block success">
+                        <strong>💡 Power of Nondeterminism:</strong> NPDAs are strictly more powerful than DPDAs. While every DPDA is technically an NPDA, not every NPDA has an equivalent DPDA. NPDAs are needed when the machine must "guess" how to process the input, such as in the language \(L = \{a^nb^n\} \cup \{a^nb^{2n}\}\).</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Example: PDA for the Language \(L = \{a^nb^n \mid n > 0\}\)</h2>
+                    <div class="example-block">
+                        <p>This PDA accepts any string with one or more 'a's followed by an equal number of 'b's.</p>
+                        <p><strong>Formal Definition (M):</strong></p>
+                        <ul>
+                            <li><strong>Q</strong> = {q0, q1}</li>
+                            <li><strong>Σ</strong> = {a, b}</li>
+                            <li><strong>Γ</strong> = {A, Z}</li>
+                            <li><strong>q0</strong> is the initial state</li>
+                            <li><strong>Z</strong> is the initial stack symbol</li>
+                            <li>Acceptance is by empty stack in this example.</li>
+                        </ul>
+                        <p><strong>Transition Function (δ):</strong></p>
+                        <ol>
+                            <li>δ(q0, a, Z) = (q0, AZ)  <em>// First 'a', push A onto Z</em></li>
+                            <li>δ(q0, a, A) = (q0, AA)  <em>// Subsequent 'a's, push A onto A</em></li>
+                            <li>δ(q0, b, A) = (q1, ε)   <em>// First 'b', start popping A's</em></li>
+                            <li>δ(q1, b, A) = (q1, ε)   <em>// Subsequent 'b's, pop A's</em></li>
+                            <li>δ(q1, ε, Z) = (q1, ε)   <em>// Input empty, stack has Z, pop Z to accept</em></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Applications and Limitations of PDAs</h2>
+                    <h3>Key Applications</h3>
+                    <div class="note-block success">
+                        <ul>
+                            <li><strong>Compilers:</strong> Used for parsing and syntax analysis of programming languages.</li>
+                            <li><strong>Document Validation:</strong> Validating the structure of files like XML and HTML against a specified grammar (CFG).</li>
+                            <li><strong>Natural Language Processing (NLP):</strong> Analyzing the syntactic structure of sentences.</li>
+                            <li><strong>Syntax Checking:</strong> Powering syntax highlighting and error detection in code editors.</li>
+                        </ul>
+                    </div>
+                     <h3>Limitations</h3>
+                    <div class="note-block warning">
+                        <ul>
+                            <li><strong>Limited to Context-Free Languages (CFLs):</strong> Even an NPDA cannot recognize languages that are not context-free, such as \(L = \{a^nb^nc^n \mid n \ge 1\}\). Such languages require a more powerful model like a Turing machine.</li>
+                            <li><strong>Inefficiency of NPDA:</strong> Because an NPDA explores multiple paths, simulating it on real (deterministic) hardware can be inefficient and may require exponential time.</li>
+                            <li><strong>Theoretical Model:</strong> NPDAs are primarily a theoretical tool. Practical parsers often use deterministic (DPDA-like) methods for efficiency.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="memorization-area">
+                <h2 class="mem-header">📝 Quick Review & Memorization</h2>
+                
+                <div class="mem-section">
+                    <h3>Key Terms & Acronyms</h3>
+                    <ol>
+                        <li><span class="term">PDA (Pushdown Automaton)</span>: A finite automaton augmented with a stack for memory.</li>
+                        <li><span class="term">Stack</span>: A Last-In, First-Out (LIFO) data structure that gives a PDA its memory.</li>
+                        <li><span class="term">Context-Free Language (CFL)</span>: The class of languages that can be recognized by a Pushdown Automaton.</li>
+                        <li><span class="term">Instantaneous Description (ID)</span>: A snapshot of the PDA's configuration, represented as `(q, w, α)`.</li>
+                        <li><span class="term">Turnstile Notation (⊢)</span>: A symbol representing a single transition or move in a PDA.</li>
+                        <li><span class="term">DPDA (Deterministic PDA)</span>: A PDA with at most one possible move for any configuration.</li>
+                        <li><span class="term">NPDA (Nondeterministic PDA)</span>: A PDA with multiple possible moves for a configuration, allowing it to "guess" or explore paths in parallel.</li>
+                        <li><span class="term">Stack Alphabet (Γ)</span>: The set of symbols that can be pushed onto the stack.</li>
+                        <li><span class="term">Acceptance by Empty Stack</span>: A method of acceptance where an input string is accepted if the PDA finishes processing the string and the stack is empty.</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Summary Points</h3>
+                    <ol>
+                        <li>A Pushdown Automaton (PDA) is a Finite Automaton plus a <strong>stack</strong>.</li>
+                        <li>The stack gives the PDA memory, allowing it to recognize <strong>Context-Free Languages</strong>, which are more complex than Regular Languages.</li>
+                        <li>A PDA is formally defined by a 7-tuple: `{ Q, Σ, Γ, δ, q0, Z, F }`.</li>
+                        <li>The transition function `δ` depends on the current state, the current input symbol (or ε), and the symbol at the top of the stack.</li>
+                        <li>There are two main types: <strong>Deterministic (DPDA)</strong> and <strong>Nondeterministic (NPDA)</strong>.</li>
+                        <li>NPDAs are strictly more powerful than DPDAs, meaning they can recognize all deterministic CFLs plus some non-deterministic CFLs.</li>
+                        <li>The primary application of PDAs is in the parsing phase of compiler construction and document validation (e.g., XML).</li>
+                    </ol>
+                </div>
+
+                <div class="mem-section">
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>The 7 Tuples of a Pushdown Automaton:</strong>
+                            <ul>
+                                <li>Q (Set of States)</li>
+                                <li>Σ (Input Alphabet)</li>
+                                <li>Γ (Stack Alphabet)</li>
+                                <li>δ (Transition Function)</li>
+                                <li>q0 (Initial State)</li>
+                                <li>Z (Initial Stack Symbol)</li>
+                                <li>F (Set of Final States)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Components of an Instantaneous Description (ID):</strong>
+                            <ul>
+                                <li>Current State (q)</li>
+                                <li>Remaining Input (w)</li>
+                                <li>Stack Contents (α)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Two Main Types of Pushdown Automata:</strong>
+                            <ul>
+                                <li>Deterministic (DPDA)</li>
+                                <li>Nondeterministic (NPDA)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-btn">← Previous Chapter</a>
+                <a href="#" class="nav-btn next-btn">Next Chapter →</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+</body>
+</html>
