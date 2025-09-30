@@ -58,7 +58,7 @@ const subjects = [
     },
         {
         name: "Automata",
-        icon: "👾",
+        icon: "📟",
         color: "#6b7280",
         chapters: [
             { id: "unit1", title: "Unit 1: Introduction to Automata Theory and Forma Languages" },
