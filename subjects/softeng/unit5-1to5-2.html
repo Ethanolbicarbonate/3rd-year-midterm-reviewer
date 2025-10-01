@@ -97,16 +97,16 @@
                         <p>0 → 3 (Uptime) | 4 → 6 (Downtime) | 7 → 8 (Uptime) | 9 → 10 (Downtime) | 11 → 14 (Uptime) | 15 → 16 (Downtime) | 17 → 21 (Uptime) | 21 → 24 (Downtime)</p>
                         <p>Based on the source material's interpretation of another timeline:</p>
                         <ul>
-                            <li><strong>Uptime periods:</strong> 3, 2, 4, 5 (4 total failures)</li>
-                            <li><strong>Repair time periods:</strong> 3, 2, 2, 3 (as given in the example)</li>
+                            <li><strong>Uptime periods:</strong> 3, 2, 4, 5</li>
+                            <li><strong>Repair time periods:</strong> 3, 2, 2, 3</li>
                         </ul>
-                        <pre class="code-block"><code># MTBF calculation based on uptime periods
+                        <pre class="code-block"><code># MTBF total operation time / total number of failures
 MTBF = (3 + 2 + 4 + 5) / 4 = 14 / 4 = 3.5
 
-# MTTR calculation based on repair time periods
+# MTTR total maintenance time / Total number of Repairs
 MTTR = (3 + 2 + 2 + 3) / 4 = 10 / 4 = 2.5
 
-# Reliability
+# Reliability 
 R = 3.5 / (1 + 3.5) = 3.5 / 4.5 ≈ 0.78 or 78%
 
 # Availability
