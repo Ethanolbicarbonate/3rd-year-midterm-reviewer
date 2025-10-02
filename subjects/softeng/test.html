@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Test: Units 1-5 - SoftEng</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .test-section ol {
+            padding-left: 20px;
+        }
+        .test-section li {
+            margin-bottom: 2rem;
+        }
+        .test-section ul {
+            list-style-type: lower-alpha;
+            padding-left: 30px;
+            margin-top: 0.5rem;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f5e9; /* Light green */
+            border-left: 4px solid var(--secondary-green);
+            border-radius: 4px;
+        }
+        .answer pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        
+        /* Floating Action Button Style */
+        #toggleAnswersBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 15px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50px; /* Pill shape */
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        #toggleAnswersBtn:hover {
+            transform: scale(1.05);
+            background-color: #1d4ed8; /* Darker blue */
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../../index.html">📚 Komsai Reviewer</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chapter-container">
+        <aside class="sidebar" id="sidebar">
+            <h3>Test Navigation</h3>
+            <div class="section-links" id="sectionLinks">
+                <!-- Auto-populated -->
+            </div>
+        </aside>
+
+        <main class="chapter-main">
+            <header class="chapter-header">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Home</a> / 
+                    <span>SoftEng</span> / 
+                    <span>Comprehensive Test</span>
+                </div>
+                <h1 class="chapter-title">Comprehensive Test: Software Quality & Design</h1>
+            </header>
+            
+            <button id="toggleAnswersBtn" class="toggle-btn">Show Answers</button>
+
+            <section class="content-area">
+                <div class="content-section test-section">
+                    <h2 class="section-title">Part I: Multiple Choice</h2>
+                    <ol>
+                        <!-- Question 1 -->
+<ol>
+    <li>
+        According to David Garvin's Five Views on Quality, which perspective defines quality by its conformance to the original specification?
+        <ul>
+            <li> User View</li>
+            <li> Transcendental View</li>
+            <li> Manufacturer’s View</li>
+            <li> Value-Based View</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Manufacturer’s View</div>
+    </li>
+    <li>
+        The "User View" of quality is primarily concerned with:
+        <ul>
+            <li> The product's inherent characteristics.</li>
+            <li> Fitness for purpose and meeting the end-user's specific goals.</li>
+            <li> How much a customer is willing to pay for the product.</li>
+            <li> Conformance to established standards and design.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Fitness for purpose and meeting the end-user's specific goals.</div>
+    </li>
+    <li>
+        Robert Glass proposes the formula: User Satisfaction = Compliant Product + Good Quality + X. What does X represent?
+        <ul>
+            <li> Advanced Features</li>
+            <li> Delivery within Budget and Schedule</li>
+            <li> Perfect Aesthetics</li>
+            <li> Zero Defects</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Delivery within Budget and Schedule</div>
+    </li>
+    <li>
+        Which of the following is an example of a Prevention Cost in the Cost of Quality model?
+        <ul>
+            <li> Reworking a module before release.</li>
+            <li> Responding to customer support calls.</li>
+            <li> Conducting formal technical reviews.</li>
+            <li> Training developers on new quality standards.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> d) Training developers on new quality standards.</div>
+    </li>
+    <li>
+        The cost of warranty work and handling customer complaints after a product has been shipped falls under which category?
+        <ul>
+            <li> Appraisal Costs</li>
+            <li> Prevention Costs</li>
+            <li> Internal Failure Costs</li>
+            <li> External Failure Costs</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> d) External Failure Costs</div>
+    </li>
+    <li>
+        What is the main risk for smaller companies that release "good enough" software?
+        <ul>
+            <li> High IT support costs.</li>
+            <li> Corrupted data for a small user base.</li>
+            <li> Permanently damaging the company's reputation.</li>
+            <li> Legal action from large competitors.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Permanently damaging the company's reputation.</div>
+    </li>
+    <li>
+        Which ISO 9126 quality factor refers to the ease with which software can be moved from one environment to another?
+        <ul>
+            <li> Usability</li>
+            <li> Reliability</li>
+            <li> Portability</li>
+            <li> Maintainability</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Portability</div>
+    </li>
+    <li>
+        "Did we build the product the way we said we would?" is the central question of:
+        <ul>
+            <li> Quality of Design</li>
+            <li> Quality of Conformance</li>
+            <li> Perceived Quality</li>
+            <li> User Satisfaction</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Quality of Conformance</div>
+    </li>
+    <li>
+        Which is a core principle of User-Centered Design (UCD)?
+        <ul>
+            <li> Focusing primarily on the technology stack.</li>
+            <li> Involving end-users only at the final testing stage.</li>
+            <li> An iterative process of design, testing, and refinement.</li>
+            <li> Prioritizing the manufacturer's specifications over user feedback.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) An iterative process of design, testing, and refinement.</div>
+    </li>
+    <li>
+        A primary advantage of a Command Line Interface (CLI) is that it:
+        <ul>
+            <li> Is easier for beginners to navigate.</li>
+            <li> Relies on recognition rather than recall.</li>
+            <li> Offers more customization and is efficient for complex tasks.</li>
+            <li> Uses visual elements like icons and windows.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Offers more customization and is efficient for complex tasks.</div>
+    </li>
+    <li>
+        A common disadvantage of a Graphical User Interface (GUI) compared to a CLI is that it:
+        <ul>
+            <li> Is harder to learn for non-technical users.</li>
+            <li> Typically has fewer options and is less customizable.</li>
+            <li> Requires users to remember complex commands.</li>
+            <li> Cannot handle multiple tasks simultaneously.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Typically has fewer options and is less customizable.</div>
+    </li>
+    <li>
+        The UI design principle of Tolerance suggests that an interface should:
+        <ul>
+            <li> Make all required options visible.</li>
+            <li> Be organized and consistent.</li>
+            <li> Reduce the cost of user errors, for example, by providing an "undo" feature.</li>
+            <li> Keep the user informed about system status.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Reduce the cost of user errors, for example, by providing an "undo" feature.</div>
+    </li>
+    <li>
+        Making all necessary options and materials for a given function visible without distraction is the goal of which UI design principle?
+        <ul>
+            <li> Structure</li>
+            <li> Simplicity</li>
+            <li> Visibility</li>
+            <li> Feedback</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Visibility</div>
+    </li>
+    <li>
+        The User Interface (UI) is best described as:
+        <ul>
+            <li> The underlying code and database of an application.</li>
+            <li> The visual part of an application through which a user interacts.</li>
+            <li> A design philosophy that prioritizes user needs.</li>
+            <li> The process of testing software for bugs.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) The visual part of an application through which a user interacts.</div>
+    </li>
+    <li>
+        According to Theo Mandel's Golden Rules, using icons and menus so users can see their options instead of remembering commands primarily supports which rule?
+        <ul>
+            <li> Place the user in control.</li>
+            <li> Reduce the user's memory load.</li>
+            <li> Make the interface consistent.</li>
+            <li> Make the interface aesthetically pleasing.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Reduce the user's memory load.</div>
+    </li>
+    <li>
+        Providing reversible actions (e.g., "undo") is a key sub-principle of which Golden Rule?
+        <ul>
+            <li> Place the user in control.</li>
+            <li> Reduce the user's memory load.</li>
+            <li> Make the interface consistent.</li>
+            <li> Promote visual clarity.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> a) Place the user in control.</div>
+    </li>
+    <li>
+        Using a "trash can" icon to represent deleting files is an example of a real-world metaphor that helps to:
+        <ul>
+            <li> Make the interface consistent.</li>
+            <li> Place the user in control.</li>
+            <li> Reduce the user's memory load by leveraging existing knowledge.</li>
+            <li> Ensure aesthetic integrity.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Reduce the user's memory load by leveraging existing knowledge.</div>
+    </li>
+    <li>
+        Showing only basic settings by default and hiding advanced options until a user explicitly asks for them is a technique known as:
+        <ul>
+            <li> Direct Manipulation</li>
+            <li> Progressive Disclosure</li>
+            <li> Modeless Interaction</li>
+            <li> Aesthetic Integrity</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Progressive Disclosure</div>
+    </li>
+    <li>
+        An interface that allows a user to switch between tasks without being locked into a specific operation (e.g., spell-check mode) is described as:
+        <ul>
+            <li> Modeless</li>
+            <li> Consistent</li>
+            <li> Forgiving</li>
+            <li> Navigable</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> a) Modeless</div>
+    </li>
+    <li>
+        The principle that actions should produce predictable results every time (e.g., a play button always starts a video) supports which Golden Rule?
+        <ul>
+            <li> Place the user in control.</li>
+            <li> Reduce the user's memory load.</li>
+            <li> Make the interface consistent.</li>
+            <li> Promote an object-action syntax.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Make the interface consistent.</div>
+    </li>
+    <li>
+        The Factory Method pattern belongs to which category of design patterns?
+        <ul>
+            <li> Structural</li>
+            <li> Behavioral</li>
+            <li> Creational</li>
+            <li> Architectural</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Creational</div>
+    </li>
+    <li>
+        What is the primary purpose of the Facade design pattern?
+        <ul>
+            <li> To allow an object's state to be saved and restored.</li>
+            <li> To provide a simplified, unified interface to a complex subsystem.</li>
+            <li> To let subclasses decide which type of object to create.</li>
+            <li> To ensure a class has only one instance.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) To provide a simplified, unified interface to a complex subsystem.</div>
+    </li>
+    <li>
+        Which design pattern is used to restore an object to a previous state without revealing its internal implementation?
+        <ul>
+            <li> Facade</li>
+            <li> Memento</li>
+            <li> Factory Method</li>
+            <li> Singleton</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Memento</div>
+    </li>
+    <li>
+        Which of the following is NOT one of the three fundamental categories of design patterns?
+        <ul>
+            <li> Creational</li>
+            <li> Structural</li>
+            <li> Functional</li>
+            <li> Behavioral</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Functional</div>
+    </li>
+    <li>
+        An implementation-specific skeletal infrastructure that provides a structure to build an application upon is known as a:
+        <ul>
+            <li> Design Pattern</li>
+            <li> Framework</li>
+            <li> Library</li>
+            <li> Subsystem</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Framework</div>
+    </li>
+    <li>
+        In the Memento pattern, the object whose state needs to be saved is called the:
+        <ul>
+            <li> Caretaker</li>
+            <li> Originator</li>
+            <li> Memento</li>
+            <li> Client</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Originator</div>
+    </li>
+    <li>
+        What is the key difference between Mean Time Between Failure (MTBF) and Mean Time To Failure (MTTF)?
+        <ul>
+            <li> MTBF is for non-repairable systems, while MTTF is for repairable systems.</li>
+            <li> MTBF includes repair time, while MTTF does not.</li>
+            <li> MTBF is for repairable systems, while MTTF is for non-repairable systems.</li>
+            <li> There is no difference; the terms are interchangeable.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) MTBF is for repairable systems, while MTTF is for non-repairable systems.</div>
+    </li>
+    <li>
+        Cyclomatic Complexity is a software metric used to measure the:
+        <ul>
+            <li> Speed and performance of the code.</li>
+            <li> Number of lines of code in a program.</li>
+            <li> Number of linearly independent paths through the source code.</li>
+            <li> Probability of the software failing.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Number of linearly independent paths through the source code.</div>
+    </li>
+    <li>
+        A cyclomatic complexity score of 35 indicates that the code is:
+        <ul>
+            <li> Simple and well-structured.</li>
+            <li> Not realistically testable.</li>
+            <li> Very complex and has low testability.</li>
+            <li> Moderately complex.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Very complex and has low testability.</div>
+    </li>
+    <li>
+        Software Maintainability (M) is a probability metric that is most directly related to:
+        <ul>
+            <li> MTBF</li>
+            <li> MTTF</li>
+            <li> MTTR</li>
+            <li> Total Uptime</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) MTTR</div>
+    </li>
+    <li>
+        What is the primary objective of a Formal Technical Review (FTR)?
+        <ul>
+            <li> To debate and implement solutions for known problems.</li>
+            <li> To appraise the performance of the developer.</li>
+            <li> To systematically detect errors in a work product.</li>
+            <li> To approve the project's budget.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) To systematically detect errors in a work product.</div>
+    </li>
+    <li>
+        A Post-Mortem Evaluation (PME) differs from an FTR in that a PME:
+        <ul>
+            <li> Focuses on a specific work product, like a single code file.</li>
+            <li> Occurs before the work product is completed.</li>
+            <li> Reflects on the entire project after its completion to find lessons learned.</li>
+            <li> Is only conducted if the project fails.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Reflects on the entire project after its completion to find lessons learned.</div>
+    </li>
+    <li>
+        In the context of Statistical SQA, the Pareto principle (80/20 rule) suggests that:
+        <ul>
+            <li> 80% of the project budget is spent on 20% of the features.</li>
+            <li> 80% of defects can be traced to 20% of the underlying causes.</li>
+            <li> A review should take no more than 80 minutes for every 20 pages.</li>
+            <li> Only 20% of bugs found are critical.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) 80% of defects can be traced to 20% of the underlying causes.</div>
+    </li>
+    <li>
+        Quality Assurance (QA) is best described as a:
+        <ul>
+            <li> Reactive process focused on finding defects in the final product.</li>
+            <li> Proactive process focused on improving and ensuring the quality of the development process itself.</li>
+            <li> Series of tests run just before software is released.</li>
+            <li> Synonym for software testing.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Proactive process focused on improving and ensuring the quality of the development process itself.</div>
+    </li>
+    <li>
+        Quality Control (QC) is best described as a:
+        <ul>
+            <li> Proactive process focused on the development process.</li>
+            <li> Set of auditing and reporting procedures.</li>
+            <li> Reactive process involving inspections and tests to find defects in a work product.</li>
+            <li> Way to manage project risks.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Reactive process involving inspections and tests to find defects in a work product.</div>
+    </li>
+    <li>
+        The cost to fix a software defect is lowest when it is discovered during:
+        <ul>
+            <li> Production/Maintenance</li>
+            <li> Testing</li>
+            <li> Coding</li>
+            <li> Requirements Analysis</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> d) Requirements Analysis</div>
+    </li>
+    <li>
+        Which of the following is a key guideline for conducting an effective FTR?
+        <ul>
+            <li> Review the producer, not the product.</li>
+            <li> Focus on fixing problems during the meeting.</li>
+            <li> Limit debate and stick to an agenda.</li>
+            <li> Allow the meeting to run as long as needed to cover all points.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) Limit debate and stick to an agenda.</div>
+    </li>
+    <li>
+        According to the IEEE standard for SQA plans, which of these is NOT a required component?
+        <ul>
+            <li> A description of all software engineering work products.</li>
+            <li> A list of individual developer performance metrics.</li>
+            <li> Applicable standards and practices to be applied.</li>
+            <li> Organizational roles and responsibilities.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) A list of individual developer performance metrics.</div>
+    </li>
+    <li>
+        What is the relationship between Software Quality Assurance (SQA) and Quality Control (QC)?
+        <ul>
+            <li> They are the same thing.</li>
+            <li> SQA is a subset of QC.</li>
+            <li> QC is a subset of the broader SQA "umbrella" activities.</li>
+            <li> They are unrelated activities.</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> c) QC is a subset of the broader SQA "umbrella" activities.</div>
+    </li>
+    <li>
+        The NASA Mars Climate Orbiter failure, caused by a metric vs. imperial unit error, is a classic example of a failure that could have been caught by a:
+        <ul>
+            <li> Post-Mortem Evaluation</li>
+            <li> Rigorous requirements and design review</li>
+            <li> "Good Enough" software approach</li>
+            <li> Value-based quality check</li>
+        </ul>
+        <div class="answer"><strong>Answer:</strong> b) Rigorous requirements and design review</div>
+    </li>
+</ol>
+                    </ol>
+                </div>
+
+                <div class="content-section test-section">
+                    <h2 class="section-title">Part II: Identification</h2>
+                    <ol start="41">
+                        <!-- Question 41 -->
+                        <li>
+                            Costs incurred to find defects through activities like testing and technical reviews.
+                            <div class="answer"><strong>Answer:</strong> Appraisal Costs</div>
+                        </li>
+
+                        <!-- Question 42 -->
+                        <li>
+                            Garvin's view of quality based on how much a customer is willing to pay for a product.
+                            <div class="answer"><strong>Answer:</strong> Value-Based View</div>
+                        </li>
+
+                        <!-- Question 43 -->
+                        <li>
+                            Garvin's dimension of quality that refers to how long a product lasts before it deteriorates.
+                            <div class="answer"><strong>Answer:</strong> Durability</div>
+                        </li>
+                        <!-- ... (Continue adding all 20 identification questions in this format) ... -->
+                        <li>
+                            The "80/20 rule," often applied in Statistical SQA.
+                            <div class="answer"><strong>Answer:</strong> Pareto Principle</div>
+                        </li>
+                        <li>
+                            An umbrella activity that encompasses standards, reviews, and testing to ensure software quality throughout the SDLC.
+                            <div class="answer"><strong>Answer:</strong> Software Quality Assurance (SQA)</div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="content-section test-section">
+                    <h2 class="section-title">Part III: Problem Solving</h2>
+                    <ol start="61">
+                        <!-- Scenario 1 -->
+                        <li>
+                            <strong>Scenario 1:</strong> A web application is monitored for 50 hours. During this time, it experiences three failures. The first failure occurs after 15 hours of uptime and takes 2 hours to repair. The second failure occurs after 20 more hours of uptime and takes 3 hours to repair. The third failure occurs after 8 more hours of uptime and takes 2 hours to repair.
+                            <br><br>What is the total operational time (uptime)?
+                            <div class="answer"><strong>Answer:</strong> 15 + 20 + 8 = <strong>43 hours</strong></div>
+                        </li>
+                        <li>
+                            (Scenario 1 cont.) What is the total maintenance time (downtime)?
+                            <div class="answer"><strong>Answer:</strong> 2 + 3 + 2 = <strong>7 hours</strong></div>
+                        </li>
+                        <li>
+                            (Scenario 1 cont.) What is the Mean Time Between Failure (MTBF)?
+                            <div class="answer"><strong>Answer:</strong> MTBF = Total Uptime / # of Failures = 43 / 3 ≈ <strong>14.33 hours</strong></div>
+                        </li>
+                        <li>
+                            (Scenario 1 cont.) What is the Mean Time To Repair (MTTR)?
+                            <div class="answer"><strong>Answer:</strong> MTTR = Total Downtime / # of Failures = 7 / 3 ≈ <strong>2.33 hours</strong></div>
+                        </li>
+                        <li>
+                            (Scenario 1 cont.) What is the software Reliability (R)? (Formula: MTBF / (1 + MTBF))
+                            <div class="answer"><strong>Answer:</strong> R = 14.33 / (1 + 14.33) ≈ <strong>0.93 or 93%</strong></div>
+                        </li>
+                        <li>
+                            (Scenario 1 cont.) What is the software Availability (A)? (Formula: MTBF / (MTBF + MTTR))
+                             <div class="answer"><strong>Answer:</strong> A = 14.33 / (14.33 + 2.33) ≈ <strong>0.86 or 86%</strong></div>
+                        </li>
+                        <li>
+                            (Scenario 1 cont.) What is the software Maintainability (M)? (Formula: 1 / (1 + MTTR))
+                            <div class="answer"><strong>Answer:</strong> M = 1 / (1 + 2.33) ≈ <strong>0.30 or 30%</strong></div>
+                        </li>
+
+                        <!-- Scenario 2 -->
+                        <li>
+                            <strong>Scenario 2:</strong> An IT department deploys 500 new, non-repairable hard drives. After 1,000,000 hours of total combined operation, all 500 have failed. What is the Mean Time To Failure (MTTF) for these hard drives?
+                            <div class="answer"><strong>Answer:</strong> MTTF = Total Hours / Total # of Units = 1,000,000 / 500 = <strong>2000 hours</strong></div>
+                        </li>
+
+                        <!-- Scenario 3 -->
+                        <li>
+                            <strong>Scenario 3:</strong> A system has a known Availability of 98% (0.98) and an MTTR of 2 hours. What is the MTBF of this system?
+                            <div class="answer">
+                                <strong>Answer:</strong>
+                                <pre><code>A = MTBF / (MTBF + MTTR)
+0.98 = MTBF / (MTBF + 2)
+0.98 * (MTBF + 2) = MTBF
+0.98 * MTBF + 1.96 = MTBF
+1.96 = MTBF - 0.98 * MTBF
+1.96 = 0.02 * MTBF
+MTBF = 1.96 / 0.02 = 98 hours</code></pre>
+                            </div>
+                        </li>
+
+                        <!-- Cyclomatic Complexity -->
+                        <li>Calculate the Cyclomatic Complexity V(G) for: <code>if (x > 10)</code>
+                            <div class="answer"><strong>Answer:</strong> P=1 (if). V(G) = 1 + 1 = <strong>2</strong></div>
+                        </li>
+                        <li>Calculate the Cyclomatic Complexity V(G) for: <code>if (code == 200 && isComplete)</code>
+                            <div class="answer"><strong>Answer:</strong> P=2 (if, &&). V(G) = 2 + 1 = <strong>3</strong></div>
+                        </li>
+                        <li>Calculate the Cyclomatic Complexity V(G) for: <code>if (is_active) { if (role == 'admin' or role == 'super') }</code>
+                            <div class="answer"><strong>Answer:</strong> P=3 (if, if, or). V(G) = 3 + 1 = <strong>4</strong></div>
+                        </li>
+                        <li>Calculate the Cyclomatic Complexity V(G) for: A switch statement with 5 case labels.
+                             <div class="answer"><strong>Answer:</strong> P=5 (5 cases). V(G) = 5 + 1 = <strong>6</strong></div>
+                        </li>
+                         <li>Calculate the Cyclomatic Complexity V(G) for: <code>while (i < max) { if (i % 2 == 0) }</code>
+                            <div class="answer"><strong>Answer:</strong> P=2 (while, if). V(G) = 2 + 1 = <strong>3</strong></div>
+                        </li>
+                        <li>
+                           According to the provided table, what does a cyclomatic complexity score between 1 and 10 signify?
+                           <div class="answer"><strong>Answer:</strong> Structured, well-written code with high testability and low cost/effort to maintain.</div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Study Reviewer. All rights reserved.</p>
+    </footer>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/chapter.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('toggleAnswersBtn');
+            const answers = document.querySelectorAll('.answer');
+            let answersVisible = false;
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    answersVisible = !answersVisible;
+                    if (answersVisible) {
+                        answers.forEach(answer => answer.style.display = 'block');
+                        toggleBtn.textContent = 'Hide Answers';
+                    } else {
+                        answers.forEach(answer => answer.style.display = 'none');
+                        toggleBtn.textContent = 'Show Answers';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -42,7 +42,8 @@ const subjects = [
             { id: "unit3", title: "Unit 3: Golden Rules of Interface Design" },
             { id: "unit4", title: "Unit 4: Pattern Based Design" },
             { id: "unit5", title: "Unit 5: Review Techniques and SQA" },
-            { id: "unit5-1to5-2", title: "Unit 5.1 and 5.2: Cyclomatic Complexity and Reliability, Availability, Maintainability" }
+            { id: "unit5-1to5-2", title: "Unit 5.1 and 5.2: Cyclomatic Complexity and Reliability, Availability, Maintainability" },
+            { id: "test", title: "Test" }
         ]
     },
     {
