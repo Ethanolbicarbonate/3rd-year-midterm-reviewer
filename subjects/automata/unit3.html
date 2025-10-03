@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit 3: Pillars of Technopreneurship & Design Thinking - BA234 Techno</title>
+    <title>Unit 3: Formal Languages - Automata CCS 226</title>
     <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
@@ -35,89 +35,113 @@
             <header class="chapter-header">
                 <div class="breadcrumb">
                     <a href="../../index.html">Home</a> / 
-                    <span>BA234 Techno</span> / 
-                    <span>Unit 3: Pillars of Technopreneurship & Design Thinking</span>
+                    <span>Automata CCS 226</span> / 
+                    <span>Unit 3: Formal Languages</span>
                 </div>
-                <h1 class="chapter-title">Unit 3: Pillars of Technopreneurship & Design Thinking</h1>
+                <h1 class="chapter-title">Unit 3: Formal Languages</h1>
             </header>
 
             <section class="content-area">
                 <!-- Main content sections -->
                 <div class="content-section">
-                    <h2 class="section-title">The 5 Pillars of Technopreneurship</h2>
-                    
-                    <h3>1. Value Creation</h3>
+                    <h2 class="section-title">Introduction to Formal Languages</h2>
                     <div class="content-block info-block">
-                        <p>Value creation is the foundation of any successful venture. It means your products and services must create tangible value for your customers. Importantly, value is defined by the customer—it is whatever they believe it to be.</p>
-                        <ul>
-                            <li><strong>Value Proposition:</strong> A clear statement explaining why customers should choose your product over others.</li>
-                            <li><strong>Key Drivers:</strong> Vision, passion, and the ability to adapt to customer needs and market trends.</li>
-                        </ul>
-                    </div>
-
-                    <h3>2. The Lean Startup</h3>
-                    <div class="content-block info-block">
-                        <p>Developed by Eric Ries, the Lean Startup is a scientific approach to creating and managing startups, aiming to get a desired product to customers faster. It is inspired by "lean manufacturing" techniques from Toyota.</p>
-                    </div>
-                    <div class="concept-cards">
-                        <div class="concept-card primary-concept">
-                            <h4>Minimum Viable Product (MVP)</h4>
-                            <p>A basic version of a product presented to early customers to gather feedback. This feedback helps determine whether to <strong>pivot</strong> (change direction) or <strong>persevere</strong> (continue on the current path).</p>
-                        </div>
-                        <div class="concept-card primary-concept">
-                            <h4>Pivoting</h4>
-                            <p>Realizing a business idea has no future and identifying a more successful direction based on customer feedback. It is not a failure, but a strategic shift.</p>
-                        </div>
-                    </div>
-                     <div class="note-block success">
-                        <strong>Principles of a Lean Startup:</strong>
-                        <ul>
-                            <li><strong>Entrepreneurial Management:</strong> Uses the <strong>build-measure-learn feedback loop</strong> with iterative MVPs instead of complex plans.</li>
-                            <li><strong>Validated Learning:</strong> Runs rigorous experiments (e.g., exposing customers to MVPs) to test each element of the business model.</li>
-                            <li><strong>Innovation Accounting:</strong> Measures progress toward finding a scalable, repeatable business model.</li>
-                        </ul>
-                    </div>
-
-                    <h3>3. Customer Discovery and Validation</h3>
-                    <div class="content-block info-block">
-                        <p>This is the primary focus during the startup phase. It involves understanding the customer and validating the business model before scaling.</p>
-                        <ul>
-                            <li><strong>Customer Discovery:</strong> Captures the founder's vision and turns it into a series of testable hypotheses about the customer problem.</li>
-                            <li><strong>Customer Validation:</strong> Tests whether the business model is <strong>repeatable</strong> (can consistently deliver value) and <strong>scalable</strong> (can handle a growing customer base).</li>
-                        </ul>
-                    </div>
-
-                    <h3>4. The Business Model Canvas</h3>
-                    <div class="content-block info-block">
-                        <p>Developed by Alexander Osterwalder, this is a powerful strategic management tool for technology entrepreneurs. A <strong>Business Model</strong> describes the logic by which an enterprise sustains itself financially. A successful model is both repeatable and scalable.</p>
-                    </div>
-
-                    <h3>5. The Entrepreneurial Method</h3>
-                    <div class="content-block info-block">
-                        <p>A scientific approach to entrepreneurship, crucial for customer discovery and validation. It is guided by four core principles.</p>
-                    </div>
-                    <div class="concept-cards">
-                        <div class="concept-card secondary-concept"><h4>Value Creation is Primary</h4><p>Expert entrepreneurs believe this is the core purpose of their business.</p></div>
-                        <div class="concept-card secondary-concept"><h4>Rebound from Failure</h4><p>They are resilient and can bounce back from personal and professional setbacks.</p></div>
-                        <div class="concept-card secondary-concept"><h4>Respect Property and Contracts</h4><p>They uphold private property rights and contractual obligations.</p></div>
-                        <div class="concept-card secondary-concept"><h4>Respect the Marketplace</h4><p>They respect the judgment and feedback of the market.</p></div>
+                        <p>Formal languages are sets of strings composed of symbols from an alphabet, defined by a specific set of rules called a grammar. They form a hierarchy of complexity and are fundamental to understanding computation, compilers, and language processing.</p>
                     </div>
                 </div>
 
                 <div class="content-section">
-                    <h2 class="section-title">Design Thinking</h2>
+                    <h2 class="section-title">Regular Languages (RL)</h2>
                     <div class="content-block info-block">
-                        <p>Design Thinking is a step-by-step, human-centered process for solving complex problems. It focuses on understanding people's needs, thinking creatively, and testing ideas before creating a final solution.</p>
+                        <p><strong>Regular Languages</strong> are the most restricted class of formal languages. They are characterized by their simple structure, often involving repeating patterns, and can be defined using regular expressions or recognized by finite automata.</p>
                     </div>
-                    <h3>The 5 Stages of Design Thinking</h3>
+                    <h3>Key Characteristics</h3>
+                    <ul>
+                        <li>They can be recognized by <strong>finite automata (FA)</strong>.</li>
+                        <li>They can be described using <strong>regular expressions</strong>.</li>
+                        <li>They have a simple structure, typically involving repetition.</li>
+                    </ul>
+                    <h3>Closure Properties</h3>
+                    <p>Regular languages are "closed" under certain operations, meaning that if you perform these operations on regular languages, the result is always another regular language.</p>
                     <div class="concept-cards">
-                        <div class="concept-card primary-concept"><h4>1. Empathize</h4><p>Gain a deep understanding of your users' needs and feelings. Methods include observing, engaging (talking), and immersing yourself in their situation.</p></div>
-                        <div class="concept-card primary-concept"><h4>2. Define</h4><p>Clearly state the problem based on your empathy findings. This involves synthesizing insights into an actionable problem statement or <strong>Point of View (POV)</strong>.</p></div>
-                        <div class="concept-card primary-concept"><h4>3. Ideate</h4><p>Generate a broad range of ideas and solutions. The focus is on quantity and diversity of ideas, not finding the single "right" one.</p></div>
-                        <div class="concept-card primary-concept"><h4>4. Prototype</h4><p>Bring ideas to life with low-resolution versions of solutions. Prototyping is for problem-solving ("build to think"), communicating ideas, and failing quickly and cheaply.</p></div>
-                        <div class="concept-card primary-concept"><h4>5. Test</h4><p>Solicit feedback from real users on your prototypes to refine the solution and deepen your understanding of the user.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Union</h4><p>If L_1 and L_2 are regular languages, then L_1 + L_2 is also a regular language.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Concatenation</h4><p>If L_1 and L_2 are regular languages, then L_1.L_2 is also a regular language.</p></div>
+                        <div class="concept-card secondary-concept"><h4>Kleene Star</h4><p>If L is a regular language, then L^* (zero or more repetitions) is also a regular language.</p></div>
+                    </div>
+                     <h3>Applications of Regular Languages</h3>
+                    <div class="note-block success">
+                        <ul>
+                            <li><strong>Pattern Matching:</strong> Used in text editors and programming languages for searching strings (e.g., finding all email addresses in a document).</li>
+                            <li><strong>Lexical Analysis:</strong> Used in compilers to tokenize source code into keywords, identifiers, and operators.</li>
+                            <li><strong>Input Validation:</strong> Validating user input in forms to ensure it matches a specific format (e.g., phone numbers, postal codes).</li>
+                            <li><strong>Network Protocols:</strong> Defining the syntax of messages in protocols like HTTP and SMTP.</li>
+                        </ul>
+                    </div>
+                    <div class="example-block">
+                        <h4>Example: Email Validation with a Regular Expression</h4>
+                        <p>To validate an email address in a web form, a regular expression can be used:</p>
+                        <pre class="code-block"><code>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</code></pre>
+                        <p>This expression defines the pattern for a valid email, ensuring it has a user part, an '@' symbol, a domain, a dot, and a top-level domain.</p>
                     </div>
                 </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">Context-Free Languages (CFL)</h2>
+                    <div class="content-block info-block">
+                        <p><strong>Context-Free Languages (<span class="term">CFLs</span>)</strong> are a class of formal languages that can be generated by a <strong>Context-Free Grammar (<span class="term">CFG</span>)</strong>. A CFG is a set of production rules that define how to generate strings in a language. These languages are more expressive than regular languages and can describe nested structures.</p>
+                    </div>
+                    <h3>Production Rules</h3>
+                    <p>Production rules in a CFG define how variables (non-terminals) can be replaced by a sequence of variables and terminals. The rules are "context-free" because a variable can be replaced regardless of the context in which it appears.</p>
+                    <div class="example-block">
+                        <h4>Example: Grammar for \(a^nb^n\)</h4>
+                        <p>The following CFG generates the language of strings with some number of 'a's followed by an equal number of 'b's.</p>
+                        <pre class="code-block"><code>1. S → aSb
+2. S → ε</code></pre>
+                        <ul>
+                            <li>The first rule states that a variable `S` can be rewritten as an `a`, followed by `S`, followed by a `b`. This allows for recursive nesting.</li>
+                            <li>The second rule states that `S` can be replaced by `ε` (the empty string), which terminates the recursion.</li>
+                        </ul>
+                        <p>To generate the string "aabb":</p>
+                        <p>Derivation: <code>S → aSb → aaSbb → aabb</code></p>
+                    </div>
+                    <h3>Applications of CFLs</h3>
+                    <div class="note-block success">
+                        <ul>
+                            <li><strong>Programming Languages:</strong> The syntax of most programming languages is defined by a CFG, which allows compilers to parse and understand the code's structure.</li>
+                            <li><strong>Natural Language Processing (NLP):</strong> Used to parse the structure of human language sentences and identify parts of speech.</li>
+                            <li><strong>Document Formats:</strong> Defines the structure of valid documents like HTML and XML.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Context-Sensitive Languages (CSL)</h2>
+                    <div class="content-block info-block">
+                        <p><strong>Context-Sensitive Languages (<span class="term">CSLs</span>)</strong> are a class of formal languages that are more expressive than CFLs. They are defined by <strong>Context-Sensitive Grammars (<span class="term">CSGs</span>)</strong>, whose production rules can refer to the context in which a variable appears.</p>
+                    </div>
+                    <h3>Difference between CFL and CSL Rules</h3>
+                    <p>The key difference is that CSL rules can be conditional, while CFL rules are not.</p>
+                    <div class="concept-cards">
+                        <div class="concept-card primary-concept">
+                            <h4>Context-Free Rule</h4>
+                            <pre><code>S → aSb | bSa</code></pre>
+                            <p>This rule can be applied to the variable `S` <strong>regardless</strong> of the context in which it appears.</p>
+                        </div>
+                        <div class="concept-card primary-concept">
+                            <h4>Context-Sensitive Rule</h4>
+                            <pre><code>S → aSb | bSa $</code></pre>
+                            <p>This rule can only be applied to the variable `S` when it is <strong>followed by</strong> the end-of-string marker `$`. This makes the rule context-sensitive.</p>
+                        </div>
+                    </div>
+                     <h3>Applications and Challenges</h3>
+                     <div class="note-block success">
+                        <strong>Applications:</strong> CSLs are used in NLP and compiler design for languages with complex syntactic features that CFLs cannot handle, such as long-distance dependencies.
+                    </div>
+                    <div class="note-block warning">
+                        <strong>Challenges:</strong> CSLs are more complex to implement and analyze than CFLs. There are also fewer tools and resources available for working with them because they are less widely used in practice.
+                    </div>
+                </div>
+
             </section>
 
             <section class="memorization-area">
@@ -125,38 +149,57 @@
                 
                 <div class="mem-section">
                     <h3>Key Terms & Acronyms</h3>
-                    <div class="term-cards">
-                        <div class="term-card"><span class="term">Value Proposition</span><span class="definition">Why customers should choose your product.</span></div>
-                        <div class="term-card"><span class="term">Lean Startup</span><span class="definition">A scientific method for managing startups.</span></div>
-                        <div class="term-card"><span class="term">MVP</span><span class="definition">Minimum Viable Product; a basic version for feedback.</span></div>
-                        <div class="term-card"><span class="term">Pivot</span><span class="definition">A strategic shift in direction based on feedback.</span></div>
-                        <div class="term-card"><span class="term">Validated Learning</span><span class="definition">Testing business hypotheses through experiments.</span></div>
-                        <div class="term-card"><span class="term">Customer Discovery</span><span class="definition">The process of validating the customer's problem.</span></div>
-                        <div class="term-card"><span class="term">Design Thinking</span><span class="definition">A human-centered problem-solving process.</span></div>
-                        <div class="term-card"><span class="term">POV</span><span class="definition">Point of View; an actionable problem statement in Design Thinking.</span></div>
-                    </div>
+                    <ol>
+                        <li><span class="term">Formal Language</span>: A set of strings defined by a specific set of rules (a grammar).</li>
+                        <li><span class="term">Regular Language (RL)</span>: The simplest class of formal languages, recognized by finite automata.</li>
+                        <li><span class="term">Regular Expression (Regex)</span>: A sequence of characters that specifies a search pattern, used to define regular languages.</li>
+                        <li><span class="term">Context-Free Language (CFL)</span>: A language generated by a context-free grammar, recognized by pushdown automata.</li>
+                        <li><span class="term">CFG (Context-Free Grammar)</span>: A set of production rules used to generate strings in a CFL. The rules are applied regardless of context.</li>
+                        <li><span class="term">Context-Sensitive Language (CSL)</span>: A language generated by a context-sensitive grammar, where rules can depend on the context.</li>
+                        <li><span class="term">Production Rule</span>: A rule in a grammar that defines how a symbol can be rewritten (e.g., `S → aSb`).</li>
+                        <li><span class="term">Start Symbol</span>: The initial variable from which all strings in a language are derived.</li>
+                        <li><span class="term">Terminal Symbol</span>: The basic symbols from which strings are formed (e.g., 'a', 'b').</li>
+                        <li><span class="term">ε (Epsilon)</span>: Represents the empty string.</li>
+                    </ol>
                 </div>
 
                 <div class="mem-section">
                     <h3>Summary Points</h3>
-                    <ul class="summary-list">
-                        <li class="summary-point">The <strong>5 Pillars of Technopreneurship</strong> are Value Creation, Lean Startup, Customer Discovery/Validation, Business Model Canvas, and the Entrepreneurial Method.</li>
-                        <li class="summary-point"><strong>Value Creation</strong> is the foundation; value is always defined by the customer.</li>
-                        <li class="summary-point">The <strong>Lean Startup</strong> method uses the <strong>Build-Measure-Learn</strong> feedback loop with MVPs to achieve validated learning.</li>
-                        <li class="summary-point">A <strong>pivot</strong> is not a failure but a strategic change in direction based on what has been learned.</li>
-                        <li class="summary-point"><strong>Design Thinking</strong> is a 5-stage process for creative problem-solving: Empathize, Define, Ideate, Prototype, and Test.</li>
-                    </ul>
+                    <ol>
+                        <li>Formal languages are categorized by their complexity, most famously in the Chomsky Hierarchy.</li>
+                        <li><strong>Regular Languages</strong> are the simplest, used for pattern matching and lexical analysis, and are recognized by finite automata.</li>
+                        <li><strong>Context-Free Languages</strong> are more powerful, can describe nested structures like those in programming languages and XML, and are recognized by pushdown automata.</li>
+                        <li><strong>Context-Sensitive Languages</strong> are even more powerful, as their grammars can consider the context of a variable before applying a rule.</li>
+                        <li>The key difference between a CFL and a CSL is whether the grammar's production rules depend on the surrounding symbols (context).</li>
+                    </ol>
                 </div>
 
                 <div class="mem-section">
-                    <h3>Quick Facts</h3>
-                    <div class="fact-grid">
-                        <div class="fact-card"><span class="fact-label">Technopreneurship Pillars:</span><span class="fact-value">5</span></div>
-                        <div class="fact-card"><span class="fact-label">Design Thinking Stages:</span><span class="fact-value">5</span></div>
-                        <div class="fact-card"><span class="fact-label">Lean Startup Loop:</span><span class="fact-value">Build-Measure-Learn</span></div>
-                        <div class="fact-card"><span class="fact-label">Value is Defined By:</span><span class="fact-value">The Customer</span></div>
-                        <div class="fact-card"><span class="fact-label">Creator of Lean Startup:</span><span class="fact-value">Eric Ries</span></div>
-                    </div>
+                    <h3>Important Enumerations</h3>
+                    <ol>
+                        <li><strong>Language Hierarchy (Simplest to Most Complex):</strong>
+                            <ul>
+                                <li>Regular Languages (RL)</li>
+                                <li>Context-Free Languages (CFL)</li>
+                                <li>Context-Sensitive Languages (CSL)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Closure Properties of Regular Languages:</strong>
+                            <ul>
+                                <li>Union</li>
+                                <li>Concatenation</li>
+                                <li>Kleene Star</li>
+                            </ul>
+                        </li>
+                        <li><strong>Key Applications of Context-Free Grammars (CFGs):</strong>
+                            <ul>
+                                <li>Defining programming language syntax.</li>
+                                <li>Parsing in compilers and interpreters.</li>
+                                <li>Structuring documents like XML and HTML.</li>
+                                <li>Natural Language Processing.</li>
+                            </ul>
+                        </li>
+                    </ol>
                 </div>
             </section>
 
@@ -166,8 +209,6 @@
             </nav>
         </main>
     </div>
-
-
 
     <script src="../../js/navigation.js"></script>
     <script src="../../js/chapter.js"></script>
